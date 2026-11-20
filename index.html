@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Phần mềm học Hình học lớp 8: bài học tương tác, giải bài từng bước, chuyên đề nâng cao, luyện tập, thẻ nhớ và kiểm tra.">
+<meta name="theme-color" content="#1f56d8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%90%3C/text%3E%3C/svg%3E">
+<title>Phần mềm học Hình học 8</title>
+<style>
+:root{--bg:#eceff6;--card:#fff;--tx:#162032;--mu:#546178;--bd:#d5dbe8;--ac:#1f56d8;--on:#fff;--acs:#e6eeff;--acd:#173fa3;--fl:#d4e3ff;--svg:#f6f9ff;--aux:#d62839;--ok:#12803a;--oks:#e3f6ea;--no:#c62828;--rb:#fff4d1;--sh:0 1px 2px rgba(22,32,50,.06),0 6px 18px rgba(22,32,50,.07);--r:16px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1017;--card:#171b25;--tx:#edf0f7;--mu:#a9b3c8;--bd:#2b3342;--ac:#8db2ff;--on:#0b1220;--acs:#1c2a4b;--acd:#b9d0ff;--fl:#27406e;--svg:#10141d;--aux:#ff7b82;--ok:#4ade80;--oks:#14301f;--no:#ff8a8a;--rb:#2f2a1a;--sh:none}}
+:root[data-theme="dark"]{--bg:#0d1017;--card:#171b25;--tx:#edf0f7;--mu:#a9b3c8;--bd:#2b3342;--ac:#8db2ff;--on:#0b1220;--acs:#1c2a4b;--acd:#b9d0ff;--fl:#27406e;--svg:#10141d;--aux:#ff7b82;--ok:#4ade80;--oks:#14301f;--no:#ff8a8a;--rb:#2f2a1a;--sh:none}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{font-size:18px;line-height:1.55;padding:0 16px 90px;max-width:1000px;margin:0 auto}
+button,select,input{font-family:inherit}
+button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid color-mix(in srgb,var(--ac) 60%,transparent);outline-offset:2px}
+.top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;padding:14px 0 6px}
+h1{font-size:23px;font-weight:800;margin:0;letter-spacing:-.01em}
+.hud{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;font-size:15px}
+.hud .k{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:4px 12px}
+.hud button{padding:4px 12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;cursor:pointer;font-weight:700;font-size:15px}
+.bar{display:inline-block;width:64px;height:8px;background:var(--bd);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok)}
+.navwrap{position:sticky;top:0;z-index:20;background:var(--bg);margin:0 -16px 12px;padding:6px 16px 10px;border-bottom:1px solid var(--bd)}
+.n1{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.n1 button{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:8px;padding:8px 8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;line-height:1.15;min-height:44px}
+.n1 button:hover{border-color:var(--ac)}
+.n1 button[aria-current=page]{background:var(--ac);color:var(--on);border-color:var(--ac);box-shadow:var(--sh)}
+.n2{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.n2 button{padding:6px 14px;border:1px solid transparent;background:transparent;color:var(--mu);border-radius:999px;font-size:16px;font-weight:600;cursor:pointer}
+.n2 button:hover{color:var(--tx);background:var(--acs)}
+.n2 button[aria-current=page]{background:var(--acs);color:var(--acd);border-color:var(--ac)}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:18px;margin-bottom:14px;box-shadow:var(--sh)}
+h2{font-size:24px;font-weight:800;margin:0 0 8px;letter-spacing:-.01em}
+h3{font-size:14px;font-weight:700;margin:18px 0 8px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em}
+.pt{font-size:16px;color:var(--mu);margin:4px 0 10px}
+.pb{height:10px;background:var(--bd);border-radius:99px;overflow:hidden}.pb i{display:block;height:100%;background:var(--ok);width:0;transition:.3s}
+.nav,.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
+.nav button,.chips button{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 14px;border-radius:999px;font-size:16px;cursor:pointer}
+.nav button:hover,.chips button:hover{border-color:var(--ac)}
+.nav button.on,.chips button.on{background:var(--ac);border-color:var(--ac);color:var(--on);font-weight:700}
+select.big{width:100%;padding:12px 14px;font-size:18px;border:2px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx)}
+.real{background:var(--rb);border-radius:12px;padding:12px 14px;font-size:18px;line-height:1.6;margin-bottom:10px}
+.tip{border-radius:12px;font-size:17px;line-height:1.6;margin-bottom:10px}
+details.an{background:var(--acs);border:1px solid color-mix(in srgb,var(--ac) 35%,transparent);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:16.5px}
+details.an summary{font-weight:700;cursor:pointer;color:var(--acd)}details.an>div{margin-top:6px}
+.g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:start}
+@media(min-width:701px){.g>svg{position:sticky;top:118px}}
+@media(max-width:700px){.g{grid-template-columns:1fr}body{font-size:17px}.navwrap{position:static;border-bottom:0;padding-bottom:2px}.n1 button{font-size:13.5px;flex-direction:column;gap:2px;padding:7px 2px;min-height:54px}.n2 button{font-size:14px;padding:6px 10px}h2{font-size:21px}.hud{font-size:13px;gap:5px}.hud .k{padding:3px 8px;gap:4px}.hud .bar{width:34px}.hud button{padding:3px 9px;font-size:13px}.dots{display:none}.top{padding-top:10px}}
+svg{width:100%;height:auto;display:block;background:var(--svg);border:1px solid var(--bd);border-radius:14px}
+svg text{paint-order:stroke;stroke:var(--svg);stroke-width:5px;stroke-linejoin:round}
+.sl{display:flex;align-items:center;gap:10px;font-size:16px;margin:10px 0}.sl span{min-width:100px;color:var(--mu)}.sl input{flex:1;accent-color:var(--ac);height:28px}.sl b{min-width:42px;text-align:right}
+label.t{font-size:16px;display:flex;gap:8px;align-items:center;margin-top:8px;cursor:pointer}label.t input{width:20px;height:20px;accent-color:var(--ac)}
+ul{margin:0;padding-left:20px;font-size:17.5px;line-height:1.65}
+.v{font-size:18px;line-height:1.8}.v em{font-style:normal;font-weight:700;color:var(--ac)}
+.try{font-size:17px;margin-top:10px;color:var(--mu)}
+.q b.qq{display:block;margin-bottom:10px;font-size:19px}
+.q button.o{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border:2px solid var(--bd);background:var(--card);color:var(--tx);border-radius:12px;font-size:17.5px;cursor:pointer}
+.q button.o:hover{border-color:var(--ac)}
+.q button.ok{border-color:var(--ok);background:var(--oks)}.q button.no{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,transparent)}
+.ex{font-size:17.5px;margin-top:8px;line-height:1.55}
+.stp{display:flex;gap:10px;padding:8px 10px;border-radius:10px;cursor:pointer;color:var(--mu);font-size:15.5px;line-height:1.45}
+.stp:hover{background:var(--acs)}
+.stp i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--bd);color:var(--tx);font-style:normal;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.stp>span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.stn{display:flex;gap:12px;padding:14px 16px;border-radius:14px;background:var(--card);border:2px solid var(--ac);box-shadow:var(--sh);font-size:19px;line-height:1.7;margin:8px 0;animation:pop .22s ease-out}
+.stn i{flex:none;width:32px;height:32px;border-radius:50%;background:var(--ac);color:var(--on);font-style:normal;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px}
+@keyframes pop{from{transform:translateY(6px);opacity:.3}to{transform:none;opacity:1}}
+.f{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:12px 0}
+.f span{font-size:16px;color:var(--mu)}
+.f button,.ans button,.pri{white-space:nowrap;min-height:48px;padding:0 20px;border-radius:12px;border:2px solid var(--ac);background:var(--ac);color:var(--on);font-size:17px;font-weight:700;cursor:pointer}
+.f button.g2,.g2s{background:transparent;color:var(--ac)}
+.g2s{min-height:44px;padding:0 14px;border-radius:12px;border:2px solid var(--bd);font-size:16px;font-weight:600;cursor:pointer;color:var(--tx)}
+.f button:hover,.ans button:hover,.pri:hover{filter:brightness(1.08)}
+.f button:disabled{opacity:.35;cursor:default;filter:none}
+.ctl{border-top:1px solid var(--bd);padding:12px 0 4px;margin:10px 0 0}
+.ctl #xnx,.ctl #zxn,.ctl #cvn{flex:1;min-height:52px;font-size:18px}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:42%}
+.dots i{width:10px;height:10px;border-radius:50%;background:var(--bd);cursor:pointer}.dots i.on{background:var(--ac)}.dots i.cur{width:22px;border-radius:6px}
+.wh{position:relative;display:inline-block;padding-top:.5em;line-height:1}.wh::before{content:'';position:absolute;left:6%;right:6%;top:.1em;height:.4em;border-top:1.6px solid currentColor;border-radius:50% 50% 0 0/100% 100% 0 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 3px;font-size:.92em;line-height:1.2}.fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 3px}.fr>span:last-child{padding:0 3px}
+input#dq{width:100%;padding:12px 14px;border:2px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font-size:18px}
+.it{border-top:1px solid var(--bd);padding:12px 0;font-size:17.5px;line-height:1.65}.it small{color:var(--mu)}
+details.it{border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin:8px 0}details.it summary{cursor:pointer;font-weight:600}
+.bd{display:inline-block;font-size:13px;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--acs);color:var(--acd);margin-right:6px}
+.lk a{font-size:16px;color:var(--ac);margin-right:16px;cursor:pointer;text-decoration:underline}
+.sy{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;font-size:16.5px}.sy div{border:1px solid var(--bd);border-radius:10px;padding:8px 12px;background:var(--card)}.sy b{font-size:20px;color:var(--ac);margin-right:6px}
+.ans{display:flex;gap:8px;margin:12px 0}.ans input{flex:1;min-width:0;padding:10px 14px;border:2px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font-size:20px}
+.fcard{min-height:180px;border:2px dashed var(--ac);border-radius:16px;padding:20px;cursor:pointer;line-height:1.7;margin:12px 0;background:var(--acs)}
+.rc label{display:flex;gap:10px;padding:8px 0;cursor:pointer;align-items:center}.rc input{width:20px;height:20px;accent-color:var(--ac)}
+details.acc{border:1px solid var(--bd);border-radius:12px;margin:10px 0;background:var(--card)}
+details.acc>summary{padding:13px 16px;font-weight:700;cursor:pointer;font-size:17.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary::after{content:'▾';color:var(--mu)}details.acc[open]>summary::after{content:'▴'}
+details.acc[open]>summary{border-bottom:1px solid var(--bd)}
+details.acc .in{padding:8px 16px 14px}
+.badge{font-size:14px;font-weight:700;background:var(--acs);color:var(--acd);border-radius:99px;padding:2px 10px;margin-left:auto;margin-right:6px}
+.badge.ok{background:var(--oks);color:var(--ok)}
+.exg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.exc{display:flex;gap:12px;align-items:center;text-align:left;padding:12px 14px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:14px;cursor:pointer;font-size:16px;line-height:1.35;min-height:74px}
+.exc:hover{border-color:var(--ac);box-shadow:var(--sh)}
+.exc .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--acs);color:var(--acd);font-weight:800;display:flex;align-items:center;justify-content:center}
+.exc.dn .num{background:var(--ok);color:#fff}
+.exc b{display:block;font-size:16.5px}.exc small{color:var(--mu);font-size:14px}
+.today{border:2px solid var(--ac);background:linear-gradient(135deg,var(--acs),var(--card) 70%)}
+.todo{display:flex;gap:10px;align-items:center;padding:12px 0;border-top:1px solid var(--bd);flex-wrap:wrap}.todo>div{flex:1;min-width:200px}
+.tk{display:flex;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--bd);font-size:17.5px}.tk label{flex:1;display:flex;gap:10px;align-items:center;cursor:pointer}.tk input{width:20px;height:20px;accent-color:var(--ac)}.tk a{color:var(--ac);cursor:pointer;font-weight:700;white-space:nowrap}
+.hero{text-align:center;padding:22px 8px}.hero .big{font-size:60px;font-weight:800;color:var(--ac);line-height:1}.hero p{margin:10px auto 18px;max-width:520px;color:var(--mu)}
+.hero .pri{min-height:54px;font-size:19px;padding:0 28px}
+pre{white-space:pre-wrap;font-size:15px;max-height:320px;overflow:auto}
+#cvt{font-size:20px;line-height:1.3}
+.note{background:var(--acs);border:1px solid color-mix(in srgb,var(--ac) 35%,transparent);border-radius:12px;padding:12px 14px;margin-bottom:12px;font-size:17.5px;line-height:1.6}
+.res{border-radius:12px;padding:12px 14px;border:2px solid;margin:10px 0;font-size:17.5px;line-height:1.6}
+.res.ok{border-color:var(--ok);background:var(--oks)}.res.bad{border-color:var(--no);background:color-mix(in srgb,var(--no) 12%,transparent)}.res.hint{border-color:var(--ac);background:var(--acs)}
+.stk{display:flex;height:12px;border-radius:99px;overflow:hidden;background:var(--bd);margin:12px 0 8px}.stk i{display:block;min-width:0;transition:flex .3s}
+.fcard{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:230px;border:2px dashed var(--ac);border-radius:18px;padding:22px;cursor:pointer;background:var(--acs);margin:12px 0}
+.fcard.back{border-style:solid;background:var(--card);align-items:flex-start;text-align:left;justify-content:flex-start}
+.fcard:focus-visible{outline:3px solid color-mix(in srgb,var(--ac) 60%,transparent);outline-offset:3px}
+@media(max-width:700px){.dots{display:none}#cvt{font-size:18px}}
+</style></head><body>
+<header class="top"><h1>📐 Hình học 8</h1><div class="hud" id="hud"></div></header>
+<div class="navwrap"><nav class="n1" id="n1" aria-label="Khu vực"></nav><nav class="n2" id="n2" aria-label="Mục"></nav></div>
+
+<section id="m_learn">
+<div class="pb"><i id="lpb"></i></div><div class="pt" id="lpt"></div><div class="nav" id="lnav"></div>
+<div class="c"><h2 id="lti"></h2><div class="real" id="lreal"></div></div>
+<div class="c"><div class="g"><div><svg id="lsv" viewBox="0 0 400 260"></svg><div id="lsl"></div>
+<label class="t"><input type="checkbox" id="laux" checked> Đường phụ (đường chéo, đường trung bình…)</label><label class="t"><input type="checkbox" id="lmk" checked> Ký hiệu: cung góc, góc vuông, cạnh bằng nhau, song song</label><label class="t"><input type="checkbox" id="llen"> Hiện độ dài các cạnh</label></div>
+<div><h3>Ý chính</h3><div id="ldef"></div><h3>Số đo (tự cập nhật)</h3><div class="v" id="linfo"></div></div></div>
+<div class="try" id="ltry"></div></div>
+<div class="c q" id="lq"></div>
+<div class="f"><button class="g2" id="lpv">← Bài trước</button><button id="lnx">Bài sau →</button></div>
+</section>
+
+<section id="m_ex" hidden>
+<div class="nav" id="xnav"></div>
+<div class="c"><div class="g"><svg id="xsv" viewBox="0 0 400 250"></svg>
+<div><div class="tip" id="xtip"></div><div id="xsteps"></div>
+<div class="f ctl"><button class="g2" id="xpv">← Trước</button><span id="xcn"></span><button id="xnx">Bước tiếp →</button></div><div id="xpast"></div></div></div></div>
+</section>
+
+<section id="m_dang" hidden>
+<div class="c"><div class="chips" id="zf" style="margin-bottom:10px"></div><select class="big" id="zsel" aria-label="Chọn bài" style="margin-bottom:14px"></select>
+<div class="g"><svg id="zsv" viewBox="0 0 400 250"></svg>
+<div><div class="tip" id="zinfo"></div><div id="zsteps"></div>
+<div class="f ctl"><button class="g2" id="zpv">← Trước</button><span id="zcn"></span><button id="zxn">Bước tiếp →</button></div><div id="zpast"></div></div></div></div>
+<details class="acc"><summary>📖 Cách đọc ký hiệu trong hình</summary><div class="in"><svg id="lgsv" viewBox="0 0 440 150"></svg><div class="sy" id="lgt" style="margin-top:10px"></div></div></details>
+</section>
+
+<section id="m_gen" hidden>
+<div class="c"><div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px"><label for="gsel" style="font-weight:700">Dạng bài</label><select class="big" id="gsel" style="flex:1;min-width:220px;width:auto"></select></div>
+<div class="g"><svg id="gsv" viewBox="0 0 400 250"></svg>
+<div><div class="note" id="gq"></div><div class="ans"><input id="ga" inputmode="decimal" placeholder="Nhập đáp án…" aria-label="Đáp án"><button id="gc">Kiểm tra</button></div><div id="gr"></div><div class="f"><button class="g2" id="gh">💡 Gợi ý</button><button class="g2" id="gn">Câu khác →</button></div><div class="pt" style="margin:0">Đúng ngay lần đầu +10 XP, chuỗi đúng liên tiếp tăng dần.</div></div></div><span id="gl"></span></div>
+<details class="acc"><summary>🔍 Công cụ nhận dạng tứ giác</summary><div class="in"><div class="pt">Tick các điều bạn biết về một tứ giác, công cụ cho biết nó chắc chắn là hình gì.</div><div class="rc" id="rc"></div><div id="rr"></div></div></details>
+</section>
+
+<section id="m_fc" hidden>
+<div class="c"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><h2 style="margin:0">🃏 Thẻ ghi nhớ</h2><span class="pt" id="fst" style="margin:0"></span></div><div id="fstk"></div>
+<div class="fcard" id="fcd" tabindex="0" role="button" aria-label="Lật thẻ"></div><div class="f" id="frate"></div>
+<div class="pt" style="margin:0">Thẻ “chưa nhớ” xuất hiện nhiều hơn, thẻ đã thuộc xuất hiện thưa dần. Bấm vào thẻ hoặc phím Cách để lật.</div></div>
+</section>
+
+<section id="m_drag" hidden>
+<div class="c"><div class="chips" id="dscn"></div>
+<div class="g"><svg id="dsv" viewBox="0 0 400 260" style="touch-action:none"></svg>
+<div><div class="note" id="dht"></div><h3 style="margin-top:0">Số đo (tự cập nhật)</h3><div class="v" id="dif"></div>
+<div class="f"><span class="pt" style="margin:0">Chạm và kéo các chấm đỏ</span><button class="g2" id="drs">↺ Đặt lại</button></div></div></div></div></section>
+
+<section id="m_solid" hidden>
+<div class="c"><h2>🧊 Hình khối thực tiễn</h2><div class="chips" id="sfc"></div><div class="real" id="sre" style="margin-top:8px"></div>
+<div class="g"><div><svg id="ssv" viewBox="0 0 400 300"></svg><div id="ssl"></div>
+<div class="sl"><span>Xoay</span><input type="range" id="srot" min="0" max="360" value="35"><b id="srv"></b></div>
+<div class="chips"><button id="sau">▶ Tự xoay</button></div>
+<label class="t"><input type="checkbox" id="sk1" checked> Hiện nét khuất (nét đứt)</label><label class="t"><input type="checkbox" id="sk2" checked> Tô mặt đáy</label><label class="t"><input type="checkbox" id="sk3" checked> Chiều cao h</label><label class="t"><input type="checkbox" id="sk4" checked> Trung đoạn d (hình chóp)</label></div>
+<div><h3>Công thức và số đo</h3><div class="v" id="sin"></div><div class="pt">Sxq: diện tích xung quanh · Stp: diện tích toàn phần · V: thể tích</div></div></div></div></section>
+
+<section id="m_test" hidden><div class="c"><h2>📝 Kiểm tra tổng hợp</h2><div id="tbx"></div></div></section>
+
+<section id="m_cd" hidden><div id="cdh"></div>
+<div class="c" id="cvw" hidden><h2 id="cvt"></h2><div class="g"><svg id="cvsv" viewBox="0 0 400 250"></svg><div><div class="tip" id="cvi"></div><div id="cvs"></div><div class="f ctl"><button class="g2" id="cvp">← Trước</button><span id="cvc"></span><button id="cvn">Bước tiếp →</button></div><div id="cvpast"></div></div></div><div class="f"><span class="pt">Xem hết các bước để được +5 XP và dấu ✓</span><button class="g2" id="cvx">Đóng ✕</button></div></div>
+<div id="cdb"></div></section>
+
+<section id="m_plan" hidden><div id="ptd"></div><div class="c" style="padding:14px 18px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><h2 style="margin:0;font-size:20px">🗓️ Lộ trình 8 tuần</h2><span class="pt" id="ppt" style="margin:0"></span></div><div class="pb" style="margin-top:10px"><i id="ppb"></i></div><div class="pt" style="margin:10px 0 0">Mỗi ngày 30–40 phút: 5 câu ở 🎲 Luyện tập và 10 thẻ ở 🃏 Thẻ nhớ. Sau mỗi bài, tự vẽ lại hình trên giấy.</div></div><div id="pw"></div></section>
+
+<section id="m_db" hidden>
+<div class="c"><input id="dq" placeholder="🔍 Tìm: Talet, hình thoi, 360°, ∥ …"><div class="chips" id="dc"></div><div class="chips" id="dk"></div><div class="pt" id="dn"></div><div id="dl"></div></div>
+<div class="c"><h3>Bài tập từng bước</h3><div class="chips" id="xl"></div></div>
+<div class="c"><h3>Bảng ký hiệu dùng trong phần mềm</h3><div class="sy" id="sy"></div></div>
+<details class="c"><summary>Dữ liệu thô (JSON)</summary><pre id="js"></pre></details>
+</section>
+
+<script>
+const f1=n=>(Math.round(n*10)/10).toString().replace('.',',');
+const f=n=>(+n.toFixed(2)).toString().replace('.',',');
+const dist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]);
+const mid=(a,b)=>[(a[0]+b[0])/2,(a[1]+b[1])/2];
+const ang=(p,q,r)=>{const a=[q[0]-p[0],q[1]-p[1]],b=[r[0]-p[0],r[1]-p[1]];return Math.acos((a[0]*b[0]+a[1]*b[1])/(Math.hypot(...a)*Math.hypot(...b)))*180/Math.PI};
+const L=[
+{n:'Tứ giác',ic:'🏞️',real:'Một mảnh đất hình tứ giác. Bác thợ đo xong 3 góc là tính ngay được góc thứ tư mà không cần đo nữa. Bí quyết: <b>bốn góc luôn cộng lại bằng 360°</b>.',
+ def:['Tứ giác ABCD có 4 cạnh AB, BC, CD, DA','Tổng 4 góc trong = 360°'],try:'Kéo thanh trượt để di chuyển đỉnh A. Góc nào cũng đổi, nhưng tổng vẫn là 360°.',
+ p:[['x','Đỉnh A: ngang',0,3,1],['y','Đỉnh A: cao',4,7,5.5]],
+ b(v){const D=[0,0],C=[8,0],B=[7,6],A=[v.x,v.y],a=ang(A,D,B),b=ang(B,A,C),c=ang(C,B,D),d=ang(D,C,A);
+ return{P:{A,B,C,D},poly:['A','B','C','D'],aux:[],X:{},info:[`∠A + ∠B + ∠C + ∠D = <b style="color:#e5484d">${f1(a)}°</b> + <b style="color:#16a34a">${f1(b)}°</b> + <b style="color:#d97706">${f1(c)}°</b> + <b style="color:#7c3aed">${f1(d)}°</b>`,`Tổng = <em>${f1(a+b+c+d)}°</em>`]}},
+ q:['Tứ giác có 3 góc 90°, 100°, 80°. Góc còn lại là?',['90°','80°','100°'],0,'360 − (90 + 100 + 80) = 90°.']},
+{n:'Hình thang',ic:'🪜',real:'Ruộng bậc thang, mặt cắt chiếc xô, bậc thang có hai cạnh trên – dưới <b>song song</b>. Hình có đúng đặc điểm đó gọi là hình thang.',
+ def:['Hình thang: 2 cạnh đối song song (AB ∥ CD)','Diện tích = {(đáy lớn + đáy bé) × cao|2}','Đường trung bình = nửa tổng hai đáy'],try:'Kéo đáy và chiều cao, xem diện tích và đường trung bình MN thay đổi thế nào.',
+ p:[['a','Đáy bé AB',2,6,4],['b','Đáy lớn CD',7,12,9],['h','Chiều cao',2,6,4],['o','Lệch ngang',0,3,1]],
+ b(v){const A=[v.o,v.h],B=[v.o+v.a,v.h],C=[v.b,0],D=[0,0],M=mid(A,D),N=mid(B,C);
+ return{P:{A,B,C,D},poly:['A','B','C','D'],aux:[['M','N']],X:{M,N},info:[`MN = {AB+CD|2} = <em>${f((v.a+v.b)/2)}</em>`,`Diện tích = <em>${f((v.a+v.b)*v.h/2)}</em>`,`Chu vi = <em>${f(v.a+v.b+dist(A,D)+dist(B,C))}</em>`]}},
+ q:['Hình thang có đáy 4 và 8, chiều cao 5. Diện tích?',['20','30','60'],1,'(4+8)×5÷2 = 30.']},
+{n:'Hình thang cân',ic:'👜',real:'Chiếc túi xách, mặt cắt con mương: hai bên <b>đối xứng</b>, nhìn cân đối. Đó là hình thang cân.',
+ def:['Hai góc kề một đáy bằng nhau','Hai cạnh bên bằng nhau','Hai đường chéo bằng nhau (cũng là dấu hiệu nhận biết)'],try:'Bật đường phụ: hai đường chéo AC và BD luôn bằng nhau.',
+ p:[['a','Đáy bé AB',2,6,4],['b','Đáy lớn CD',7,12,10],['h','Chiều cao',2,6,4]],
+ b(v){const o=(v.b-v.a)/2,A=[o,v.h],B=[o+v.a,v.h],C=[v.b,0],D=[0,0];
+ return{P:{A,B,C,D},poly:['A','B','C','D'],aux:[['A','C'],['B','D']],X:{},info:[`AD = BC = <em>${f(dist(A,D))}</em>`,`AC = BD = <em>${f(dist(A,C))}</em>`,`Diện tích = <em>${f((v.a+v.b)*v.h/2)}</em>`]}},
+ q:['Hình thang có tính chất nào thì là hình thang cân?',['Hai đường chéo bằng nhau','Hai đáy bằng nhau','Hai cạnh bên song song'],0,'Hình thang có hai đường chéo bằng nhau là hình thang cân.']},
+{n:'Hình bình hành',ic:'🚪',real:'Cổng xếp, giàn kéo: khi kéo ra kéo vào, hình dạng nghiêng đi nhưng <b>các cạnh đối luôn song song và bằng nhau</b>.',
+ def:['Các cặp cạnh đối song song','Cạnh đối bằng nhau, góc đối bằng nhau','Hai đường chéo cắt nhau tại trung điểm','Diện tích = đáy × cao'],try:'Kéo góc D: hình nghiêng đi nhưng O vẫn là trung điểm hai đường chéo.',
+ p:[['a','Cạnh CD',3,8,6],['b','Cạnh AD',2,6,4],['g','Góc D (độ)',30,150,65]],
+ b(v){const r=v.g*Math.PI/180,x=v.b*Math.cos(r),h=v.b*Math.sin(r),D=[0,0],C=[v.a,0],B=[v.a+x,h],A=[x,h],O=mid(A,C);
+ return{P:{A,B,C,D},poly:['A','B','C','D'],aux:[['A','C'],['B','D'],['A','H']],X:{O,H:[x,0]},info:[`∠D = ∠B = <em>${v.g}°</em>; ∠A = ∠C = <em>${180-v.g}°</em>`,`OA = OC = <em>${f(dist(A,O))}</em>; OB = OD = <em>${f(dist(B,O))}</em>`,`Diện tích = <em>${f(v.a*h)}</em>`,`Chu vi = <em>${f(2*(v.a+v.b))}</em>`]}},
+ q:['Hai đường chéo của hình bình hành luôn…',['cắt nhau tại trung điểm mỗi đường','bằng nhau','vuông góc'],0,'Đó là tính chất của mọi hình bình hành. Bằng nhau là của chữ nhật, vuông góc là của hình thoi.']},
+{n:'Hình chữ nhật',ic:'📱',real:'Màn hình điện thoại, cánh cửa, tờ giấy A4 đều có <b>4 góc vuông</b>.',
+ def:['Tứ giác có 4 góc vuông','Hai đường chéo bằng nhau, cắt nhau tại trung điểm','Diện tích = dài × rộng'],try:'Kéo dài – rộng: hai đường chéo vẫn bằng nhau.',
+ p:[['a','Chiều dài',3,10,7],['b','Chiều rộng',2,7,4]],
+ b(v){const A=[0,v.b],B=[v.a,v.b],C=[v.a,0],D=[0,0],O=mid(A,C);
+ return{P:{A,B,C,D},poly:['A','B','C','D'],aux:[['A','C'],['B','D']],X:{O},info:[`AC = BD = <em>${f(dist(A,C))}</em>`,`Diện tích = <em>${f(v.a*v.b)}</em>`,`Chu vi = <em>${f(2*(v.a+v.b))}</em>`]}},
+ q:['Hình bình hành có một góc vuông là hình gì?',['Hình chữ nhật','Hình thoi','Hình thang cân'],0,'Hình bình hành có một góc vuông là hình chữ nhật.']},
+{n:'Hình thoi',ic:'🔷',real:'Quả trám, mắt lưới hàng rào, con diều: bốn cạnh <b>bằng nhau</b> nhưng góc không vuông.',
+ def:['Tứ giác có 4 cạnh bằng nhau','Hai đường chéo vuông góc và là phân giác các góc','Diện tích = {tích hai đường chéo|2}'],try:'Kéo hai đường chéo: bốn cạnh luôn bằng nhau, AC luôn vuông góc BD.',
+ p:[['a','Đường chéo AC',3,11,8],['b','Đường chéo BD',3,11,5]],
+ b(v){const A=[-v.a/2,0],B=[0,-v.b/2],C=[v.a/2,0],D=[0,v.b/2],s=dist(A,B);
+ return{P:{A,D,C,B},poly:['A','D','C','B'],aux:[['A','C'],['B','D']],X:{O:[0,0]},info:[`Cạnh = <em>${f(s)}</em> (4 cạnh bằng nhau)`,`Diện tích = <em>${f(v.a*v.b/2)}</em>`,`Chu vi = <em>${f(4*s)}</em>`]}},
+ q:['Hình thoi có hai đường chéo 6 và 8. Diện tích?',['48','24','14'],1,'6 × 8 ÷ 2 = 24.']},
+{n:'Hình vuông',ic:'🧱',real:'Viên gạch lát nền, ô bàn cờ: vừa <b>4 góc vuông</b> vừa <b>4 cạnh bằng nhau</b>, nên là hình chữ nhật và cũng là hình thoi.',
+ def:['Có đủ tính chất của hình chữ nhật và hình thoi','Diện tích = a²; chu vi = 4a; đường chéo = a√2'],try:'Kéo cạnh a, xem đường chéo luôn bằng a√2.',
+ p:[['a','Cạnh a',2,8,5]],
+ b(v){const A=[0,v.a],B=[v.a,v.a],C=[v.a,0],D=[0,0];
+ return{P:{A,B,C,D},poly:['A','B','C','D'],aux:[['A','C'],['B','D']],X:{O:[v.a/2,v.a/2]},info:[`Đường chéo = <em>${f(v.a*Math.SQRT2)}</em>`,`Diện tích = <em>${f(v.a*v.a)}</em>`,`Chu vi = <em>${f(4*v.a)}</em>`]}},
+ q:['Hình vuông cạnh 5 có chu vi?',['20','25','10'],0,'4 × 5 = 20 (25 là diện tích).']},
+{n:'Đường trung bình',ic:'🏞️',real:'Muốn biết bề rộng cái ao mà không lội qua: lấy trung điểm hai bờ rồi đo đoạn nối. <b>Rộng ao gấp đôi đoạn đó.</b>',
+ def:['Nối trung điểm hai cạnh của tam giác','MN ∥ BC và MN = {BC|2}'],try:'Kéo đỉnh A: MN luôn bằng nửa BC.',
+ p:[['c','Cạnh BC',6,12,10],['x','Vị trí A',0,12,3],['h','Chiều cao',4,9,6]],
+ b(v){const B=[0,0],C=[v.c,0],A=[v.x,v.h],M=mid(A,B),N=mid(A,C);
+ return{P:{A,B,C},poly:['A','B','C'],aux:[['M','N']],X:{M,N},info:[`BC = <em>${f(v.c)}</em>`,`MN = <em>${f(dist(M,N))}</em> = BC ÷ 2`]}},
+ q:['M, N là trung điểm AB, AC. MN = 5 thì BC =?',['10','5','2,5'],0,'BC = 2·MN = 10.']},
+{n:'Định lí Talet',ic:'🌳',real:'Đo chiều cao cây bằng bóng nắng: cây và cọc cắm cạnh đều tạo tam giác có cạnh <b>song song</b>, nên các đoạn tương ứng <b>tỉ lệ</b>.',
+ def:['Nếu B′C′ ∥ BC thì {AB′|AB} = {AC′|AC} = {B′C′|BC}','Talet đảo: tỉ lệ bằng nhau ⇒ song song'],try:'Kéo tỉ số t: ba tỉ số luôn bằng nhau.',
+ p:[['t','Tỉ số {AB′|AB}',0.1,0.9,0.4,0.05]],
+ b(v){const B=[0,0],C=[10,0],A=[3,7],B1=[A[0]+v.t*(B[0]-A[0]),A[1]+v.t*(B[1]-A[1])],C1=[A[0]+v.t*(C[0]-A[0]),A[1]+v.t*(C[1]-A[1])];
+ return{P:{A,B,C},poly:['A','B','C'],aux:[["B'","C'"]],X:{"B'":B1,"C'":C1},info:[`{AB′|AB} = <em>${f(dist(A,B1)/dist(A,B))}</em>`,`{AC′|AC} = <em>${f(dist(A,C1)/dist(A,C))}</em>`,`{B′C′|BC} = <em>${f(dist(B1,C1)/10)}</em>`]}},
+ q:['MN ∥ BC, {AM|AB} = 1/3, BC = 12. MN =?',['4','6','3'],0,'{MN|BC} = 1/3 ⇒ MN = 4.']},
+{n:'Tam giác đồng dạng',ic:'🗺️',real:'Bản đồ, bản vẽ thu nhỏ, ảnh phóng to: <b>hình dạng y hệt, chỉ khác kích thước</b>. Đó là đồng dạng theo tỉ số k.',
+ def:['Góc bằng nhau, cạnh tỉ lệ theo k','Tỉ số chu vi = k','Tỉ số diện tích = k²'],try:'Kéo k: chu vi tăng k lần nhưng diện tích tăng k² lần.',
+ p:[['k','Tỉ số k',0.3,1.6,0.6,0.05]],
+ b(v){const k=v.k,A=[2,3.5],B=[0,0],C=[6,0],A1=[8+2*k,3.5*k],B1=[8,0],C1=[8+6*k,0],S=t=>Math.abs((t[1][0]-t[0][0])*(t[2][1]-t[0][1])-(t[2][0]-t[0][0])*(t[1][1]-t[0][1]))/2,pe=t=>dist(t[0],t[1])+dist(t[1],t[2])+dist(t[2],t[0]);
+ const t1=[A,B,C],t2=[A1,B1,C1];
+ return{P:{A,B,C,"A'":A1,"B'":B1,"C'":C1},poly:['A','B','C'],poly2:["A'","B'","C'"],aux:[],X:{},info:[`k = <em>${f(k)}</em>`,`Chu vi: tỉ số = <em>${f(pe(t2)/pe(t1))}</em> (= k)`,`Diện tích: tỉ số = <em>${f(S(t2)/S(t1))}</em> (= k²)`]}},
+ q:['Hai tam giác đồng dạng tỉ số k = 2. Tam giác nhỏ có diện tích 10, tam giác lớn?',['20','40','10'],1,'Diện tích tỉ lệ k² = 4 ⇒ 10 × 4 = 40.']}
+];
+
+const X=[
+{n:'Tính góc tứ giác',tip:'<b>Dạng:</b> biết 3 góc, tìm góc còn lại. <b>Mẹo:</b> thấy tứ giác → nhớ ngay tổng 4 góc = 360°.',
+P:{A:[100,40],B:[300,70],C:[330,215],D:[60,225]},
+E:{q:['g','ABCD'],p:['p','ABCD'],ta:['t',118,66,'72°'],tb:['t',262,92,'114°'],td:['t',92,205,'85°'],tc:['t',290,198,'?'],tc2:['t',286,198,'89°']},
+S:[{s:'<b>Đề:</b> tứ giác ABCD có ∠A = 72°, ∠B = 114°, ∠D = 85°. Tính ∠C.',a:['q','p','ta','tb','td']},
+{s:'<b>Nhớ:</b> tổng bốn góc của tứ giác bằng 360°.',h:['q']},
+{s:'Viết: ∠A + ∠B + ∠C + ∠D = 360°, nên ∠C = 360° − (72° + 114° + 85°).',a:['tc']},
+{s:'72 + 114 + 85 = 271, vậy ∠C = 360° − 271° = <b>89°</b> ✔',a:['tc2'],d:['tc']}]},
+{n:'Chứng minh hình bình hành',tip:'<b>Dạng:</b> chứng minh tứ giác là hình bình hành rồi suy ra cạnh bằng nhau. <b>Mẹo:</b> tìm cặp cạnh đối <i>song song và bằng nhau</i>.',
+P:{A:[90,60],B:[300,60],C:[340,200],D:[130,200]},
+E:{q:['g','ABCD'],p:['p','ABCD'],ab:['l','AB'],dc:['l','DC'],ad:['l','AD'],bc:['l','BC'],e1:['t',160,48,'AB ∥ CD, AB = CD']},
+S:[{s:'<b>Đề:</b> tứ giác ABCD có AB ∥ CD và AB = CD. Chứng minh ABCD là hình bình hành, từ đó suy ra AD = BC.',a:['q','p']},
+{s:'Đọc giả thiết: cặp cạnh đối AB và CD vừa song song vừa bằng nhau.',a:['e1'],h:['ab','dc']},
+{s:'<b>Dấu hiệu:</b> tứ giác có hai cạnh đối song song và bằng nhau là hình bình hành ⇒ ABCD là hình bình hành.',h:['q']},
+{s:'Hình bình hành có các cạnh đối bằng nhau ⇒ <b>AD = BC</b> ✔',h:['ad','bc']}]},
+{n:'Hình vuông (c.g.c)',tip:'<b>Dạng:</b> chứng minh tam giác bằng nhau rồi chứng minh vuông góc. <b>Mẹo:</b> hình vuông cho sẵn cạnh bằng nhau và góc 90°.',
+P:{A:[110,30],B:[290,30],C:[290,210],D:[110,210],E:[110,90],F:[170,210],G:[128,84]},
+E:{q:['g','ABCD'],p:['p','ABCD'],ef:['p','EF'],ae:['l','AE'],df:['l','DF'],af:['l','AF'],be:['l','BE'],t1:['g','ADF'],t2:['g','BAE'],g:['p','G']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD; E ∈ AD, F ∈ DC sao cho AE = DF. a) Chứng minh ΔADF = ΔBAE. b) Chứng minh BE ⊥ AF.',a:['q','p','ef','ae','df']},
+{s:'<b>a)</b> Nối AF và BE để có hai tam giác cần so sánh.',a:['af','be'],h:['t1','t2']},
+{s:'Xét ΔADF và ΔBAE: AD = AB (cạnh hình vuông); ∠D = ∠A = 90°; DF = AE (giả thiết) ⇒ ΔADF = ΔBAE (c.g.c).',h:['t1','t2']},
+{s:'Suy ra ∠DAF = ∠ABE (hai góc tương ứng).',h:['af','be']},
+{s:'<b>b)</b> Gọi G là giao điểm của BE và AF.',a:['g']},
+{s:'Có ∠BAF + ∠DAF = ∠BAD = 90°. Thay ∠DAF = ∠ABE: ∠BAG + ∠ABG = 90°.',h:['q']},
+{s:'Trong ΔABG: ∠AGB = 180° − 90° = 90° ⇒ <b>BE ⊥ AF</b> ✔',h:['af','be']}]},
+{n:'Talet tính độ dài',tip:'<b>Dạng:</b> có đường thẳng song song với một cạnh, tìm độ dài. <b>Mẹo:</b> song song → Talet; viết tỉ lệ cùng một kiểu ở hai cạnh.',
+P:{A:[200,25],B:[70,225],C:[340,225],M:[113,158],N:[293,158]},
+E:{q:['g','ABC'],p:['p','ABC'],mp:['p','MN'],mn:['l','MN'],t1:['t',132,90,'6'],t2:['t',70,197,'3'],t3:['t',262,90,'8'],t4:['t',326,197,'?'],t5:['t',326,197,'4']},
+S:[{s:'<b>Đề:</b> MN ∥ BC, AM = 6, MB = 3, AN = 8. Tính NC.',a:['q','p','mp','mn','t1','t2','t3','t4']},
+{s:'Thấy MN ∥ BC ⇒ dùng định lí <b>Talet</b>.',h:['mn']},
+{s:'Viết tỉ lệ: {AM|MB} = {AN|NC} (đoạn trên / đoạn dưới, cùng kiểu ở cả hai cạnh).',h:['t1','t2','t3','t4']},
+{s:'Thay số: {6|3} = {8|NC}.'},
+{s:'NC = 3 × 8 ÷ 6 = <b>4</b> ✔',a:['t5'],d:['t4']}]},
+{n:'Đường trung bình',tip:'<b>Dạng:</b> cho trung điểm hai cạnh, tìm cạnh thứ ba. <b>Mẹo:</b> trung điểm + trung điểm → đường trung bình → gấp đôi / giảm nửa.',
+P:{A:[200,25],B:[70,225],C:[340,225],M:[135,125],N:[270,125]},
+E:{q:['g','ABC'],p:['p','ABC'],mp:['p','MN'],mn:['l','MN'],tm:['t',190,116,'3,5'],tc:['t',195,244,'?'],tc2:['t',195,244,'7']},
+S:[{s:'<b>Đề:</b> M, N là trung điểm của AB, AC; MN = 3,5 cm. Tính BC.',a:['q','p','mp','mn','tm','tc']},
+{s:'M, N là trung điểm hai cạnh ⇒ MN là <b>đường trung bình</b> của ΔABC.',h:['mn']},
+{s:'Tính chất: MN ∥ BC và MN = {BC|2} ⇒ BC = 2 · MN.',h:['mn','tc']},
+{s:'BC = 2 × 3,5 = <b>7 cm</b> ✔',a:['tc2'],d:['tc']}]},
+{n:'Đường phân giác',tip:'<b>Dạng:</b> phân giác chia cạnh đối diện thành hai đoạn. <b>Mẹo:</b> đoạn này / đoạn kia = cạnh bên này / cạnh bên kia.',
+P:{A:[130,25],B:[70,225],C:[340,225],D:[178,225]},
+E:{q:['g','ABC'],p:['p','ABC'],d:['p','D'],ad:['l','AD'],t1:['t',74,120,'6'],t2:['t',252,120,'9'],tb:['t',116,243,'?'],tc:['t',250,243,'?'],tb2:['t',116,243,'4'],tc2:['t',250,243,'6']},
+S:[{s:'<b>Đề:</b> AD là phân giác ∠A; AB = 6, AC = 9, BC = 10. Tính DB, DC.',a:['q','p','d','ad','t1','t2','tb','tc']},
+{s:'<b>Tính chất đường phân giác:</b> {DB|DC} = {AB|AC}.',h:['ad']},
+{s:'{DB|DC} = {6|9} = {2|3} ⇒ đặt DB = 2k, DC = 3k.'},
+{s:'DB + DC = BC = 10 ⇒ 5k = 10 ⇒ k = 2.'},
+{s:'DB = 2·2 = <b>4</b>, DC = 3·2 = <b>6</b> ✔',a:['tb2','tc2'],d:['tb','tc']}]},
+{n:'Đồng dạng g.g',tip:'<b>Dạng:</b> chứng minh hai tam giác đồng dạng. <b>Mẹo:</b> tam giác vuông + góc chung → chỉ cần 2 góc bằng nhau (g.g).',
+P:{A:[90,210],B:[90,40],C:[330,210],H:[170,97]},
+E:{q:['g','ABC'],p:['p','ABC'],ah:['l','AH'],h:['p','H'],t2:['g','HBA']},
+S:[{s:'<b>Đề:</b> ΔABC vuông tại A, đường cao AH. Chứng minh ΔABC ∽ ΔHBA.',a:['q','p']},
+{s:'Vẽ đường cao AH ⊥ BC (H thuộc BC).',a:['ah','h']},
+{s:'Xét ΔABC và ΔHBA: ∠BAC = ∠BHA = 90°.',h:['q','t2']},
+{s:'Hai tam giác có chung góc B.',h:['q','t2']},
+{s:'Vậy ΔABC ∽ ΔHBA (g.g) ✔ – hai góc bằng nhau là đủ.',h:['q','t2']}]},
+{n:'Thực tế: đo chiều cao cây',tip:'<b>Dạng:</b> bài toán thực tiễn. <b>Mẹo:</b> tia nắng song song ⇒ hai tam giác vuông đồng dạng ⇒ lập tỉ lệ.',
+P:{O:[30,215],T:[30,45],S:[256,215],Q:[300,215],R:[300,187],U:[338,215]},
+E:{gr:['l','OU'],tree:['g','OTS'],post:['g','QRU'],a1:['t',6,130,'x'],a2:['t',6,130,'9 m'],b1:['t',130,236,'12 m'],c1:['t',262,206,'1,5'],d1:['t',312,236,'2 m']},
+S:[{s:'<b>Đề:</b> cọc cao 1,5 m có bóng dài 2 m. Cùng lúc, cây có bóng dài 12 m. Tính chiều cao cây.',a:['gr','tree','post','a1','b1','c1','d1']},
+{s:'Tia nắng song song ⇒ hai tam giác vuông có một góc nhọn bằng nhau ⇒ <b>đồng dạng</b> (g.g).',h:['tree','post']},
+{s:'Cạnh tương ứng tỉ lệ: {cao cây|cao cọc} = {bóng cây|bóng cọc}.'},
+{s:'{x|1,5} = {12|2}.'},
+{s:'x = 1,5 × 12 ÷ 2 = <b>9 m</b> ✔',a:['a2'],d:['a1']}]}
+,{n:'Pythagore: tìm cạnh',tip:'<b>Dạng:</b> tam giác vuông, biết 2 cạnh, tìm cạnh thứ ba. <b>Mẹo:</b> xác định cạnh huyền trước (đối diện góc vuông, dài nhất).',
+P:{A:[90,215],B:[90,75],C:[330,215]},
+E:{q:['g','ABC'],p:['p','ABC'],ra:['t',97,205,'∟'],t1:['t',66,150,'8'],t2:['t',208,236,'?'],t3:['t',222,138,'17'],t4:['t',208,236,'15'],bc:['l','BC']},
+S:[{s:'<b>Đề:</b> ΔABC vuông tại A, AB = 8, BC = 17. Tính AC.',a:['q','p','ra','t1','t2','t3']},
+{s:'Vuông tại A ⇒ BC (đối diện góc vuông) là <b>cạnh huyền</b>.',h:['bc']},
+{s:'<b>Pythagore:</b> AB² + AC² = BC².',h:['q']},
+{s:'Thay số: 8² + AC² = 17² ⇒ AC² = 289 − 64 = 225.'},
+{s:'AC = √225 = <b>15</b> ✔',a:['t4'],d:['t2']}]},
+{n:'Pythagore đảo',tip:'<b>Dạng:</b> kiểm tra tam giác có vuông không. <b>Mẹo:</b> bình phương cạnh lớn nhất, so với tổng bình phương hai cạnh còn lại.',
+P:{A:[60,205],B:[60,127],C:[287,205]},
+E:{q:['g','ABC'],p:['p','ABC'],bc:['l','BC'],t1:['t',34,172,'12'],t2:['t',160,225,'35'],t3:['t',185,152,'37'],ra:['t',67,195,'∟']},
+S:[{s:'<b>Đề:</b> tam giác có ba cạnh 12, 35, 37. Có phải tam giác vuông không?',a:['q','p','t1','t2','t3']},
+{s:'Cạnh lớn nhất là 37. Nếu vuông thì đó là cạnh huyền.',h:['bc']},
+{s:'Tính: 37² = 1369.',h:['bc']},
+{s:'Tính: 12² + 35² = 144 + 1225 = 1369.'},
+{s:'1369 = 1369 ⇒ 12² + 35² = 37². Theo <b>Pythagore đảo</b>, đây là tam giác vuông ✔ (nếu hai vế khác nhau thì không vuông).',a:['ra'],h:['q']}]}
+];
+
+const D=[
+['Tam giác (lớp 7)','Định lí','Tổng ba góc','∠A + ∠B + ∠C = 180°. Tam giác vuông: hai góc nhọn phụ nhau.',-1,-1],
+['Tam giác (lớp 7)','Định lí','Góc ngoài','Góc ngoài bằng tổng hai góc trong không kề với nó.',-1,-1],
+['Tam giác (lớp 7)','Dấu hiệu','Hai tam giác bằng nhau','c.c.c; c.g.c (góc xen giữa); g.c.g (một cạnh và hai góc kề).',-1,-1],
+['Tam giác (lớp 7)','Dấu hiệu','Tam giác vuông bằng nhau','Hai cạnh góc vuông; cạnh góc vuông – góc nhọn kề; cạnh huyền – góc nhọn; cạnh huyền – cạnh góc vuông.',-1,-1],
+['Tam giác (lớp 7)','Tính chất','Tam giác cân','AB = AC ⇒ ∠B = ∠C = {180° − ∠A|2}. Đường cao từ đỉnh cũng là phân giác, trung tuyến, trung trực.',-1,-1],
+['Tam giác (lớp 7)','Tính chất','Tam giác đều','AB = AC = BC ⇒ ∠A = ∠B = ∠C = 60°. Tam giác cân có một góc 60° là tam giác đều.',-1,-1],
+['Tam giác (lớp 7)','Định lí','Bất đẳng thức tam giác','|AC − AB| < BC < AC + AB.',-1,-1],
+['Tam giác (lớp 7)','Định lí','Góc – cạnh đối diện','Cạnh lớn hơn thì góc đối diện lớn hơn: AB > BC ⇒ ∠C > ∠A, và ngược lại.',-1,-1],
+['Tam giác (lớp 7)','Tính chất','Các đường đồng quy','Trung tuyến → trọng tâm (OA = 2·OE). Phân giác → tâm đường tròn nội tiếp (cách đều 3 cạnh). Trung trực → tâm đường tròn ngoại tiếp (OA = OB = OC). Đường cao → trực tâm.',-1,-1],
+['Pythagore','Định lí','Pythagore thuận','ΔABC vuông tại A ⇒ AB² + AC² = BC².',-1,8],
+['Pythagore','Định lí','Pythagore đảo','AB² + AC² = BC² ⇒ ΔABC vuông tại A. Ví dụ: 12² + 35² = 37².',-1,9],
+['Pythagore','Dấu hiệu','Nhận biết tam giác vuông','Có một góc 90°; hoặc trung tuyến bằng nửa cạnh huyền; hoặc thỏa Pythagore đảo.',-1,-1],
+['Tứ giác','Định lí','Tổng bốn góc','∠A + ∠B + ∠C + ∠D = 360°. Tổng bốn góc ngoài cũng bằng 360°.',0,0],
+['Tứ giác','Định nghĩa','Hình thang','Tứ giác có hai cạnh đối song song (AB ∥ CD).',1,-1],
+['Tứ giác','Công thức','Diện tích hình thang','S = {(đáy lớn + đáy bé) × cao|2}. Chu vi = AB + BC + CD + DA.',1,-1],
+['Tứ giác','Tính chất','Hình thang cân','Hai góc kề một đáy bằng nhau; hai cạnh bên bằng nhau; hai đường chéo bằng nhau.',2,-1],
+['Tứ giác','Dấu hiệu','Nhận biết hình thang cân','Hình thang có hai góc kề một đáy bằng nhau, hoặc hai đường chéo bằng nhau.',2,-1],
+['Tứ giác','Tính chất','Hình bình hành','Các cạnh đối song song và bằng nhau; các góc đối bằng nhau; hai đường chéo cắt nhau tại trung điểm mỗi đường.',3,-1],
+['Tứ giác','Dấu hiệu','Nhận biết hình bình hành','Các cạnh đối song song; các cạnh đối bằng nhau; hai cạnh đối song song và bằng nhau; các góc đối bằng nhau; hai đường chéo cắt nhau tại trung điểm.',3,1],
+['Tứ giác','Công thức','Hình bình hành','S = đáy × chiều cao; chu vi = 2(AB + BC).',3,-1],
+['Tứ giác','Tính chất','Hình chữ nhật','Có 4 góc vuông; hai đường chéo bằng nhau, cắt nhau tại trung điểm. Trong tam giác vuông, trung tuyến ứng với cạnh huyền bằng nửa cạnh huyền.',4,-1],
+['Tứ giác','Dấu hiệu','Nhận biết hình chữ nhật','Tứ giác có 3 góc vuông; hình thang cân có một góc vuông; hình bình hành có một góc vuông hoặc hai đường chéo bằng nhau.',4,-1],
+['Tứ giác','Công thức','Hình chữ nhật','S = AB · BC; chu vi = 2(AB + BC).',4,-1],
+['Tứ giác','Tính chất','Hình thoi','Bốn cạnh bằng nhau; hai đường chéo vuông góc và là phân giác của các góc.',5,-1],
+['Tứ giác','Dấu hiệu','Nhận biết hình thoi','Tứ giác có 4 cạnh bằng nhau; hình bình hành có hai cạnh kề bằng nhau, hoặc hai đường chéo vuông góc, hoặc một đường chéo là phân giác.',5,-1],
+['Tứ giác','Công thức','Hình thoi','S = {AC · BD|2}; chu vi = 4AB.',5,-1],
+['Tứ giác','Tính chất','Hình vuông','Có đủ tính chất của hình chữ nhật và hình thoi. Đường chéo = a√2.',6,2],
+['Tứ giác','Dấu hiệu','Nhận biết hình vuông','Hình chữ nhật có hai cạnh kề bằng nhau hoặc hai đường chéo vuông góc; hình thoi có một góc vuông hoặc hai đường chéo bằng nhau.',6,2],
+['Tứ giác','Công thức','Hình vuông','S = a²; chu vi = 4a.',6,-1],
+['Talet & đường TB','Định lí','Đường trung bình tam giác','M, N là trung điểm AB, AC ⇒ MN ∥ BC và MN = {BC|2}.',7,4],
+['Talet & đường TB','Định lí','Đường trung bình hình thang','Song song với hai đáy và bằng nửa tổng hai đáy: MN = {AB + CD|2}.',1,-1],
+['Talet & đường TB','Định lí','Định lí Talet','B′C′ ∥ BC ⇒ {AB′|AB} = {AC′|AC} = {B′C′|BC}.',8,3],
+['Talet & đường TB','Định lí','Talet đảo','{AB′|AB} = {AC′|AC} ⇒ B′C′ ∥ BC.',8,-1],
+['Talet & đường TB','Định lí','Đường phân giác trong tam giác','AD là phân giác ∠A ⇒ {DB|DC} = {AB|AC}.',-1,5],
+['Đồng dạng','Định nghĩa','Tam giác đồng dạng','ΔABC ∽ ΔA′B′C′ ⇔ ∠A = ∠A′, ∠B = ∠B′, ∠C = ∠C′ và {AB|A′B′} = {BC|B′C′} = {CA|C′A′} = k.',9,-1],
+['Đồng dạng','Dấu hiệu','Ba trường hợp đồng dạng','c.c.c: ba cạnh tỉ lệ. c.g.c: hai cạnh tỉ lệ và góc xen giữa bằng nhau. g.g: hai góc bằng nhau.',9,6],
+['Đồng dạng','Dấu hiệu','Tam giác vuông đồng dạng','Một góc nhọn bằng nhau; hoặc hai cạnh góc vuông tỉ lệ; hoặc cạnh huyền và một cạnh góc vuông tỉ lệ.',9,6],
+['Đồng dạng','Tính chất','Tỉ số khi đồng dạng','Chu vi, đường cao, trung tuyến, phân giác tương ứng: tỉ số k. Diện tích: tỉ số k².',9,7],
+['Hình khối','Công thức','Hình hộp chữ nhật, lập phương','V = a · b · h; Sxq = 2(a + b) · h; Stp = Sxq + 2 · Sđáy. Hình lập phương cạnh a: V = a³, Stp = 6a².',-1,-1],
+['Hình khối','Công thức','Lăng trụ đứng','V = Sđáy · h; Sxq = (chu vi đáy) · h; Stp = Sxq + 2 · Sđáy.',-1,-1],
+['Hình khối','Tính chất','Hình chóp tam giác đều, tứ giác đều','Đáy là tam giác đều (hoặc hình vuông); các mặt bên là những tam giác cân bằng nhau; chân đường cao là tâm của đáy.',-1,-1],
+['Hình khối','Công thức','Hình chóp đều','V = {1|3} · Sđáy · h; Sxq = {1|2} · (chu vi đáy) · d (d là trung đoạn); Stp = Sxq + Sđáy.',-1,-1],
+['Chuyên đề nâng cao','Tính chất','Tam giác vuông cân','Hai góc nhọn bằng 45°; đường cao, trung tuyến, phân giác từ đỉnh góc vuông trùng nhau và bằng nửa cạnh huyền.',-1,-1],
+['Chuyên đề nâng cao','Định lí','Nửa tam giác đều','Tam giác vuông có một góc 30° thì cạnh góc vuông đối diện bằng nửa cạnh huyền (và ngược lại).',-1,-1],
+['Chuyên đề nâng cao','Định lí','Tứ giác nối trung điểm các cạnh','EFGH luôn là hình bình hành. AC ⊥ BD ⇒ hình chữ nhật; AC = BD ⇒ hình thoi; cả hai điều kiện ⇒ hình vuông.',-1,-1],
+['Chuyên đề nâng cao','Phương pháp','Đoạn thứ ba làm trung gian','Không so sánh trực tiếp được hai đoạn x, y thì tìm đoạn z rồi chứng minh x = z và y = z (thường phải vẽ thêm đường phụ).',-1,-1],
+['Chuyên đề nâng cao','Phương pháp','Dựng tam giác đều','Gặp các góc 60°, 15°, 75°, 150° thì thử dựng tam giác đều trên một cạnh, rồi chứng minh các tam giác bằng nhau.',-1,-1]];
+const SY=[['∠A','góc A'],['Δ','tam giác'],['∥','song song'],['⊥','vuông góc'],['∽','đồng dạng'],['=','bằng nhau (ΔABC = ΔMNP: hai tam giác bằng nhau)'],['⇒','suy ra'],['⇔','tương đương'],['°','độ'],['A′','đọc “A phẩy”'],['√','căn bậc hai'],['a²','a bình phương'],['{a|b}','phân số a trên b'],['·  ×','phép nhân'],['÷','phép chia'],['k','tỉ số đồng dạng'],['S','diện tích'],['∈','thuộc'],['≠','khác'],['|x|','giá trị tuyệt đối']];
+const $=id=>document.getElementById(id);
+const fr=s=>String(s).replace(/∠([A-Z]{3})/g,'<span class="wh">$1</span>').replace(/∠([A-Z])(′?)/g,'$1\u0302$2').replace(/\{([^{}|]+)\|([^{}]+)\}/g,'<span class="fr"><span>$1</span><span>$2</span></span>');
+const GR=[['📘','Học',[['learn','Bài học'],['drag','Kéo & khám phá'],['solid','Hình khối'],['fc','Thẻ nhớ']]],['🧩','Giải bài',[['ex','Giải từng bước'],['dang','Dạng toán'],['cd','Chuyên đề']]],['🎲','Luyện & thi',[['gen','Luyện tập'],['test','Kiểm tra']]],['🗓️','Lộ trình',[['plan','Lộ trình'],['db','Tra cứu']]]],lastIn={};
+function show(m){if(m!='solid')sstop();['learn','ex','dang','drag','solid','gen','fc','test','cd','plan','db'].forEach(k=>{$('m_'+k).hidden=k!=m});
+ const gi=Math.max(0,GR.findIndex(g=>g[2].some(x=>x[0]==m)));lastIn[gi]=m;
+ $('n1').innerHTML=GR.map((g,i)=>`<button ${i==gi?'aria-current="page"':''} onclick="show(lastIn[${i}]||'${g[2][0][0]}')"><span style="font-size:1.2em;line-height:1">${g[0]}</span>${g[1]}</button>`).join('');
+ $('n2').innerHTML=GR[gi][2].map(x=>`<button ${x[0]==m?'aria-current="page"':''} onclick="show('${x[0]}')">${x[1]}</button>`).join('');scrollTo(0,0)}
+/* ===== HỌC THEO BÀI ===== */
+let lc=0,val={},done=new Set();
+try{done=new Set(JSON.parse(localStorage.getItem('hh8')||'[]'))}catch(e){}
+function lprog(){$('lpb').style.width=done.size/L.length*100+'%';$('lpt').textContent=`Đã hoàn thành ${done.size}/${L.length} bài`;
+ $('lnav').innerHTML=L.map((l,i)=>`<button class="${i==lc?'on':''}" onclick="lgo(${i})">${done.has(i)?'✓':i+1} ${l.n}</button>`).join('')}
+function lgo(i){lc=i;const l=L[i];val={};
+ $('lti').textContent=`${l.ic} Bài ${i+1}: ${l.n}`;$('lreal').innerHTML='<b>Ngoài đời:</b> '+fr(l.real);
+ $('lsl').innerHTML=l.p.map(p=>{val[p[0]]=p[4];return`<div class="sl"><span>${p[1]}</span><input type="range" min="${p[2]}" max="${p[3]}" step="${p[5]||(p[3]-p[2]<8?0.5:1)}" value="${p[4]}" data-k="${p[0]}"><b id="v_${p[0]}">${f(p[4])}</b></div>`}).join('');
+ document.querySelectorAll('#lsl input').forEach(e=>e.oninput=()=>{val[e.dataset.k]=+e.value;$('v_'+e.dataset.k).textContent=f(+e.value);ldraw()});
+ $('ldef').innerHTML='<ul>'+l.def.map(x=>`<li>${fr(x)}</li>`).join('')+'</ul>';$('ltry').innerHTML='👉 <b>Thử ngay:</b> '+fr(l.try);
+ $('lq').innerHTML=`<h3>Kiểm tra nhanh</h3><b class="qq">${fr(l.q[0])}</b>`+l.q[1].map((o,j)=>`<button class="o" data-j="${j}">${fr(o)}</button>`).join('')+'<div class="ex" id="lex"></div>';
+ document.querySelectorAll('#lq .o').forEach(b=>b.onclick=()=>{const j=+b.dataset.j,ok=j==l.q[2];b.classList.add(ok?'ok':'no');
+  $('lex').innerHTML=ok?'✅ Đúng rồi! '+fr(l.q[3]):'❌ Chưa đúng, thử lại nhé.';if(ok){if(!done.has(lc))addXP(5);done.add(lc);try{localStorage.setItem('hh8',JSON.stringify([...done]))}catch(e){}lprog()}});
+ $('lpv').style.visibility=i?'visible':'hidden';$('lnx').style.visibility=i<L.length-1?'visible':'hidden';lprog();ldraw()}
+$('lpv').onclick=()=>{lgo(lc-1);scrollTo(0,0)};$('lnx').onclick=()=>{lgo(lc+1);scrollTo(0,0)};$('laux').onchange=$('lmk').onchange=$('llen').onchange=ldraw;
+const C4=['#e5484d','#16a34a','#d97706','#7c3aed'],BC_='var(--ac)';
+const AA=(S,v,a,b,r,c,n=1)=>hArc(S[v],S[a],S[b],r,Math.round(ang(S[v],S[a],S[b]))+'°',n,c);
+const RR=(S,v,a,b)=>hRight(S[v],S[a],S[b],13,'var(--tx)');
+const LM=[
+ S=>AA(S,'A','D','B',30,C4[0])+AA(S,'B','A','C',30,C4[1])+AA(S,'C','B','D',30,C4[2])+AA(S,'D','C','A',30,C4[3]),
+ S=>hPar(S.A,S.B,1,BC_)+hPar(S.D,S.C,1,BC_),
+ S=>hPar(S.A,S.B,1,BC_)+hPar(S.D,S.C,1,BC_)+hTick(S.A,S.D,1,BC_)+hTick(S.B,S.C,1,BC_)+AA(S,'D','C','A',30,C4[0])+AA(S,'C','D','B',30,C4[0])+AA(S,'A','B','D',26,C4[1],2)+AA(S,'B','A','C',26,C4[1],2),
+ S=>hPar(S.A,S.B,1,BC_)+hPar(S.D,S.C,1,BC_)+hPar(S.A,S.D,2,BC_)+hPar(S.B,S.C,2,BC_)+hTick(S.A,S.O,1,BC_)+hTick(S.O,S.C,1,BC_)+hTick(S.B,S.O,2,BC_)+hTick(S.O,S.D,2,BC_)+AA(S,'A','D','B',30,C4[0])+AA(S,'C','B','D',30,C4[0])+AA(S,'D','C','A',30,C4[1])+AA(S,'B','A','C',30,C4[1]),
+ S=>RR(S,'A','B','D')+RR(S,'B','A','C')+RR(S,'C','B','D')+RR(S,'D','C','A')+hTick(S.A,S.O,1,BC_)+hTick(S.O,S.C,1,BC_)+hTick(S.B,S.O,1,BC_)+hTick(S.O,S.D,1,BC_),
+ S=>hTick(S.A,S.D,1,BC_)+hTick(S.D,S.C,1,BC_)+hTick(S.C,S.B,1,BC_)+hTick(S.B,S.A,1,BC_)+RR(S,'O','A','D'),
+ S=>RR(S,'A','B','D')+RR(S,'B','A','C')+RR(S,'C','B','D')+RR(S,'D','C','A')+hTick(S.A,S.B,1,BC_)+hTick(S.B,S.C,1,BC_)+hTick(S.C,S.D,1,BC_)+hTick(S.D,S.A,1,BC_)+RR(S,'O','A','B'),
+ S=>hTick(S.A,S.M,1,BC_)+hTick(S.M,S.B,1,BC_)+hTick(S.A,S.N,2,BC_)+hTick(S.N,S.C,2,BC_)+hPar(S.M,S.N,1,BC_)+hPar(S.B,S.C,1,BC_),
+ S=>hPar(S["B'"],S["C'"],1,BC_)+hPar(S.B,S.C,1,BC_),
+ S=>['A','B','C'].map((v,i)=>{const o=['A','B','C'].filter(x=>x!=v);return hArc(S[v],S[o[0]],S[o[1]],20,'',1,C4[i])+hArc(S[v+"'"],S[o[0]+"'"],S[o[1]+"'"],14,'',1,C4[i])}).join('')
+];
+function ldraw(){
+ const r=L[lc].b(val),all={...r.P,...r.X},ks=Object.keys(r.P),xs=ks.map(k=>r.P[k][0]),ys=ks.map(k=>r.P[k][1]);
+ const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys),s=Math.min(350/(x1-x0||1),200/(y1-y0||1)),ox=200-(x0+x1)/2*s,oy=130+(y0+y1)/2*s;
+ const m=p=>[ox+p[0]*s,oy-p[1]*s],cc=m([(x0+x1)/2,(y0+y1)/2]),poly=n=>n.map(k=>m(all[k]).join(',')).join(' ');
+ let o=`<polygon points="${poly(r.poly)}" fill="var(--fl)" stroke="var(--ac)" stroke-width="2.5" stroke-linejoin="round"/>`;
+ if(r.poly2)o+=`<polygon points="${poly(r.poly2)}" fill="var(--fl)" stroke="var(--ac)" stroke-width="2.5" stroke-linejoin="round"/>`;
+ if($('laux').checked){r.aux.forEach(l=>{const a=m(all[l[0]]),b=m(all[l[1]]);o+=`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="var(--aux)" stroke-width="1.8" stroke-dasharray="5 4"/>`});
+  Object.keys(r.X).forEach(k=>{const p=m(all[k]);o+=`<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="var(--aux)"/><text x="${p[0]+7}" y="${p[1]-6}" fill="var(--aux)" font-size="16" font-style="italic" font-weight="700">${k}</text>`})}
+ const S={};Object.keys(all).forEach(k=>S[k]=m(all[k]));
+ if($('lmk').checked)o+=(LM[lc]||(()=>''))(S);
+ if($('llen').checked)[r.poly,r.poly2].filter(Boolean).forEach(pl=>pl.forEach((k,i)=>{const k2=pl[(i+1)%pl.length],p=S[k],q=S[k2],c0=[(p[0]+q[0])/2,(p[1]+q[1])/2],dx=c0[0]-cc[0],dy=c0[1]-cc[1],dd=Math.hypot(dx,dy)||1;o+=`<text x="${c0[0]+dx/dd*17}" y="${c0[1]+dy/dd*17+5}" text-anchor="middle" font-size="14" font-weight="700" fill="var(--mu)">${f(dist(r.P[k],r.P[k2]))}</text>`}));
+ ks.forEach(k=>{const p=m(r.P[k]),dx=p[0]-cc[0],dy=p[1]-cc[1],d=Math.hypot(dx,dy)||1;
+  o+=`<circle cx="${p[0]}" cy="${p[1]}" r="4.8" fill="var(--tx)"/><text x="${p[0]+dx/d*19-7}" y="${p[1]+dy/d*19+6}" fill="var(--tx)" font-size="19" font-style="italic" font-weight="800">${k}</text>`});
+ $('lsv').innerHTML=o;$('linfo').innerHTML=r.info.map(x=>`<div>${fr(x)}</div>`).join('')}
+/* ===== GIẢI TỪNG BƯỚC ===== */
+let xc=0,xs=0;
+$('xnav').innerHTML=X.map((e,i)=>`<button onclick="xpick(${i})">${i+1}. ${e.n}</button>`).join('');
+function xpick(i){xc=i;xs=0;xdraw()}
+$('xpv').onclick=()=>{if(xs>0){xs--;xdraw()}};$('xnx').onclick=()=>{if(xs<X[xc].S.length-1){xs++;xdraw()}else xpick((xc+1)%X.length)};
+function nowUI(S,i){return `<div class="stn"><i>${i+1}</i><div>${fr(S[i].s)}</div></div>`}
+function pastUI(S,i,go){if(!i)return '';let o='<h3 style="margin-top:14px">Các bước trước (bấm để quay lại)</h3>';for(let j=0;j<i;j++)o+=`<div class="stp" onclick="${go}(${j})"><i>${j+1}</i><span>${fr(S[j].s.replace(/<[^>]+>/g,'').replace(/\{([^{}|]+)\|([^{}]+)\}/g,'$1/$2'))}</span></div>`;return o}
+function dotsUI(n,i,go){return Array.from({length:n},(_,j)=>`<i class="${j<i?'on':''}${j==i?' cur on':''}" onclick="${go}(${j})"></i>`).join('')}
+function xgo(j){xs=j;xdraw()}function zgo(j){zs=j;zdraw()}function cvgo(j){cvs=j;cvdraw()}
+function xdraw(){
+ const e=X[xc],n=e.S.length,sh=new Set();
+ for(let i=0;i<=xs;i++){(e.S[i].a||[]).forEach(k=>sh.add(k));(e.S[i].d||[]).forEach(k=>sh.delete(k))}
+ const hl=new Set(e.S[xs].h||[]),V=Object.values(e.P),cx=V.reduce((s,p)=>s+p[0],0)/V.length,cy=V.reduce((s,p)=>s+p[1],0)/V.length;
+ const it=Object.entries(e.E).filter(([k])=>sh.has(k)||hl.has(k)),pl=s=>[...s].map(k=>e.P[k].join(',')).join(' ');let o='';
+ it.filter(([,v])=>v[0]=='g').forEach(([k,v])=>{const on=hl.has(k);o+=`<polygon points="${pl(v[1])}" fill="${on?'var(--aux)':'var(--fl)'}" fill-opacity="${on?.28:1}" stroke="${on?'var(--aux)':'var(--ac)'}" stroke-width="${on?3.5:2.5}" stroke-linejoin="round"/>`});
+ it.filter(([,v])=>v[0]=='l').forEach(([k,v])=>{const a=e.P[v[1][0]],b=e.P[v[1][1]],on=hl.has(k);o+=`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${on?'var(--aux)':'var(--ac)'}" stroke-width="${on?4:2.2}" stroke-linecap="round"/>`});
+ it.filter(([,v])=>v[0]=='p').forEach(([k,v])=>[...v[1]].forEach(c=>{const p=e.P[c],dx=p[0]-cx,dy=p[1]-cy,d=Math.hypot(dx,dy)||1;o+=`<circle cx="${p[0]}" cy="${p[1]}" r="4.8" fill="var(--tx)"/><text x="${p[0]+dx/d*19-6}" y="${p[1]+dy/d*19+6}" fill="var(--tx)" font-size="19" font-style="italic" font-weight="800">${c}</text>`}));
+ it.filter(([,v])=>v[0]=='t').forEach(([k,v])=>{const on=hl.has(k);o+=`<text x="${v[1]}" y="${v[2]}" font-size="14" font-weight="700" fill="${on?'var(--aux)':'var(--tx)'}">${v[3]}</text>`});
+ $('xsv').innerHTML=o;$('xtip').innerHTML=`<details class="an" ${xs==0?'open':''}><summary>💡 Mẹo nhận dạng</summary><div>${fr(e.tip)}</div></details>`;
+ $('xsteps').innerHTML=nowUI(e.S,xs);$('xpast').innerHTML=pastUI(e.S,xs,'xgo');
+ $('xcn').innerHTML=dotsUI(n,xs,'xgo');$('xcn').className='dots';$('xpv').disabled=xs==0;$('xnx').textContent=xs==n-1?'Bài kế tiếp →':'Bước tiếp →';
+ [...$('xnav').children].forEach((b,i)=>b.classList.toggle('on',i==xc))}
+/* ===== DẠNG TOÁN HK1 + NÂNG CAO ===== */
+const U=(a,b)=>{const d=Math.hypot(b[0]-a[0],b[1]-a[1])||1;return[(b[0]-a[0])/d,(b[1]-a[1])/d]};
+const at=(A,B,t)=>[A[0]+(B[0]-A[0])*t,A[1]+(B[1]-A[1])*t];
+function hArc(V,X,Y,r,lab,n,c){const a1=Math.atan2(X[1]-V[1],X[0]-V[0]),a2=Math.atan2(Y[1]-V[1],Y[0]-V[0]);let d=a2-a1;while(d>Math.PI)d-=2*Math.PI;while(d<-Math.PI)d+=2*Math.PI;let o=n>0?`<path d="M${V[0]},${V[1]} L${V[0]+r*Math.cos(a1)},${V[1]+r*Math.sin(a1)} A${r} ${r} 0 0 ${d>0?1:0} ${V[0]+r*Math.cos(a2)},${V[1]+r*Math.sin(a2)} Z" fill="${c}" fill-opacity=".18" stroke="none"/>`:'';
+ for(let i=0;i<n;i++){const q=r+i*5;o+=`<path d="M${V[0]+q*Math.cos(a1)},${V[1]+q*Math.sin(a1)} A${q} ${q} 0 0 ${d>0?1:0} ${V[0]+q*Math.cos(a2)},${V[1]+q*Math.sin(a2)}" fill="none" stroke="${c}" stroke-width="2.6"/>`}
+ if(lab){const am=a1+d/2,q=r+(n-1)*5+14+(lab.length>3?7:0);o+=`<text x="${V[0]+q*Math.cos(am)}" y="${V[1]+q*Math.sin(am)}" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="800" fill="${c}">${lab}</text>`}return o}
+function hRight(V,X,Y,s,c){const u=U(V,X),w=U(V,Y),a=[V[0]+u[0]*s,V[1]+u[1]*s],b=[a[0]+w[0]*s,a[1]+w[1]*s],d=[V[0]+w[0]*s,V[1]+w[1]*s];return`<polyline points="${a} ${b} ${d}" fill="none" stroke="${c}" stroke-width="2"/>`}
+function hTick(A,B,n,c){const M=at(A,B,.35),u=U(A,B),v=[-u[1],u[0]];let o='';for(let i=0;i<n;i++){const k=(i-(n-1)/2)*6,q=[M[0]+u[0]*k,M[1]+u[1]*k];o+=`<line x1="${q[0]-v[0]*6}" y1="${q[1]-v[1]*6}" x2="${q[0]+v[0]*6}" y2="${q[1]+v[1]*6}" stroke="${c}" stroke-width="2.2"/>`}return o}
+function hPar(A,B,n,c){const M=at(A,B,.65),u=U(A,B),v=[-u[1],u[0]];let o='';for(let i=0;i<n;i++){const k=(i-(n-1)/2)*8,q=[M[0]+u[0]*k,M[1]+u[1]*k];o+=`<polyline points="${q[0]-u[0]*4+v[0]*5},${q[1]-u[1]*4+v[1]*5} ${q[0]+u[0]*4},${q[1]+u[1]*4} ${q[0]-u[0]*4-v[0]*5},${q[1]-u[1]*4-v[1]*5}" fill="none" stroke="${c}" stroke-width="2.2" stroke-linejoin="round"/>`}return o}
+const Z=[
+{g:'HK1',n:'Tính góc tứ giác (có ẩn x)',nd:'Đề cho 3–4 góc của một tứ giác, có thể có ẩn x.',cc:'Tổng bốn góc = 360°; đặt ẩn rồi giải phương trình.',loi:'Quên cộng góc vuông 90°; giải xong không kiểm tra lại tổng.',
+P:{A:[90,40],B:[300,40],C:[278,102],D:[90,210]},
+E:{q:['g','ABCD'],p:['p','ABCD'],ra:['r','DAB'],aB:['a','ABC','x',26,1],aC:['a','BCD','2x',22,2],aD:['a','CDA','60°',26,1],aB2:['a','ABC','70°',26,1],aC2:['a','BCD','140°',22,2]},
+S:[{s:'<b>Đề:</b> tứ giác ABCD có ∠A = 90°, ∠B = x, ∠C = 2x, ∠D = 60°. Tìm x và các góc.',a:['q','p','ra','aB','aC','aD']},
+{s:'<b>Nhận dạng:</b> bài cho các góc của tứ giác ⇒ dùng <b>tổng bốn góc = 360°</b>.',h:['q']},
+{s:'Lập phương trình: 90° + x + 2x + 60° = 360°.',h:['ra','aB','aC','aD']},
+{s:'Giải: 3x + 150° = 360° ⇒ 3x = 210° ⇒ x = 70°.'},
+{s:'Kết luận: ∠B = 70°, ∠C = 2 · 70° = 140° ✔. Kiểm tra: 90 + 70 + 140 + 60 = 360 ✔.',a:['aB2','aC2'],d:['aB','aC'],h:['aB2','aC2']}]},
+{g:'HK1',n:'Pythagore thực tế (cái thang)',nd:'Thang, cột, đường chéo… tạo ra một tam giác vuông trong thực tế.',cc:'Pythagore: bình phương cạnh huyền = tổng bình phương hai cạnh góc vuông.',loi:'Nhầm cạnh huyền. Cạnh huyền luôn đối diện góc vuông và dài nhất.',
+P:{A:[100,55],B:[100,215],C:[220,215]},
+E:{q:['g','ABC'],p:['p','ABC'],rb:['r','ABC'],ac:['l','AC'],t1:['t',172,112,'5 m'],t2:['t',150,238,'3 m'],t3:['t',60,140,'?'],t4:['t',50,140,'4 m']},
+S:[{s:'<b>Đề:</b> thang dài 5 m dựa vào tường thẳng đứng, chân thang cách tường 3 m. Đầu thang chạm tường ở độ cao bao nhiêu?',a:['q','p','t1','t2','t3']},
+{s:'Tường vuông góc mặt đất ⇒ ΔABC vuông tại B. Thang AC là <b>cạnh huyền</b>.',a:['rb'],h:['ac','rb']},
+{s:'<b>Pythagore:</b> AB² + BC² = AC².',h:['q']},
+{s:'Thay số: AB² + 3² = 5² ⇒ AB² = 25 − 9 = 16.'},
+{s:'AB = √16 = <b>4 m</b> ✔',a:['t4'],d:['t3']}]},
+{g:'HK1',n:'Hình thang cân: tính các góc',nd:'Đề cho hình thang cân và một góc.',cc:'Hình thang cân: hai góc kề một đáy bằng nhau. Hình thang: hai góc kề một cạnh bên bù nhau (tổng 180°).',loi:'Nhầm đáy: hai góc bằng nhau phải cùng kề MỘT đáy.',
+P:{A:[140,60],B:[260,60],C:[320,200],D:[80,200]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pa1:['pa','AB',1],pa2:['pa','DC',1],k1:['k','AD',1],k2:['k','BC',1],aD:['a','CDA','70°',26,1],aC:['a','DCB','70°',26,1],aA:['a','BAD','?',22,2],aB:['a','ABC','?',22,2],aA2:['a','BAD','110°',22,2],aB2:['a','ABC','110°',22,2]},
+S:[{s:'<b>Đề:</b> ABCD là hình thang cân (AB ∥ CD), ∠D = 70°. Tính ∠C, ∠A, ∠B.',a:['q','p','pa1','pa2','k1','k2','aD','aA','aB']},
+{s:'Hình thang cân: hai góc kề đáy CD bằng nhau ⇒ ∠C = ∠D = 70°.',a:['aC'],h:['aD','aC']},
+{s:'AB ∥ CD ⇒ hai góc kề cạnh bên AD bù nhau: ∠A + ∠D = 180°.',h:['aA','aD']},
+{s:'∠A = 180° − 70° = 110°.',a:['aA2'],d:['aA'],h:['aA2']},
+{s:'Hình thang cân nên ∠B = ∠A = 110° ✔. Kiểm tra: 70 + 70 + 110 + 110 = 360 ✔.',a:['aB2'],d:['aB'],h:['aA2','aB2']}]},
+{g:'HK1',n:'Chứng minh hình bình hành',nd:'Có giao điểm O của hai đường chéo và các đoạn bằng nhau.',cc:'Dấu hiệu: hai đường chéo cắt nhau tại trung điểm mỗi đường.',loi:'Chỉ có một đường chéo được chia đôi thì chưa kết luận được.',
+P:{A:[120,60],B:[280,50],C:[290,190],D:[130,200],O:[205,125]},
+E:{q:['g','ABCD'],p:['p','ABCD'],o:['p','O'],ac:['l','AC'],bd:['l','BD'],k1:['k','AO',1],k2:['k','OC',1],k3:['k','BO',2],k4:['k','OD',2],pa1:['pa','AB',1],pa2:['pa','DC',1],pb1:['pa','AD',2],pb2:['pa','BC',2]},
+S:[{s:'<b>Đề:</b> tứ giác ABCD có hai đường chéo AC, BD cắt nhau tại O, OA = OC, OB = OD. Chứng minh ABCD là hình bình hành.',a:['q','p','o','ac','bd','k1','k2','k3','k4']},
+{s:'Đọc giả thiết: O là trung điểm của AC (một vạch) và O là trung điểm của BD (hai vạch).',h:['ac','bd']},
+{s:'<b>Dấu hiệu:</b> tứ giác có hai đường chéo cắt nhau tại trung điểm của mỗi đường là hình bình hành.',h:['q']},
+{s:'Kết luận: ABCD là hình bình hành ✔ ⇒ AB ∥ CD và AD ∥ BC (mũi tên giống nhau).',a:['pa1','pa2','pb1','pb2']}]},
+{g:'HK1',n:'Hình chữ nhật: 3 góc vuông',nd:'Tam giác vuông + trung điểm + đường vuông góc ⇒ tìm tứ giác có nhiều góc vuông.',cc:'Tứ giác có 3 góc vuông là hình chữ nhật; hình chữ nhật có hai đường chéo bằng nhau.',loi:'Mới chỉ ra 2 góc vuông đã kết luận. Cần đủ 3 góc.',
+P:{A:[100,210],B:[100,50],C:[340,210],M:[220,130],D:[100,130],E:[220,210]},
+E:{q:['g','ABC'],p:['p','ABCMDE'],md:['l','MD'],me:['l','ME'],k1:['k','BM',1],k2:['k','MC',1],ra:['r','BAC'],rd:['r','ADM'],re:['r','AEM'],rect:['g','ADME'],de:['l','DE'],am:['l','AM']},
+S:[{s:'<b>Đề:</b> ΔABC vuông tại A, M là trung điểm BC. Kẻ MD ⊥ AB (D ∈ AB), ME ⊥ AC (E ∈ AC). Chứng minh ADME là hình chữ nhật.',a:['q','p','md','me','k1','k2']},
+{s:'Xét tứ giác ADME: ∠DAE = 90° (ΔABC vuông tại A).',a:['ra'],h:['ra']},
+{s:'∠ADM = 90° (vì MD ⊥ AB).',a:['rd'],h:['rd','md']},
+{s:'∠AEM = 90° (vì ME ⊥ AC).',a:['re'],h:['re','me']},
+{s:'<b>Dấu hiệu:</b> tứ giác có ba góc vuông là hình chữ nhật ⇒ ADME là hình chữ nhật ✔.',h:['rect']},
+{s:'Mở rộng: hình chữ nhật có hai đường chéo bằng nhau ⇒ <b>DE = AM</b>.',a:['de','am'],h:['de','am']}]},
+{g:'HK1',n:'Hình thoi: cạnh và diện tích',nd:'Đề cho hai đường chéo của hình thoi, cần cạnh hoặc diện tích.',cc:'Hai đường chéo vuông góc tại trung điểm ⇒ Pythagore trong ΔAOB; S = {AC · BD|2}.',loi:'Dùng cả đường chéo (8) thay vì nửa đường chéo (4) khi áp dụng Pythagore.',
+P:{A:[80,125],B:[200,215],C:[320,125],D:[200,35],O:[200,125]},
+E:{q:['g','ABCD'],p:['p','ABCD'],o:['p','O'],ac:['l','AC'],bd:['l','BD'],ro:['r','AOB'],k1:['k','AO',1],k2:['k','OC',1],k3:['k','BO',2],k4:['k','OD',2],t1:['t',255,113,'AC = 8'],t2:['t',207,75,'BD = 6'],t3:['t',112,196,'?'],t4:['t',112,196,'5']},
+S:[{s:'<b>Đề:</b> hình thoi ABCD có AC = 8 cm, BD = 6 cm. Tính cạnh AB và diện tích.',a:['q','p','o','ac','bd','t1','t2','t3']},
+{s:'<b>Tính chất:</b> hai đường chéo vuông góc và cắt nhau tại trung điểm mỗi đường ⇒ AC ⊥ BD tại O.',a:['ro','k1','k2','k3','k4'],h:['ac','bd','ro']},
+{s:'OA = {AC|2} = 4; OB = {BD|2} = 3.',h:['k1','k3']},
+{s:'ΔAOB vuông tại O: AB² = OA² + OB² = 16 + 9 = 25 ⇒ AB = 5 cm (Pythagore).',a:['t4'],d:['t3'],h:['ro']},
+{s:'Diện tích: S = {AC · BD|2} = {8 · 6|2} = <b>24 cm²</b> ✔. Chu vi = 4 · 5 = 20 cm.',h:['q']}]},
+{g:'HK1',n:'Chứng minh hình vuông',nd:'Đề yêu cầu chứng minh tứ giác là hình vuông.',cc:'Hình vuông = hình chữ nhật + hình thoi. Thêm một điều kiện vào hình chữ nhật (hai cạnh kề bằng nhau hoặc hai đường chéo vuông góc).',loi:'Chỉ chỉ ra “bốn cạnh bằng nhau” mà chưa có góc vuông (đó mới chỉ là hình thoi).',
+P:{A:[110,35],B:[290,35],C:[290,215],D:[110,215],O:[200,125]},
+E:{q:['g','ABCD'],p:['p','ABCD'],o:['p','O'],ac:['l','AC'],bd:['l','BD'],ra:['r','DAB'],rb:['r','ABC'],rc:['r','BCD'],rd:['r','CDA'],ro:['r','AOB'],k1:['k','AB',1],k2:['k','BC',1],k3:['k','CD',1],k4:['k','DA',1]},
+S:[{s:'<b>Đề:</b> hình chữ nhật ABCD có hai đường chéo AC ⊥ BD tại O. Chứng minh ABCD là hình vuông.',a:['q','p','o','ac','bd','ra','rb','rc','rd','ro']},
+{s:'Hình chữ nhật cũng là hình bình hành; hình bình hành có hai đường chéo vuông góc ⇒ ABCD là <b>hình thoi</b>.',h:['ac','bd','ro']},
+{s:'Hình thoi có bốn cạnh bằng nhau: AB = BC = CD = DA.',a:['k1','k2','k3','k4'],h:['k1','k2','k3','k4']},
+{s:'ABCD vừa là hình chữ nhật (4 góc vuông) vừa là hình thoi (4 cạnh bằng nhau) ⇒ <b>ABCD là hình vuông</b> ✔.',h:['q']}]},
+{g:'Nâng cao',n:'Đường trung bình hình thang (đường phụ)',nd:'Hình thang có trung điểm hai cạnh bên, cần tính đoạn nối hai trung điểm.',cc:'Kẻ đường phụ qua M song song CD, dùng đường trung bình trong hai tam giác; kết quả MN = {AB + CD|2}.',loi:'Quên chứng minh M, I, N thẳng hàng, hoặc quên điều kiện AB ∥ CD.',
+P:{A:[140,60],B:[220,60],C:[280,200],D:[80,200],M:[110,130],N:[250,130],I:[210,130]},
+E:{q:['g','ABCD'],p:['p','ABCD'],mn:['p','MN'],pi:['p','I'],mnl:['l','MN'],mi:['l','MI'],inn:['l','IN'],ac:['l','AC'],pa1:['pa','AB',1],pa2:['pa','DC',1],k1:['k','AM',1],k2:['k','MD',1],k3:['k','BN',2],k4:['k','NC',2],t1:['t',172,50,'4'],t2:['t',172,222,'10'],t3:['t',166,150,'?'],t4:['t',166,150,'7']},
+S:[{s:'<b>Đề:</b> hình thang ABCD (AB ∥ CD), AB = 4, CD = 10. M, N là trung điểm AD, BC. Tính MN.',a:['q','p','pa1','pa2','k1','k2','k3','k4','mn','mnl','t1','t2','t3']},
+{s:'<b>Đường phụ:</b> nối AC; qua M kẻ đường thẳng song song CD, cắt AC tại I.',a:['ac','pi'],h:['ac']},
+{s:'ΔADC có M là trung điểm AD, MI ∥ DC ⇒ I là trung điểm AC và MI = {CD|2} = 5.',h:['mi']},
+{s:'ΔABC có I là trung điểm AC, IN ∥ AB (vì AB ∥ CD) ⇒ N là trung điểm BC (khớp đề) và IN = {AB|2} = 2.',h:['inn']},
+{s:'MN = MI + IN = 5 + 2 = <b>7</b> = {AB + CD|2} = {4 + 10|2} ✔',a:['t4'],d:['t3'],h:['mnl']}]},
+{g:'Nâng cao',n:'Chuỗi trung điểm: chứng minh AI = IM',nd:'Có nhiều đoạn bằng nhau liên tiếp (AD = DE = EB) và một trung tuyến.',cc:'Nối thêm EM để có đường trung bình; rồi dùng “qua trung điểm và song song cạnh thứ hai thì đi qua trung điểm cạnh thứ ba”.',loi:'Không nghĩ ra đường phụ. Hãy thử nối các trung điểm với nhau.',
+P:{A:[190,25],B:[90,225],C:[340,225],D:[157,92],E:[123,158],M:[215,225],I:[202.5,125]},
+E:{q:['g','ABC'],p1:['p','ABC'],p2:['p','DEM'],pi:['p','I'],cd:['l','CD'],am:['l','AM'],em:['l','EM'],k1:['k','AD',1],k2:['k','DE',1],k3:['k','EB',1],k4:['k','BM',2],k5:['k','MC',2],pa1:['pa','EM',3],pa2:['pa','DI',3]},
+S:[{s:'<b>Đề:</b> ΔABC, trung tuyến AM. Trên AB lấy D, E sao cho AD = DE = EB. CD cắt AM tại I. Chứng minh AI = IM.',a:['q','p1','p2','pi','cd','am','k1','k2','k3','k4','k5']},
+{s:'<b>Nhận dạng:</b> có nhiều trung điểm ⇒ nghĩ tới đường trung bình. <b>Đường phụ:</b> nối E với M.',a:['em'],h:['em']},
+{s:'ΔBDC: E là trung điểm DB (BE = ED), M là trung điểm BC ⇒ EM là đường trung bình ⇒ EM ∥ DC, tức EM ∥ DI.',a:['pa1','pa2'],h:['em','cd']},
+{s:'Xét ΔAEM: D là trung điểm AE (AD = DE) và DI ∥ EM.',h:['k1','k2']},
+{s:'Đường thẳng qua trung điểm D của AE và song song EM thì đi qua trung điểm của AM ⇒ I là trung điểm AM.',h:['am']},
+{s:'Vậy <b>AI = IM</b> ✔'}]},
+{g:'Nâng cao',n:'Tứ giác nối các trung điểm',nd:'Tứ giác bất kỳ cùng các trung điểm của bốn cạnh.',cc:'Nối một đường chéo, dùng đường trung bình hai lần ⇒ hai cạnh đối song song và bằng nhau.',loi:'Quên rằng kết quả đúng với MỌI tứ giác, không cần ABCD đặc biệt.',
+P:{A:[100,70],B:[310,50],C:[330,200],D:[80,190],E:[205,60],F:[320,125],G:[205,195],H:[90,130]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pq:['p','EFGH'],efgh:['g','EFGH'],ac:['l','AC'],ef:['l','EF'],hg:['l','HG'],k1:['k','AE',1],k2:['k','EB',1],k3:['k','BF',2],k4:['k','FC',2],k5:['k','CG',1],k6:['k','GD',1],k7:['k','DH',2],k8:['k','HA',2],pa1:['pa','EF',1],pa2:['pa','HG',1]},
+S:[{s:'<b>Đề:</b> tứ giác ABCD; E, F, G, H là trung điểm AB, BC, CD, DA. Chứng minh EFGH là hình bình hành.',a:['q','p','pq','k1','k2','k3','k4','k5','k6','k7','k8']},
+{s:'<b>Đường phụ:</b> nối đường chéo AC để tạo hai tam giác chung cạnh AC.',a:['ac'],h:['ac']},
+{s:'ΔABC: E, F là trung điểm AB, BC ⇒ EF là đường trung bình ⇒ EF ∥ AC và EF = {AC|2}.',a:['ef'],h:['ef','ac']},
+{s:'ΔADC: H, G là trung điểm DA, CD ⇒ HG ∥ AC và HG = {AC|2}.',a:['hg'],h:['hg','ac']},
+{s:'Suy ra EF ∥ HG và EF = HG ⇒ <b>EFGH là hình bình hành</b> ✔',a:['efgh','pa1','pa2'],h:['efgh']},
+{s:'<b>Nâng cao:</b> nếu AC ⊥ BD thì EFGH là hình chữ nhật; nếu AC = BD thì EFGH là hình thoi.'}]},
+{g:'CĐ1',n:'Nửa tam giác đều: tính góc BCD',nd:'Có góc 30° và một đường cao bằng nửa cạnh cho trước.',cc:'Tam giác vuông có góc 30° thì cạnh góc vuông đối diện bằng nửa cạnh huyền (nửa tam giác đều). Tam giác cân: trung tuyến cũng là phân giác.',loi:'Không nhận ra AH = {AC|2}; dùng đo đạc thay vì chứng minh.',
+P:{A:[302.5,70],B:[340,210],C:[60,210],H:[302.5,210],D:[321.3,140]},
+E:{q:['g','ABC'],p:['p','ABCDH'],ah:['l','AH'],cd:['l','CD'],rh:['r','AHC'],aC:['a','ACB','30°',34,1],tri:['g','AHC'],k1:['k','AD',2],k2:['k','DB',2],k3:['k','CA',1],k4:['k','CB',1],a1:['a','ACD','?',50,1],a2:['a','DCB','?',50,1],a3:['a','ACD','15°',50,1],a4:['a','DCB','15°',50,1]},
+S:[{s:'<b>Đề:</b> ΔABC có ∠ACB = 30°, đường cao AH = {BC|2}. D là trung điểm AB. Tính ∠BCD.',a:['q','p','ah','rh','aC','k1','k2','cd']},
+{s:'<b>Nhận dạng:</b> có góc 30° và đường cao AH ⇒ ΔAHC vuông tại H có ∠C = 30°: đó là một <b>nửa tam giác đều</b>.',h:['tri']},
+{s:'Nửa tam giác đều: cạnh góc vuông đối diện góc 30° bằng nửa cạnh huyền ⇒ AH = {AC|2}, tức AC = 2 · AH.',h:['tri','ah']},
+{s:'Giả thiết AH = {BC|2} ⇒ BC = 2 · AH. Vậy AC = BC ⇒ ΔABC cân tại C.',a:['k3','k4'],h:['k3','k4']},
+{s:'ΔABC cân tại C có CD là trung tuyến (D là trung điểm AB) ⇒ CD cũng là phân giác của ∠ACB.',h:['cd','q']},
+{s:'∠BCD = {∠ACB|2} = {30°|2} = <b>15°</b> ✔',a:['a3','a4'],h:['a3','a4']}]},
+{g:'CĐ1',n:'Hai phân giác, góc A = 60°: tam giác DIE',nd:'Cho góc A = 60° và hai đường phân giác cắt nhau tại I; hỏi dạng của ΔDIE.',cc:'∠BIC = 180° − {∠B + ∠C|2}. Vẽ thêm phân giác IK của ∠BIC để có bốn góc 60° rồi dùng tam giác bằng nhau (g.c.g) để tìm đoạn trung gian.',loi:'Dự đoán cân nhưng không chứng minh; quên rằng cần một đoạn thứ ba (IK) làm trung gian.',
+P:{A:[94.7,25],B:[60.0,222.0],C:[293.9,192.1],I:[139.0,146.6],D:[186.1,101.7],E:[76.5,128.3],K:[154.4,209.9]},
+E:{q:['g','ABC'],p:['p','ABCDE'],pi:['p','I'],pk:['p','K'],bd:['l','BD'],ce:['l','CE'],ik:['l','IK'],de:['l','DE'],aA:['a','BAC','60°',26,1],tb:['g','BIC'],a1:['a','EIB','60°',30,1],a2:['a','BIK','60°',22,1],a3:['a','KIC','60°',30,1],a4:['a','CID','60°',22,1],t1:['g','BIE'],t2:['g','BIK'],t3:['g','CID'],t4:['g','CIK'],t5:['g','DIE']},
+S:[{s:'<b>Đề:</b> ΔABC có ∠A = 60°, các phân giác BD và CE cắt nhau ở I. Tính các góc của ΔDIE.',a:['q','p','pi','bd','ce','aA','de']},
+{s:'∠B + ∠C = 180° − 60° = 120° ⇒ ∠BIC = 180° − {∠B + ∠C|2} = 180° − 60° = <b>120°</b>. Mà ∠DIE = ∠BIC (đối đỉnh).',h:['tb']},
+{s:'<b>Dự đoán:</b> ΔDIE cân tại I. Để chứng minh, so sánh ID và IE với một đoạn thứ ba: vẽ phân giác IK của ∠BIC (K ∈ BC).',a:['ik','pk'],h:['ik']},
+{s:'Có ∠EIB = 180° − 120° = 60° (kề bù); IK là phân giác nên ∠BIK = ∠KIC = 60°; ∠CID = 60° (đối đỉnh với ∠BIE). Bốn góc đều bằng 60°.',a:['a1','a2','a3','a4'],h:['a1','a2','a3','a4']},
+{s:'ΔBIE = ΔBIK (g.c.g): ∠EBI = ∠KBI (BD là phân giác), BI chung, ∠EIB = ∠KIB = 60° ⇒ IE = IK.',h:['t1','t2']},
+{s:'Tương tự ΔCID = ΔCIK (g.c.g) ⇒ ID = IK.',h:['t3','t4']},
+{s:'IE = IK = ID ⇒ ΔDIE cân tại I, ∠DIE = 120° ⇒ ∠D = ∠E = {180° − 120°|2} = <b>30°</b> ✔',h:['t5']}]},
+{g:'CĐ2',n:'Hình vuông: CE ⊥ DF, MAD cân, diện tích',nd:'Hình vuông có trung điểm hai cạnh, các đường nối cắt nhau.',cc:'Tam giác bằng nhau (c.g.c) ⇒ góc bằng nhau ⇒ vuông góc; trung tuyến ứng cạnh huyền bằng nửa cạnh huyền; đồng dạng (g.g) ⇒ tỉ số diện tích bằng bình phương tỉ số.',loi:'Quên nối thêm điểm K = AD ∩ CE (đường phụ then chốt); tính diện tích mà không dùng đồng dạng.',vb:'0 -50 400 318',
+P:{A:[150,110],B:[270,110],C:[270,230],D:[150,230],E:[210,110],F:[270,170],M:[246,182],K:[150,-10]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pe:['p','EF'],pm:['p','M'],pk:['p','K'],ce:['l','CE'],df:['l','DF'],ex:['l','EK'],ak:['l','AK'],am:['l','AM'],k1:['k','AE',1],k2:['k','EB',1],k3:['k','BF',2],k4:['k','FC',2],rm:['r','CMF'],ka:['k','KA',3],ad:['k','AD',3],t1:['g','BEC'],t2:['g','CFD'],t3:['g','AEK'],t4:['g','MAD'],t5:['g','CMD'],t6:['g','FCD']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD cạnh a; E, F là trung điểm AB, BC; M = CE ∩ DF. a) CE ⊥ DF. b) ΔMAD cân. c) Tính diện tích ΔMDC theo a.',a:['q','p','pe','pm','ce','df','k1','k2','k3','k4']},
+{s:'<b>a)</b> ΔBEC = ΔCFD (c.g.c): BE = CF (cùng bằng {a|2}), ∠B = ∠C = 90°, BC = CD ⇒ ∠BCE = ∠CDF.',h:['t1','t2']},
+{s:'ΔCDF vuông tại C ⇒ ∠CFD + ∠CDF = 90° ⇒ ∠CFD + ∠BCE = 90° ⇒ ΔCMF vuông tại M, tức <b>CE ⊥ DF</b> ✔.',a:['rm'],h:['rm']},
+{s:'<b>b)</b> Gọi K là giao điểm của AD và CE. ΔAEK = ΔBEC (g.c.g) ⇒ AK = BC = AD, tức A là trung điểm KD.',a:['ex','pk','ak','ka','ad'],h:['t3']},
+{s:'ΔMDK vuông tại M (CE ⊥ DF) có MA là trung tuyến ứng với cạnh huyền KD ⇒ AM = {KD|2} = AD ⇒ <b>ΔMAD cân tại A</b> ✔.',a:['am'],h:['t4','am']},
+{s:'<b>c)</b> ΔCMD ∽ ΔFCD (g.g) ⇒ {S(CMD)|S(FCD)} = ({CD|FD})².',h:['t5','t6']},
+{s:'S(FCD) = {1|2} · CF · CD = {1|4}a². DF² = CD² + CF² = 1,25a² ⇒ {CD²|DF²} = {4|5}. Vậy S(CMD) = {4|5} · {1|4}a² = <b>{1|5}a²</b> ✔',h:['t5']}]},
+{g:'CĐ2',n:'Hình vuông: AE = AF, hình thoi, chu vi không đổi',nd:'Hai đường thẳng vuông góc kẻ từ đỉnh hình vuông; điểm di động trên cạnh.',cc:'Hai tam giác vuông bằng nhau (cạnh góc vuông và góc cùng phụ); trung tuyến của tam giác cân là đường cao; đồng dạng g.g cho hệ thức AF² = FK · FC; chu vi không đổi nhờ biến đổi đoạn bằng nhau.',loi:'Không để ý F nằm trên tia CD kéo dài (ngoài đoạn CD); nhầm CF với CD.',
+P:{A:[100,30],B:[260,30],C:[260,190],D:[100,190],E:[260,90],F:[40,190],I:[150,140],K:[172.7,190],G:[127.3,90]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pe:['p','EF'],pi:['p','I'],pk:['p','KG'],ae:['l','AE'],af:['l','AF'],ef:['l','EF'],ak:['l','AK'],cf:['l','CF'],eg:['l','EG'],gf:['l','GF'],ek:['l','EK'],kf:['l','KF'],ra:['r','EAF'],ri:['r','EIA'],k1:['k','AE',1],k2:['k','AF',1],k3:['k','EI',2],k4:['k','IF',2],t1:['g','ABE'],t2:['g','ADF'],t3:['g','IEG'],t4:['g','IFK'],t5:['g','AKF'],t6:['g','CAF'],rh:['g','EGFK']},
+S:[{s:'<b>Đề:</b> ABCD là hình vuông, E ∈ BC. Qua A kẻ Ax ⊥ AE cắt CD tại F; trung tuyến AI của ΔAEF cắt CD ở K; qua E kẻ đường thẳng ∥ AB cắt AI tại G. a) AE = AF và EGFK là hình thoi. b) ΔAKF ∽ ΔCAF và AF² = FK · FC. c) Chu vi ΔEKC không đổi khi E thay đổi.',a:['q','p','pe','ae','af','ra','cf']},
+{s:'<b>a)</b> ΔABE và ΔADF vuông (tại B, D) có AB = AD, ∠BAE = ∠DAF (cùng phụ với ∠DAE) ⇒ ΔABE = ΔADF ⇒ AE = AF.',a:['k1','k2'],h:['t1','t2']},
+{s:'ΔAEF cân tại A, AI là trung tuyến ⇒ AI ⊥ EF.',a:['ef','pi','ak','ri','k3','k4'],h:['ak','ef']},
+{s:'ΔIEG và ΔIFK vuông tại I có IE = IF, ∠IEG = ∠IFK (so le trong, EG ∥ FK) ⇒ ΔIEG = ΔIFK ⇒ EG = FK.',a:['pk','eg'],h:['t3','t4']},
+{s:'Tứ giác EGFK có EG ∥ FK và EG = FK ⇒ hình bình hành; hai đường chéo GK và EF vuông góc ⇒ <b>EGFK là hình thoi</b> ✔.',a:['gf','ek','kf'],h:['rh']},
+{s:'<b>b)</b> ΔAKF và ΔCAF có ∠F chung và ∠KAF = ∠ACF = 45° (AK là trung tuyến của tam giác vuông cân AEF, AC là đường chéo hình vuông) ⇒ ΔAKF ∽ ΔCAF (g.g) ⇒ {AF|FC} = {FK|AF} ⇒ <b>AF² = FK · FC</b> ✔.',h:['t5','t6']},
+{s:'<b>c)</b> ΔABE = ΔADF ⇒ EB = FD; EGFK là hình thoi ⇒ EK = KF. Chu vi ΔEKC = EK + KC + CE = KF + KC + CE = CF + CE = CD + DF + CE = CD + EB + CE = CD + BC = <b>2CD</b> (không đổi) ✔',h:['cf']}]},
+{g:'CĐ2',n:'Tứ giác nối trung điểm: khi nào là HCN, thoi, vuông?',nd:'Tứ giác bất kỳ có các trung điểm của bốn cạnh; hỏi điều kiện trên hai đường chéo.',cc:'Đường trung bình: EF ∥ AC, EF = {AC|2}; EH ∥ BD, EH = {BD|2}. Hình chữ nhật cần một góc vuông; hình thoi cần hai cạnh kề bằng nhau.',loi:'Nhầm điều kiện: chéo vuông góc cho hình chữ nhật, chéo bằng nhau cho hình thoi (không ngược lại).',
+P:{A:[90,130],B:[170,30],C:[290,130],D:[170,230],E:[130,80],F:[230,80],G:[230,180],H:[130,180],I:[170,130]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pe:['p','EFGH'],pi:['p','I'],efgh:['g','EFGH'],ac:['l','AC'],bd:['l','BD'],ef:['l','EF'],hg:['l','HG'],eh:['l','EH'],fg:['l','FG'],pa1:['pa','EF',1],pa2:['pa','HG',1],pb1:['pa','EH',2],pb2:['pa','FG',2],re:['r','HEF'],ri:['r','CIB'],k1:['k','AC',2],k2:['k','BD',2],k3:['k','EF',2],k4:['k','EH',2]},
+S:[{s:'<b>Đề:</b> ABCD là tứ giác; E, F, G, H là trung điểm AB, BC, CD, DA. Hai đường chéo AC, BD cần điều kiện gì để EFGH là a) hình chữ nhật? b) hình thoi? c) hình vuông?',a:['q','p','pe','efgh','ac','bd']},
+{s:'EF là đường trung bình của ΔABC ⇒ EF ∥ AC, EF = {AC|2}. Tương tự HG ∥ AC, HG = {AC|2} ⇒ EFGH là <b>hình bình hành</b>.',a:['pa1','pa2'],h:['ef','hg','ac']},
+{s:'Tương tự EH ∥ BD, EH = {BD|2} (và FG ∥ BD).',a:['pb1','pb2'],h:['eh','fg','bd']},
+{s:'<b>a)</b> Hình bình hành EFGH là hình chữ nhật ⇔ có một góc vuông: ∠HEF = 90° ⇔ EH ⊥ EF ⇔ BD ⊥ AC. Vậy <b>AC ⊥ BD</b> ⇒ hình chữ nhật.',a:['re','pi','ri'],h:['re','ri']},
+{s:'<b>b)</b> Hình bình hành EFGH là hình thoi ⇔ EH = EF ⇔ {BD|2} = {AC|2} ⇔ AC = BD. Vậy <b>AC = BD</b> ⇒ hình thoi.',a:['k1','k2','k3','k4'],h:['k1','k2','k3','k4']},
+{s:'<b>c)</b> EFGH là hình vuông khi vừa là hình chữ nhật vừa là hình thoi: <b>AC ⊥ BD và AC = BD</b> ✔',h:['efgh']}]},
+{g:'CĐ1',n:'Dựng tam giác đều: BH = 2AC, tính ∠BHC',nd:'Có góc 75° (= 60° + 15°) và một đoạn gấp đôi đoạn khác (BH = 2AC).',cc:'Lấy trung điểm để có đoạn bằng nhau; dựng tam giác đều trên cạnh BC; tam giác bằng nhau (c.g.c); trung trực ⇒ tam giác cân.',loi:'Quên lấy trung điểm E của BH; dựng tam giác đều nhưng không chứng minh các tam giác bằng nhau.',
+P:{B:[40.0,210.0],A:[82.9,210.0],C:[82.9,50.0],H:[360.0,210.0],E:[200.0,210.0],D:[200.0,167.1]},
+E:{q:['g','ABC'],p1:['p','ABCH'],pe:['p','E'],pd:['p','D'],bh:['l','BH'],hc:['l','HC'],bd:['l','BD'],dc:['l','DC'],de:['l','DE'],dh:['l','DH'],ra:['r','HAC'],re:['r','HED'],aB:['a','ABC','75°',36,1],aC:['a','ACB','15°',28,1],aD1:['a','DBH','15°',52,1],aD2:['a','HDB','150°',24,1],aH:['a','BHC','30°',40,1],k1:['k','AC',1],k2:['k','BE',1],k3:['k','EH',1],bcd:['g','BDC'],t1:['g','EBD'],t2:['g','HDB'],t3:['g','HDC']},
+S:[{s:'<b>Đề:</b> ΔABC vuông tại A, ∠B = 75°. Trên tia đối của tia AB lấy H sao cho BH = 2AC. Tính ∠BHC.',a:['q','p1','bh','hc','ra','aB','aC']},
+{s:'<b>Phân tích:</b> BH = 2AC ⇒ lấy E là trung điểm BH để có BE = EH = AC. Góc 75° = 60° + 15° gợi ý dựng tam giác đều.',a:['pe','k1','k2','k3'],h:['k1','k2','k3']},
+{s:'Dựng ΔBDC đều (D cùng phía với A đối với BC) ⇒ BD = BC = DC, ∠CBD = 60°. Do đó ∠ABD = 75° − 60° = 15°, cũng là ∠EBD.',a:['pd','bd','dc','aD1'],h:['bcd']},
+{s:'ΔEBD = ΔABC (c.g.c): BE = AC, ∠EBD = ∠ACB = 15°, BD = CB. Suy ra ∠DEB = ∠BAC = 90°, tức DE ⊥ BH.',a:['de','re'],h:['t1','q']},
+{s:'E là trung điểm BH và DE ⊥ BH ⇒ DE là trung trực của BH ⇒ DB = DH. ΔDBH cân tại D: ∠DHB = ∠DBH = 15°, ∠BDH = 150°.',a:['dh','aD2'],h:['dh','de']},
+{s:'ΔHDB = ΔHDC (c.g.c): DB = DC, DH chung, ∠HDB = 150° = ∠HDC (= 360° − 150° − 60°). Suy ra ∠DHC = ∠DHB = 15°.',h:['t2','t3']},
+{s:'∠BHC = ∠BHD + ∠DHC = 15° + 15° = <b>30°</b> ✔',a:['aH'],h:['aH']}]},
+{g:'CĐ1',n:'Đoạn thứ ba làm trung gian: tính ∠AIM',nd:'Hai đoạn AM và AI chưa so sánh được trực tiếp; có nhiều đường vuông góc với BM.',cc:'Lấy L sao cho AL = AM để so sánh AI với AL; tam giác bằng nhau; ba đường song song cách đều chắn trên một đường thẳng các đoạn bằng nhau.',loi:'Cố chứng minh AM = AI ngay mà không nghĩ tới đoạn phụ AL.',vb:'0 10 400 310',
+P:{A:[100,210],B:[100,50],C:[260,210],M:[190,210],H:[202.4,152.4],K:[144.8,94.8],I:[100.0,120.0],L:[100,300]},
+E:{q:['g','ABC'],p:['p','ABCM'],ph:['p','H'],pk:['p','K'],pi:['p','I'],pl:['p','L'],bm:['l','BM'],ax:['l','AH'],ki:['l','KI'],al:['l','AL'],cl:['l','CL'],im:['l','IM'],ra:['r','BAC'],a45:['a','AIM','45°',30,1],k1:['k','AM',1],k2:['k','AL',1],k3:['k','AI',1],k4:['k','CH',2],k5:['k','HK',2],t1:['g','ABM'],t2:['g','ACL'],t3:['g','AMI']},
+S:[{s:'<b>Đề:</b> ΔABC vuông cân tại A, M tùy ý trên AC. Tia Ax ⊥ BM cắt BC ở H; K thuộc tia đối của HC sao cho HK = HC; tia Ky ⊥ BM cắt AB ở I. Tính ∠AIM.',a:['q','p','bm','ax','ph','pk','ki','pi','ra','k4','k5']},
+{s:'<b>Dự đoán:</b> ΔAMI vuông cân tại A, tức cần AM = AI. Chưa so sánh trực tiếp được ⇒ tìm <b>đoạn thứ ba làm trung gian</b>: lấy L trên tia đối của AB sao cho AL = AM.',a:['pl','al','cl','k1','k2'],h:['al']},
+{s:'ΔABM = ΔACL (c.g.c): AB = AC, ∠BAM = ∠CAL = 90°, AM = AL ⇒ ∠ABM = ∠ACL.',h:['t1','t2']},
+{s:'Mà ∠ACL + ∠ALC = 90° nên ∠ABM + ∠ALC = 90° ⇒ BM ⊥ CL.',h:['bm','cl']},
+{s:'BM ⊥ CL, BM ⊥ AH, BM ⊥ KI ⇒ CL ∥ AH ∥ KI.',h:['cl','ax','ki']},
+{s:'Ba đường thẳng song song CL, AH, KI cắt CK tại C, H, K với HC = HK ⇒ chúng chắn trên đường thẳng LI các đoạn bằng nhau: AL = AI.',a:['k3'],h:['k4','k5','k3']},
+{s:'AM = AL (cách lấy) và AL = AI ⇒ AM = AI ⇒ ΔAMI vuông cân tại A ⇒ ∠AIM = <b>45°</b> ✔',a:['im','a45'],h:['t3']}]},
+{g:'CĐ1',n:'Nửa tam giác đều: AH, AD chia góc A thành 3',nd:'Đường cao và trung tuyến cùng xuất phát từ A chia ∠A thành ba góc bằng nhau.',cc:'Đường cao + phân giác ⇒ tam giác cân; điểm trên phân giác cách đều hai cạnh; nửa tam giác đều (cạnh góc vuông bằng nửa cạnh huyền ⇒ góc 30°).',loi:'Không kẻ DK ⊥ AC nên không thấy tam giác nửa đều.',
+P:{A:[130,88.8],B:[60,210],C:[340,210],H:[130,210],D:[200,210],K:[235.0,149.4]},
+E:{q:['g','ABC'],p:['p','ABCD'],ph:['p','H'],pk:['p','K'],ah:['l','AH'],ad:['l','AD'],dk:['l','DK'],dh:['l','DH'],rh:['r','AHC'],rk:['r','DKA'],a1:['a','BAH','α',30,1],a2:['a','HAD','α',44,1],a3:['a','DAC','α',58,1],b1:['a','BAH','30°',30,1],b2:['a','HAD','30°',44,1],b3:['a','DAC','30°',58,1],aC:['a','ACB','30°',34,1],abd:['g','ABD'],cdk:['g','CDK'],k1:['k','DH',1],k2:['k','DK',1],k3:['k','BH',2],k4:['k','HD',2]},
+S:[{s:'<b>Đề:</b> tính các góc của ΔABC biết đường cao AH và trung tuyến AD chia ∠BAC thành ba góc bằng nhau.',a:['q','p','ph','ah','ad','a1','a2','a3','rh']},
+{s:'<b>Nhận dạng:</b> hình vẽ chính xác gợi ý ΔABC giống một “nửa tam giác đều”. Kẻ thêm DK ⊥ AC tại K để có tam giác vuông chứa đoạn DK.',a:['pk','dk','rk'],h:['dk']},
+{s:'ΔABD có AH vừa là đường cao vừa là phân giác ⇒ ΔABD cân tại A và H là trung điểm BD ⇒ HD = {BD|2} = {DC|2} (D là trung điểm BC).',a:['k3','k4'],h:['abd','ah']},
+{s:'D nằm trên phân giác AD của ∠HAC ⇒ DK = DH (cách đều hai cạnh của góc). Vậy DK = {DC|2}.',a:['k1','k2'],d:['k4'],h:['dk','dh']},
+{s:'ΔCDK vuông tại K có DK = {DC|2} ⇒ là nửa tam giác đều ⇒ ∠C = 30°.',a:['aC'],h:['cdk']},
+{s:'ΔAHC vuông tại H, ∠C = 30° ⇒ ∠HAC = 60° = 2α ⇒ α = 30°. Vậy ∠BAC = 3α = 90° và ∠B = 90° − 30° = 60°. Kết quả: <b>∠A = 90°, ∠B = 60°, ∠C = 30°</b> ✔',a:['b1','b2','b3'],d:['a1','a2','a3'],h:['b1','b2','b3']}]},
+{g:'CĐ2',n:'Hình vuông: O, M, H thẳng hàng',nd:'Hình vuông có tâm O, hai điểm M, E với BE = CM, cần chứng minh ba điểm thẳng hàng.',cc:'Tam giác bằng nhau để có tam giác vuông cân; Talet đảo cho song song; đồng dạng (g.g, c.g.c) để chứng minh góc 90°; “điểm H′ trùng H”.',loi:'Chứng minh thẳng hàng trực tiếp; nên đặt H′ = OM ∩ BN rồi chứng minh CH′ ⊥ BN.',
+P:{A:[110,40],B:[270,40],C:[270,200],D:[110,200],O:[190,120],M:[270,160],N:[323.3,200.0],E:[230,40],H:[318.0,184.0]},
+E:{q:['g','ABCD'],p:['p','ABCD'],po:['p','O'],pm:['p','MN'],pe:['p','E'],ph:['p','H'],an:['l','AN'],cn:['l','CN'],ac:['l','AC'],bd:['l','BD'],oe:['l','OE'],om:['l','OM'],me:['l','ME'],bn:['l','BN'],ch:['l','CH'],oh:['l','OH'],k1:['k','BE',2],k2:['k','CM',2],k3:['k','OB',1],k4:['k','OC',1],re:['r','EOM'],rh:['r','CHB'],aO:['a','OCM','45°',26,1],a1:['a','MHB','45°',30,1],a2:['a','CHM','45°',22,1],t1:['g','OEB'],t2:['g','OMC'],t3:['g','OEM'],t4:['g','BMH'],t5:['g','OMB'],t6:['g','CMH']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD, AC ∩ BD = O. M ∈ BC, tia AM cắt đường thẳng CD tại N. E ∈ AB sao cho BE = CM. a) ΔOEM vuông cân. b) ME ∥ BN. c) CH ⊥ BN (H ∈ BN): O, M, H thẳng hàng.',a:['q','p','po','pm','pe','an','cn','ac','bd','k1','k2']},
+{s:'<b>a)</b> ΔOEB và ΔOMC có OB = OC (hai đường chéo của hình vuông), ∠OBE = ∠OCM = 45°, BE = CM ⇒ ΔOEB = ΔOMC (c.g.c) ⇒ OE = OM, ∠EOB = ∠MOC.',a:['k3','k4','oe','om'],h:['t1','t2']},
+{s:'∠BOC = 90° nên ∠EOM = ∠EOB + ∠BOM = ∠MOC + ∠BOM = 90°. Cùng OE = OM ⇒ <b>ΔOEM vuông cân tại O</b> ✔ (∠OME = 45°).',a:['re','me'],h:['t3','re']},
+{s:'<b>b)</b> AB ∥ CN (vì AB ∥ CD) ⇒ theo Talet: {AM|MN} = {BM|MC} (1).',h:['an','cn']},
+{s:'AE = AB − BE = BC − CM = BM và EB = CM ⇒ {BM|MC} = {AE|EB}. Cùng (1): {AM|MN} = {AE|EB} ⇒ <b>ME ∥ BN</b> (Talet đảo) ✔.',a:['bn'],h:['me','bn']},
+{s:'<b>c)</b> Gọi H′ là giao điểm của OM và BN (ta sẽ chứng minh H′ ≡ H). ME ∥ BN ⇒ ∠MH′B = ∠OME = 45° (đồng vị).',a:['ph','oh','a1'],h:['oh','bn','a1']},
+{s:'ΔOMC ∽ ΔH′MB (g.g): ∠OCM = ∠MH′B = 45°, ∠OMC = ∠H′MB (đối đỉnh) ⇒ {MO|MB} = {MC|MH′} ⇒ {MO|MC} = {MB|MH′}.',a:['aO'],h:['t2','t4']},
+{s:'ΔOMB ∽ ΔCMH′ (c.g.c): {MO|MC} = {MB|MH′}, ∠OMB = ∠CMH′ (đối đỉnh) ⇒ ∠MH′C = ∠OBM = 45° (BD là phân giác góc B).',a:['a2'],h:['t5','t6']},
+{s:'∠BH′C = ∠BH′M + ∠MH′C = 45° + 45° = 90° ⇒ CH′ ⊥ BN. Mà CH ⊥ BN ⇒ H′ ≡ H ⇒ <b>O, M, H thẳng hàng</b> ✔',a:['ch','rh'],h:['oh','ch']}]},
+{g:'CĐ2',n:'Hình vuông: DE, BF, CM đồng quy; diện tích lớn nhất',nd:'Điểm M di động trên đường chéo; ME, MF vuông góc hai cạnh; hỏi đồng quy và giá trị lớn nhất.',cc:'M ∈ BD ⇒ tam giác vuông cân; ba đường cao của tam giác đồng quy; tổng không đổi + BĐT ⇒ tích lớn nhất khi hai số bằng nhau.',loi:'Quên rằng ME + MF không đổi (= a); áp dụng BĐT sai chiều.',
+P:{A:[110,40],B:[270,40],C:[270,200],D:[110,200],M:[182,128],E:[182,40],F:[110,128],K:[153.1,104.3]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pm:['p','MEF'],pk:['p','K'],bd:['l','BD'],me:['l','ME'],mf:['l','MF'],de:['l','DE'],bf:['l','BF'],cm:['l','CM'],ef:['l','EF'],cf:['l','CF'],ce:['l','CE'],ra:['r','AEM'],rf:['r','AFM'],k1:['k','AE',1],k2:['k','FM',1],k3:['k','DF',1],t1:['g','AED'],t2:['g','DFC'],t3:['g','EFC'],rect:['g','AEMF'],fdm:['g','DFM']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD cạnh a, M tùy ý trên đường chéo BD, ME ⊥ AB, MF ⊥ AD. a) DE = CF. b) DE, BF, CM đồng quy. c) Tìm M để diện tích AEMF lớn nhất.',a:['q','p','pm','bd','me','mf','ra','rf']},
+{s:'<b>a)</b> AEMF có ba góc vuông ⇒ là hình chữ nhật ⇒ AE = FM. ΔDFM vuông cân tại F (BD là phân giác của ∠D nên ∠FDM = 45°) ⇒ FM = DF. Vậy AE = DF.',a:['k1','k2','k3'],h:['rect','fdm']},
+{s:'ΔAED = ΔDFC (c.g.c): AD = DC, ∠A = ∠D = 90°, AE = DF ⇒ <b>DE = CF</b> ✔ và ∠ADE = ∠DCF.',a:['de','cf'],h:['t1','t2']},
+{s:'<b>b)</b> Từ ∠ADE = ∠DCF và ∠ADE + ∠EDC = 90° ⇒ ∠DCF + ∠EDC = 90° ⇒ DE ⊥ CF. Tương tự BF ⊥ CE. Nối EF, CE, CM: CM ⊥ EF (tài liệu dùng kết quả này).',a:['bf','ce','ef','cm'],h:['de','bf']},
+{s:'DE, BF, CM là ba đường cao của ΔEFC nên <b>đồng quy</b> (tại trực tâm K) ✔',a:['pk'],h:['t3','de','bf','cm']},
+{s:'<b>c)</b> ME + MF = AF + AE = AF + DF = AD = a (không đổi); chu vi AEMF = 2a.',h:['rect']},
+{s:'S(AEMF) = ME · MF ≤ {(ME + MF)²|4} = {a²|4}, dấu “=” khi ME = MF. Khi đó AEMF là hình vuông ⇒ <b>M là trung điểm của BD</b>, S lớn nhất = {a²|4} ✔',h:['rect']}]},
+{g:'CĐ2',n:'Hình vuông + tam giác đều: B, E, F thẳng hàng',nd:'Có các góc 15°, 60°, 150°; yêu cầu chứng minh ba điểm thẳng hàng.',cc:'Tính các góc (tổng ba góc); tam giác đều có cạnh bằng cạnh hình vuông ⇒ tam giác cân; hai tia cùng tạo với BC một góc 15° về một phía thì trùng nhau.',loi:'Quên điều kiện “cùng phía của BC” khi kết luận hai tia trùng nhau.',vb:'0 10 400 340',
+P:{A:[110,30],B:[270,30],C:[270,190],D:[110,190],E:[248.6,110],F:[190,328.6]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pE:['p','E'],pF:['p','F'],be:['l','BE'],ce:['l','CE'],cf:['l','CF'],df:['l','DF'],bf:['l','BF'],aB:['a','EBC','15°',36,1],aC:['a','BCE','15°',36,1],aE:['a','BEC','150°',22,1],aD:['a','DCF','60°',22,1],aBCF:['a','BCF','150°',48,1],aF:['a','CFB','15°',34,1],t1:['g','CDF'],t2:['g','BCF'],t3:['g','BEC']},
+S:[{s:'<b>Đề:</b> trong hình vuông ABCD lấy E sao cho ∠EBC = ∠ECB = 15°. Trên nửa mặt phẳng bờ CD không chứa E dựng tam giác đều CDF. Chứng minh B, E, F thẳng hàng.',a:['q','p','pE','be','ce','aB','aC']},
+{s:'ΔBEC có ∠BEC = 180° − 15° − 15° = <b>150°</b> (tổng ba góc).',a:['aE'],h:['t3']},
+{s:'ΔCDF đều ⇒ CF = CD = CB và ∠DCF = 60°. Do đó ∠BCF = 90° + 60° = <b>150°</b>.',a:['pF','cf','df','aD','aBCF'],h:['t1']},
+{s:'ΔBCF cân tại C (CB = CF) ⇒ ∠CBF = ∠CFB = {180° − 150°|2} = <b>15°</b>.',a:['aF','bf'],h:['t2']},
+{s:'Có ∠CBF = 15° = ∠CBE, và E, F cùng nằm về một phía của đường thẳng BC ⇒ hai tia BE và BF trùng nhau.',h:['be','bf']},
+{s:'Vậy <b>B, E, F thẳng hàng</b> ✔ (kiểm tra thêm: ∠CEF = 180° − ∠CEB = 30°).',h:['bf']}]},
+{g:'CĐ1',n:'Nửa tam giác đều: ∠B = 45°, ∠C = 120°, tính ∠ADB',nd:'Có góc 120° (kề bù 60°) và đoạn CD = 2CB gấp đôi một cạnh.',cc:'Góc 60° ⇒ hạ đường cao để có nửa tam giác đều (cạnh góc vuông = nửa cạnh huyền); các tam giác cân cho HA = HB = HD.',loi:'Không hạ DH ⊥ AC; quên rằng CH = CB nhờ CD = 2CB.',
+P:{A:[252.9,19.1],B:[40.0,232.0],C:[130.0,232.0],D:[310.0,232.0],H:[175.0,154.1]},
+E:{q:['g','ABC'],p:['p','ABCD'],pH:['p','H'],bd:['l','BD'],ad:['l','AD'],hd:['l','HD'],bh:['l','BH'],aB:['a','ABC','45°',30,1],aC:['a','BCA','120°',24,1],aACD:['a','ACD','60°',24,1],rh:['r','DHC'],rA:['r','AHD'],aD1:['a','CDH','30°',34,1],aBH:['a','CBH','30°',46,1],aABH:['a','ABH','15°',60,1],aBAC:['a','BAC','15°',30,1],aD2:['a','ADH','45°',46,1],aADB:['a','ADB','75°',62,1],k1:['k','CH',1],k2:['k','CB',1],k3:['k','HA',3],k4:['k','HB',3],k5:['k','HD',3],tCHD:['g','CHD'],tBCH:['g','BCH'],tBHD:['g','BHD'],tABH:['g','ABH'],tAHD:['g','AHD']},
+S:[{s:'<b>Đề:</b> ΔABC có ∠B = 45°, ∠C = 120°. Trên tia đối của tia CB lấy D sao cho CD = 2CB. Tính ∠ADB.',a:['q','p','bd','ad','aB','aC']},
+{s:'∠ACD = 180° − 120° = 60° (kề bù). <b>Góc 60°</b> gợi ý dùng nửa tam giác đều: hạ DH ⊥ AC (H nằm trên AC).',a:['aACD','pH','hd','rh'],h:['hd','rh']},
+{s:'ΔCHD vuông tại H có ∠HCD = 60° ⇒ nửa tam giác đều ⇒ ∠CDH = 30° và CD = 2CH. Mà CD = 2CB ⇒ <b>CH = CB</b>.',a:['aD1','k1','k2'],h:['tCHD','k1','k2']},
+{s:'ΔBCH cân tại C có ∠BCH = 120° ⇒ ∠CBH = ∠CHB = 30°.',a:['bh','aBH'],h:['tBCH']},
+{s:'∠HBD = ∠CBH = 30° = ∠HDB (cùng bằng ∠CDH) ⇒ ΔBHD cân tại H ⇒ HB = HD (1).',a:['k4','k5'],h:['tBHD']},
+{s:'∠ABH = ∠ABC − ∠CBH = 45° − 30° = 15°; ∠BAC = 180° − (120° + 45°) = 15° ⇒ ΔABH cân tại H ⇒ HB = HA (2).',a:['aABH','aBAC','k3'],h:['tABH']},
+{s:'Từ (1) và (2): HA = HD. ΔAHD có ∠AHD = 90° ⇒ vuông cân tại H ⇒ ∠HDA = 45°.',a:['rA','aD2'],h:['tAHD']},
+{s:'∠ADB = ∠CDH + ∠HDA = 30° + 45° = <b>75°</b> ✔',a:['aADB'],h:['aADB']}]},
+{g:'CĐ1',n:'Tam giác cân A = 40°, BE = BA: tính ∠BEC',nd:'Tam giác cân với góc 40° và một góc 10° (gợi 70° − 60°).',cc:'Dựng tam giác đều trên đáy BC; tìm tam giác bằng ΔBCE (c.g.c); trung trực của BC cũng là phân giác của góc ở đỉnh.',loi:'Không dựng tam giác đều; chọn D ở phía bên kia của BC.',
+P:{A:[114.0,20.0],B:[50.0,195.8],C:[178.0,195.8],D:[114.0,85.0],E:[234.3,228.3]},
+E:{q:['g','ABC'],p:['p','ABC'],pE:['p','E'],pD:['p','D'],be:['l','BE'],ec:['l','EC'],bd:['l','BD'],dc:['l','DC'],ad:['l','AD'],aA:['a','BAC','40°',26,1],aCBE:['a','CBE','10°',32,1],aDBA:['a','DBA','10°',32,1],aBAD:['a','BAD','20°',34,1],aBEC:['a','BEC','20°',30,1],k1:['k','AB',1],k2:['k','AC',1],k3:['k','BE',1],k4:['k','BC',2],k5:['k','BD',2],k6:['k','DC',2],bcd:['g','BDC'],t1:['g','CBE'],t2:['g','DBA']},
+S:[{s:'<b>Đề:</b> ΔABC cân tại A, ∠A = 40°. Trên nửa mặt phẳng bờ BC không chứa A vẽ tia Bx sao cho ∠CBx = 10°; trên Bx lấy E sao cho BE = BA. Tính ∠BEC.',a:['q','p','pE','be','ec','aA','aCBE','k1','k2','k3']},
+{s:'<b>Phân tích:</b> ∠BEC là góc của ΔBCE, cần tìm một tam giác bằng ΔBCE. Dựng ΔBDC đều (D và A cùng phía bờ BC): BD = BC = DC.',a:['pD','bd','dc','k4','k5','k6'],h:['bcd']},
+{s:'ΔABC cân tại A, ∠A = 40° ⇒ ∠ABC = 70°. Vì ∠CBD = 60° nên ∠ABD = 70° − 60° = 10° = ∠CBE.',a:['aDBA','ad'],h:['aDBA','aCBE']},
+{s:'ΔCBE = ΔDBA (c.g.c): BC = BD, ∠CBE = ∠DBA = 10°, BE = BA ⇒ ∠BEC = ∠BAD.',h:['t1','t2']},
+{s:'AB = AC và DB = DC ⇒ AD là trung trực của BC ⇒ AD cũng là phân giác của ∠BAC ⇒ ∠BAD = {40°|2} = 20°.',a:['aBAD'],h:['ad','aBAD']},
+{s:'Vậy ∠BEC = ∠BAD = <b>20°</b> ✔',a:['aBEC'],h:['aBEC']}]},
+{g:'CĐ1',n:'Vuông cân, ∠EAC = ∠ECA = 15°: tính ∠AEB',nd:'Tam giác vuông cân và hai góc 15° (75° = 60° + 15°).',cc:'Dựng tam giác đều AED; hai tam giác bằng nhau (c.g.c) cho DB = DA; rồi so sánh ΔADB và ΔEDB.',loi:'Nhầm phía của điểm D (D và B phải cùng phía AE); quên tính ∠EDB = 360° − 150° − 60°.',
+P:{A:[60,225],B:[60,25],C:[260,225],D:[86.8,125.0],E:[160.0,198.2]},
+E:{q:['g','ABC'],p:['p','ABC'],pE:['p','E'],pD:['p','D'],ra:['r','BAC'],ae:['l','AE'],ec:['l','EC'],eb:['l','EB'],ad:['l','AD'],de:['l','DE'],db:['l','DB'],aEAC:['a','EAC','15°',30,1],aECA:['a','ECA','15°',34,1],aEAB:['a','EAB','75°',36,1],aDAB:['a','DAB','15°',46,1],aDBA:['a','DBA','15°',34,1],aADB:['a','ADB','150°',20,1],aEDB:['a','EDB','150°',30,1],aDEB:['a','DEB','15°',32,1],aAEB:['a','AEB','75°',46,1],k1:['k','AD',1],k2:['k','AE',1],k3:['k','DE',1],k4:['k','EC',1],k5:['k','DB',1],tAED:['g','AED'],tADB:['g','ADB'],tAEC:['g','AEC'],tEDB:['g','EDB']},
+S:[{s:'<b>Đề:</b> ΔABC vuông cân tại A. E nằm trong tam giác sao cho ∠EAC = ∠ECA = 15°. Tính ∠AEB.',a:['q','p','pE','ra','ae','ec','eb','aEAC','aECA']},
+{s:'ΔAEC có ∠EAC = ∠ECA = 15° ⇒ cân tại E: EA = EC. Lại có ∠EAB = 90° − 15° = 75° = 60° + 15°, gợi ý dựng tam giác đều.',a:['aEAB','k4','k2'],h:['aEAB']},
+{s:'Dựng ΔAED đều (D, B cùng phía với AE) ⇒ AD = AE = DE, ∠DAE = 60°. Do đó ∠DAB = 75° − 60° = 15°.',a:['pD','ad','de','aDAB','k1','k3'],h:['tAED']},
+{s:'ΔADB = ΔAEC (c.g.c): AD = AE, ∠DAB = ∠EAC = 15°, AB = AC ⇒ DB = EC.',a:['db','k5'],h:['tADB','tAEC']},
+{s:'Mà EC = EA = AD ⇒ DB = DA ⇒ ΔADB cân tại D: ∠DBA = ∠DAB = 15° ⇒ ∠ADB = 180° − 30° = 150°.',a:['aDBA','aADB'],h:['tADB']},
+{s:'∠EDB = 360° − (∠ADB + ∠ADE) = 360° − (150° + 60°) = 150° = ∠ADB.',a:['aEDB'],h:['aADB','aEDB']},
+{s:'ΔADB = ΔEDB (c.g.c): DA = DE, ∠ADB = ∠EDB, DB chung ⇒ ∠DEB = ∠DAB = 15°.',a:['aDEB'],h:['tADB','tEDB']},
+{s:'∠AEB = ∠AED + ∠DEB = 60° + 15° = <b>75°</b> ✔',a:['aAEB'],h:['aAEB']}]},
+{g:'CĐ1',n:'Hai góc 20° và 10°: các góc của ΔIDE',nd:'Hai đường thẳng BD, CE cắt nhau tại I, hỏi dạng của ΔIDE.',cc:'Tính ∠BIC = 120°; vẽ ba phân giác của ΔIBC cắt nhau ở K; hai lần g.c.g cho IE = IK = ID.',loi:'Nhầm góc: phải dùng ∠EBI = ∠ABD = 20° và ∠KBI = {40°|2}; quên dự đoán ΔIDE cân tại I.',
+P:{A:[125.0,85.1],B:[50.0,215.0],C:[350.0,215.0],D:[172.3,112.4],E:[102.1,124.8],I:[140.8,138.8],K:[147.9,179.4]},
+E:{q:['g','ABC'],p:['p','ABCDE'],pI:['p','I'],pK:['p','K'],bd:['l','BD'],ce:['l','CE'],ik:['l','IK'],bk:['l','BK'],ck:['l','CK'],de:['l','DE'],aB:['a','ABD','20°',34,1],aC:['a','ACE','10°',34,1],aB2:['a','IBC','40°',48,1],aC2:['a','ICB','20°',44,1],a1:['a','EIB','60°',12,1],a2:['a','BIK','60°',18,1],a3:['a','KIC','60°',12,1],a4:['a','CID','60°',18,1],tIBC:['g','IBC'],t1:['g','BIE'],t2:['g','BIK'],t3:['g','CID'],t4:['g','CIK'],t5:['g','DIE']},
+S:[{s:'<b>Đề:</b> ΔABC có ∠B = 60°, ∠C = 30°. D ∈ AC, E ∈ AB sao cho ∠ABD = 20°, ∠ACE = 10°. BD cắt CE tại I. Tính các góc của ΔIDE.',a:['q','p','pI','bd','ce','aB','aC','de']},
+{s:'Trong ΔIBC: ∠IBC = 60° − 20° = 40°, ∠ICB = 30° − 10° = 20° ⇒ ∠BIC = 180° − (40° + 20°) = <b>120°</b> = ∠EID (đối đỉnh).',a:['aB2','aC2'],h:['tIBC']},
+{s:'<b>Dự đoán:</b> ΔIDE cân tại I. Cần một đoạn trung gian: vẽ ba đường phân giác của ΔIBC, cắt nhau tại K (tâm đường tròn nội tiếp).',a:['pK','ik','bk','ck'],h:['ik','bk','ck']},
+{s:'∠EIB = 180° − 120° = 60° (kề bù); IK là phân giác ⇒ ∠BIK = ∠KIC = 60°; ∠CID = 60° (đối đỉnh với ∠BIE). Bốn góc ở I đều bằng 60°.',a:['a1','a2','a3','a4'],h:['a1','a2','a3','a4']},
+{s:'ΔBIE = ΔBIK (g.c.g): ∠EBI = ∠ABD = 20° = ∠KBI ({40°|2}), BI chung, ∠EIB = ∠KIB = 60° ⇒ IE = IK.',h:['t1','t2']},
+{s:'Tương tự ΔCID = ΔCIK: ∠DCI = 10° = ∠KCI ({20°|2}), CI chung, ∠CID = ∠CIK = 60° ⇒ ID = IK.',h:['t3','t4']},
+{s:'IE = IK = ID ⇒ ΔIDE cân tại I, ∠EID = 120° ⇒ ∠D = ∠E = {180° − 120°|2} = 30°. Vậy <b>∠I = 120°, ∠D = ∠E = 30°</b> ✔',h:['t5']}]},
+{g:'CĐ2',n:'Hình vuông: CM · DN = a², ∠MKN = 90°, MN nhỏ nhất',nd:'Hai tia cắt đường thẳng CD tại M, N; cần chứng minh hệ thức tích và góc vuông.',cc:'Talet với các đường song song; hai tam giác đồng dạng (c.g.c); bất đẳng thức Cauchy cho tổng hai số có tích không đổi.',loi:'Quên điều kiện CE = AF dẫn tới BE = FD; áp dụng Cauchy mà không chỉ ra dấu “=”.',vb:'-110 10 460 170',
+P:{A:[100,30],B:[220,30],C:[220,150],D:[100,150],E:[220,102],F:[100,78],M:[300.0,150.0],N:[-80.0,150.0],K:[183.1,-25.4]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pe:['p','EF'],pm:['p','MN'],pk:['p','K'],am:['l','AM'],bn:['l','BN'],nm:['l','NM'],an:['l','AN'],bm:['l','BM'],k1:['k','CE',1],k2:['k','AF',1],ra:['r','ADN'],rk:['r','NKM'],t1:['g','CMB'],t2:['g','DAN']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD cạnh a; E ∈ BC, F ∈ AD sao cho CE = AF. AE, BF cắt đường thẳng CD tại M, N. a) CM · DN = a². b) K = NA ∩ MB: ∠MKN = 90°. c) Vị trí E, F để MN nhỏ nhất.',a:['q','p','pe','pm','am','bn','nm','k1','k2']},
+{s:'<b>a)</b> AB ∥ CD nên AB ∥ CM và AB ∥ DN. Vì CE = AF và AD = BC nên BE = BC − CE = AD − AF = FD (1).',h:['am','bn']},
+{s:'Talet với AB ∥ CM: {CM|AB} = {CE|BE} (2). Talet với AB ∥ DN: {AB|DN} = {AF|FD} (3).',h:['am','bn']},
+{s:'Có CE = AF và BE = FD (1) nên {CE|BE} = {AF|FD}. Từ (2), (3): {CM|AB} = {AB|DN} ⇒ <b>CM · DN = AB² = a²</b> ✔',h:['nm']},
+{s:'<b>b)</b> Từ {CM|AB} = {AB|DN} và AB = BC = AD ⇒ {CM|BC} = {AD|DN}. ΔCMB ∽ ΔDAN (c.g.c, ∠C = ∠D = 90°) ⇒ ∠CMB = ∠DAN.',a:['an','bm'],h:['t1','t2']},
+{s:'ΔAND vuông tại D ⇒ ∠DAN + ∠AND = 90° ⇒ ∠CMB + ∠AND = 90° ⇒ <b>∠MKN = 90°</b> ✔',a:['pk','ra','rk'],h:['rk','ra']},
+{s:'<b>c)</b> DN + CM ≥ 2√(DN · CM) = 2√(a²) = 2a (Cauchy). Nên MN = DN + CD + CM ≥ 2a + a = 3a.',h:['nm']},
+{s:'Dấu “=” xảy ra khi DN = CM = a ⇒ {CE|BE} = {CM|AB} = 1 ⇒ E, F là trung điểm của BC, AD. Vậy MN nhỏ nhất bằng <b>3a</b> ✔ (hình vẽ ứng với E, F chưa là trung điểm).',h:['k1','k2']}]},
+{g:'CĐ2',n:'Hình vuông: ΔEDF vuông cân; O, C, I thẳng hàng',nd:'Hai điểm E, F nằm ngoài hai cạnh với AE = CF; có trung điểm I của EF.',cc:'Hai tam giác vuông bằng nhau (c.g.c) ⇒ tam giác cân; trung tuyến ứng cạnh huyền bằng nửa cạnh huyền; điểm cách đều hai đầu đoạn thẳng nằm trên trung trực.',loi:'Quên rằng ΔEBF cũng vuông tại B nên BI = {EF|2}.',vb:'0 10 400 250',
+P:{A:[120,40],B:[200,40],C:[200,120],D:[120,120],E:[230,40],F:[200,230],I:[215.0,135.0],O:[160,80]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pe:['p','EF'],pi:['p','I'],po:['p','O'],de:['l','DE'],df:['l','DF'],ef:['l','EF'],di:['l','DI'],bi:['l','BI'],ac:['l','AC'],bd:['l','BD'],ci:['l','CI'],k1:['k','AE',1],k2:['k','CF',1],k3:['k','DE',2],k4:['k','DF',2],k5:['k','DI',3],k6:['k','BI',3],rd:['r','EDF'],rb:['r','EBF'],t1:['g','ADE'],t2:['g','CDF'],t3:['g','EDF']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD; E thuộc tia đối của tia BA, F thuộc tia đối của tia CB, AE = CF. a) ΔEDF là tam giác gì? b) O = AC ∩ BD, I là trung điểm EF: chứng minh O, C, I thẳng hàng.',a:['q','p','pe','ef','k1','k2']},
+{s:'<b>a)</b> ΔADE = ΔCDF (c.g.c): AD = CD, ∠DAE = ∠DCF = 90°, AE = CF ⇒ DE = DF và ∠ADE = ∠CDF. Vậy ΔEDF cân tại D.',a:['de','df','k3','k4'],h:['t1','t2']},
+{s:'∠EDF = ∠EDC + ∠CDF = ∠EDC + ∠ADE = ∠ADC = 90° ⇒ <b>ΔEDF vuông cân tại D</b> ✔',a:['rd'],h:['t3','rd']},
+{s:'<b>b)</b> Gọi O = AC ∩ BD, I là trung điểm EF. ΔEDF vuông cân tại D có DI là trung tuyến ứng cạnh huyền ⇒ DI = {EF|2}.',a:['pi','po','ac','bd','di','k5'],h:['di']},
+{s:'ΔEBF vuông tại B (BE ⊥ BF) có BI là trung tuyến ứng cạnh huyền ⇒ BI = {EF|2}. Vậy DI = BI.',a:['bi','rb','k6'],h:['bi']},
+{s:'DI = BI ⇒ I nằm trên đường trung trực của BD. Mà trung trực của BD là đường thẳng CO (tính chất hai đường chéo hình vuông) ⇒ <b>O, C, I thẳng hàng</b> ✔',a:['ci'],h:['ci','ac']}]},
+{g:'CĐ1',n:'Cân A = 20°, ∠BCM = 50°, ∠CBN = 60°: tính ∠BNM',nd:'Tam giác cân góc đỉnh 20° với hai góc 50° và 60°; hình vẽ chính xác cho thấy ∠BNM = 30°.',cc:'Dựng tam giác đều (qua N kẻ NP ∥ BC); hình thang cân có hai đường chéo bằng nhau; trung trực của PQ cũng là phân giác của góc ở đỉnh tam giác đều.',loi:'Nhầm thứ tự các điểm B, M, P trên AB; không nhận ra ΔBCQ và ΔPNQ đều.',vb:'0 -10 400 260',
+P:{A:[172.5,4.0],B:[130.0,245.0],C:[215.0,245.0],M:[144.8,161.3],N:[195.1,132.2],P:[149.9,132.2],Q:[172.5,171.4]},
+E:{q:['g','ABC'],p:['p','ABCMN'],pP:['p','P'],pQ:['p','Q'],cm:['l','CM'],bn:['l','BN'],pn:['l','PN'],pc:['l','PC'],mp:['l','MP'],mq:['l','MQ'],aA:['a','BAC','20°',30,1],aBCM:['a','BCM','50°',34,1],aCBN:['a','CBN','60°',30,1],aN:['a','BNM','?',22,1],aN2:['a','BNM','30°',22,1],aBQM:['a','BQM','80°',20,1],tBCQ:['g','BCQ'],tPNQ:['g','PNQ'],tMBC:['g','MBC'],tMBQ:['g','MBQ'],tMPQ:['g','MPQ'],k1:['k','BM',1],k2:['k','BC',1],k3:['k','BQ',1],k4:['k','NP',2],k5:['k','NQ',2],k6:['k','MP',3],k7:['k','MQ',3]},
+S:[{s:'<b>Đề:</b> ΔABC cân có ∠A = 20°. M ∈ AB, N ∈ AC sao cho ∠BCM = 50°, ∠CBN = 60°. Tính ∠BNM.',a:['q','p','cm','bn','aA','aBCM','aCBN','aN']},
+{s:'∠ABC = ∠ACB = {180° − 20°|2} = 80°. Hình vẽ chính xác gợi ý ∠BNM = 30°. Để dùng ∠CBN = 60°, tạo tam giác đều: qua N kẻ NP ∥ BC (P ∈ AB), gọi Q = PC ∩ BN.',a:['pP','pQ','pn','pc'],h:['pn']},
+{s:'PNCB là hình thang cân (AP = AN, PN ∥ BC) nên ∠PCB = ∠NBC = 60°. ΔBCQ có hai góc 60° ⇒ đều. PN ∥ BC ⇒ ∠NPQ = ∠PCB = 60°, ∠PNQ = ∠NBC = 60° ⇒ ΔPNQ đều.',a:['k4','k5'],h:['tBCQ','tPNQ']},
+{s:'ΔMBC có ∠B = 80°, ∠C = 50° ⇒ ∠BMC = 50° ⇒ ΔBMC cân tại B ⇒ BM = BC = BQ.',a:['k1','k2','k3'],h:['tMBC']},
+{s:'ΔMBQ cân tại B có ∠MBQ = ∠ABN = 80° − 60° = 20° ⇒ ∠BQM = {180° − 20°|2} = 80°.',a:['mq','aBQM'],h:['tMBQ']},
+{s:'∠MQP = 180° − (∠BQM + ∠BQC) = 180° − (80° + 60°) = 40°. ∠MPQ = ∠BPC = 40° (ΔPBC có ∠B = 80°, ∠PCB = 60°). Vậy ΔMPQ cân tại M ⇒ MP = MQ.',a:['mp','k6','k7'],h:['tMPQ']},
+{s:'NP = NQ (ΔPNQ đều) và MP = MQ ⇒ MN là đường trung trực của PQ ⇒ MN cũng là phân giác của ∠PNQ = 60°.',h:['k4','k5','k6','k7']},
+{s:'∠MNQ = {60°|2} = 30°, mà Q thuộc tia NB nên ∠BNM = <b>30°</b> ✔',a:['aN2'],d:['aN'],h:['aN2']}]},
+{g:'CĐ1',n:'Hai phân giác của góc kề phụ: ∠MON = 45°',nd:'Tam giác vuông cân, các đường vuông góc cắt nhau ở C, hai góc bằng nhau tại M (∠AMO = ∠OMN).',cc:'Kẻ OK ⊥ MN để có tam giác vuông bằng nhau (cạnh huyền – góc nhọn, cạnh huyền – cạnh góc vuông); OM, ON là phân giác của hai góc kề phụ ⇒ góc giữa chúng bằng nửa góc vuông.',loi:'Quên OK = OA = OB; không nhận ra tổng x + x + y + y = 90°.',
+P:{O:[110,210],A:[280,210],C:[280,40],B:[110,40],M:[280,142.0],N:[182.9,40],K:[233.1,92.8]},
+E:{q:['g','OACB'],p:['p','OACB'],pm:['p','MN'],pk:['p','K'],om:['l','OM'],on:['l','ON'],mn:['l','MN'],ok:['l','OK'],rA:['r','OAC'],rB:['r','OBC'],rO:['r','AOB'],rK:['r','OKM'],aM:['a','AMO','α',24,1],aM2:['a','OMN','α',34,1],a1:['a','AOM','x',30,1],a2:['a','MOK','x',42,1],a3:['a','KON','y',30,1],a4:['a','NOB','y',42,1],aMON:['a','MON','45°',58,1],k1:['k','OA',1],k2:['k','OK',1],k3:['k','OB',1],t1:['g','AOM'],t2:['g','KOM'],t3:['g','KON'],t4:['g','BON']},
+S:[{s:'<b>Đề:</b> ΔAOB vuông cân tại O. Qua A kẻ đường vuông góc với OA, qua B kẻ đường vuông góc với OB; hai đường này cắt nhau ở C. M ∈ AC, N ∈ BC sao cho ∠AMO = ∠OMN. Tính ∠MON.',a:['q','p','pm','om','on','mn','rA','rB','rO','aM','aM2']},
+{s:'<b>Dự đoán</b> ∠MON = 45° (vẽ hình chính xác). Gợi ý: nếu OM, ON là phân giác của hai góc kề phụ (tổng 90°) thì góc giữa chúng bằng {90°|2} = 45°. Kẻ OK ⊥ MN tại K.',a:['pk','ok','rK'],h:['ok','rK']},
+{s:'ΔAOM = ΔKOM (cạnh huyền – góc nhọn): ∠OAM = ∠OKM = 90°, OM chung, ∠AMO = ∠KMO ⇒ ∠AOM = ∠MOK (đặt là x) và OK = OA.',a:['a1','a2','k1','k2'],h:['t1','t2']},
+{s:'ΔKON = ΔBON (cạnh huyền – cạnh góc vuông): ∠OKN = ∠OBN = 90°, ON chung, OK = OB (= OA) ⇒ ∠KON = ∠NOB (đặt là y).',a:['a3','a4','k3'],h:['t3','t4']},
+{s:'∠AOB = 90° = x + x + y + y ⇒ x + y = 45° ⇒ ∠MON = ∠MOK + ∠KON = x + y = <b>45°</b> ✔',a:['aMON'],h:['aMON']}]},
+{g:'CĐ2',n:'Hình vuông: phân giác ∠CDE, chứng minh AE + KC = DE',nd:'Một tổng hai đoạn bằng một đoạn thứ ba, có phân giác.',cc:'Lấy I trên tia đối của AB sao cho AI = KC để “nối dài” AE thành EI; tam giác bằng nhau (c.g.c); chứng minh ΔEDI cân.',loi:'Không vẽ đường phụ I; nhầm hai góc so le trong.',vb:'-30 10 380 230',
+P:{A:[110,40],B:[270,40],C:[270,200],D:[110,200],E:[170,40],K:[270.0,89.1],I:[-0.9,40]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pe:['p','EK'],pi:['p','I'],de:['l','DE'],dk:['l','DK'],di:['l','DI'],ie:['l','IE'],k1:['k','AI',2],k2:['k','KC',2],aCDK:['a','CDK','β',30,1],aKDE:['a','KDE','β',38,1],aI:['a','DIA','α',26,1],aK:['a','DKC','α',24,1],aKDA:['a','KDA','α',44,1],aEDI:['a','EDI','α',58,1],t1:['g','AID'],t2:['g','CKD'],t3:['g','EDI']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD, E ∈ AB tùy ý (E khác A, B). Phân giác của ∠CDE cắt BC tại K. Chứng minh AE + KC = DE.',a:['q','p','pe','de','dk','aCDK','aKDE']},
+{s:'<b>Đường phụ:</b> trên tia đối của tia AB lấy I sao cho AI = KC. Khi đó EI = EA + AI = AE + KC, nên chỉ cần chứng minh <b>EI = DE</b>.',a:['pi','ie','di','k1','k2'],h:['ie']},
+{s:'ΔAID = ΔCKD (c.g.c): AD = CD, ∠DAI = ∠DCK = 90°, AI = CK ⇒ ∠AID = ∠CKD (1) và ∠ADI = ∠CDK.',a:['aI','aK'],h:['t1','t2']},
+{s:'AD ∥ BC ⇒ ∠CKD = ∠KDA (so le trong) (2).',a:['aKDA'],h:['aK','aKDA']},
+{s:'DK là phân giác của ∠CDE nên ∠CDE = 2∠CDK, ∠EDA = 90° − 2∠CDK. Do đó ∠EDI = ∠EDA + ∠ADI = (90° − 2∠CDK) + ∠CDK = 90° − ∠CDK = ∠KDA (3).',a:['aEDI'],h:['aEDI','aKDA']},
+{s:'Từ (1), (2), (3): ∠AID = ∠EDI, tức ∠EID = ∠EDI ⇒ ΔEDI cân tại E ⇒ EI = DE.',h:['t3']},
+{s:'Vậy DE = EI = EA + AI = <b>AE + KC</b> ✔',h:['ie','k1','k2']}]},
+{g:'CĐ2',n:'Hình vuông MNPQ: ΔABC vuông tại A',nd:'Hai đường thẳng cắt đường thẳng PQ tại B, C; hai tia MB, NC cắt nhau tại A.',cc:'Talet để lập tỉ lệ; tam giác vuông đồng dạng (c.g.c) ⇒ hai góc bằng nhau ⇒ tổng hai góc nhọn bằng 90°.',loi:'Nhầm tỉ số Talet; quên rằng EQ = FN vì ME = PF.',vb:'-160 -50 580 290',
+P:{M:[110,50],N:[270,50],P:[270,210],Q:[110,210],E:[110,114],F:[270,146],B:[-130.0,210.0],C:[376.7,210.0],A:[220.8,-23.8]},
+E:{q:['g','MNPQ'],p:['p','MNPQ'],pe:['p','EF'],pb:['p','BCA'],nb:['l','NB'],mc:['l','MC'],mb:['l','MB'],nc:['l','NC'],bc:['l','BC'],k1:['k','ME',1],k2:['k','PF',1],rA:['r','BAC'],rP:['r','NPC'],rQ:['r','MQB'],aB:['a','MBQ','θ',34,1],aN:['a','CNP','θ',30,1],aC:['a','NCP','φ',30,1],t1:['g','BMQ'],t2:['g','NCP']},
+S:[{s:'<b>Đề:</b> hình vuông MNPQ; E ∈ MQ, F ∈ NP sao cho ME = PF. MF và NE cắt đường thẳng PQ lần lượt tại C và B. Kéo dài MB và NC cắt nhau tại A. Chứng minh ΔABC vuông tại A.',a:['q','p','pe','nb','mc','bc','k1','k2','pb']},
+{s:'Vì MN ∥ BQ nên Talet: {ME|EQ} = {MN|BQ} (1). Vì MN ∥ PC nên {PF|FN} = {PC|MN} (2).',h:['nb','mc','bc']},
+{s:'ME = PF và EQ = MQ − ME = NP − PF = FN ⇒ {ME|EQ} = {PF|FN} (3). Từ (1), (2), (3): {MN|BQ} = {PC|MN}, mà MN = MQ = NP nên {MQ|QB} = {PC|NP}.',h:['k1','k2']},
+{s:'Hai tam giác vuông BMQ và NCP có {MQ|QB} = {PC|NP} ⇒ ΔBMQ ∽ ΔNCP (c.g.c) ⇒ ∠MBQ = ∠CNP.',a:['rP','rQ','aB','aN'],h:['t1','t2']},
+{s:'ΔNCP vuông tại P ⇒ ∠CNP + ∠NCP = 90°. Suy ra ∠MBQ + ∠NCP = 90°, tức ∠ABC + ∠ACB = 90° (∠ABC = ∠MBQ, ∠ACB = ∠NCP).',a:['aC'],h:['aB','aC']},
+{s:'Vậy ∠BAC = 180° − 90° = <b>90°</b> hay ΔABC vuông tại A ✔',a:['rA'],h:['rA']}]},
+{g:'CĐ2',n:'Hình vuông: chu vi EFGH nhỏ nhất',nd:'Bốn điểm trên bốn cạnh với AE = BF = CG = DH; tìm vị trí để chu vi nhỏ nhất.',cc:'Tam giác bằng nhau ⇒ hình vuông; O là tâm chung; chu vi = 4√2 · OE; đường vuông góc ngắn nhất.',loi:'Quên chứng minh EFGH là hình vuông trước khi tính chu vi.',
+P:{A:[110,30],B:[270,30],C:[270,190],D:[110,190],E:[150,30],F:[270,70],G:[230,190],H:[110,150],O:[190,110],K:[190,30]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pe:['p','EFGH'],pO:['p','O'],pK:['p','K'],efgh:['g','EFGH'],he:['l','HE'],oe:['l','OE'],oh:['l','OH'],ok:['l','OK'],ac:['l','AC'],eg:['l','EG'],k1:['k','AE',1],k2:['k','BF',1],k3:['k','CG',1],k4:['k','DH',1],rK:['r','OKB'],rHEF:['r','HEF'],rO:['r','HOE'],t1:['g','HAE'],t2:['g','EBF'],t3:['g','FCG'],t4:['g','GDH'],tHOE:['g','HOE']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD. Trên AB, BC, CD, DA lấy lần lượt E, F, G, H sao cho AE = BF = CG = DH. Xác định vị trí các điểm để EFGH có chu vi nhỏ nhất.',a:['q','p','pe','efgh','k1','k2','k3','k4']},
+{s:'ΔHAE = ΔEBF = ΔFCG = ΔGDH (c.g.c) ⇒ HE = EF = FG = GH ⇒ EFGH là <b>hình thoi</b>.',h:['t1','t2','t3','t4']},
+{s:'∠AHE + ∠AEH = 90° mà ∠AHE = ∠BEF ⇒ ∠BEF + ∠AEH = 90° ⇒ ∠HEF = 90° ⇒ <b>EFGH là hình vuông</b>.',a:['rHEF'],h:['rHEF','efgh']},
+{s:'AECG có AE = CG, AE ∥ CG ⇒ hình bình hành ⇒ O = AC ∩ EG là trung điểm của AC và EG ⇒ O là tâm của cả hai hình vuông ABCD và EFGH.',a:['pO','ac','eg'],h:['ac','eg']},
+{s:'ΔHOE vuông cân tại O: HE² = 2OE² ⇒ HE = OE√2. Chu vi EFGH = 4HE = 4√2 · OE.',a:['oe','oh','rO'],h:['tHOE']},
+{s:'Chu vi nhỏ nhất ⇔ OE nhỏ nhất. Kẻ OK ⊥ AB: OE ≥ OK (đường vuông góc ngắn nhất), mà OK không đổi.',a:['pK','ok','rK'],h:['ok']},
+{s:'OE = OK ⇔ E ≡ K, tức E là trung điểm của AB; khi đó F, G, H là trung điểm của BC, CD, DA. Chu vi nhỏ nhất bằng 4√2 · {a|2} = 2a√2 ✔ (hình vẽ ứng với E chưa là trung điểm).',h:['ok','efgh']}]},
+{g:'CĐ2',n:'Hai hình vuông chung đỉnh M: DF đi qua điểm cố định',nd:'Điểm M di động trên đoạn AB, dựng hai hình vuông AMCD và BMEF cùng phía; hỏi điểm cố định.',cc:'Tam giác bằng nhau (c.g.c) ⇒ vuông góc; trung tuyến bằng nửa cạnh huyền ⇒ tam giác vuông; đường trung bình hình thang cho đoạn không đổi.',loi:'Không dùng tâm O của hình vuông AMCD; quên rằng K là trung điểm cố định của AB.',
+P:{A:[60,210],M:[170,210],B:[330,210],C:[170,100],D:[60,100],E:[170,50],F:[330,50],H:[146.7,84.0],O:[115.0,155.0],I:[195.0,75.0],K:[195.0,210]},
+E:{q1:['g','AMCD'],q2:['g','BMEF'],p:['p','AMBCDEF'],ae:['l','AE'],bc:['l','BC'],ph:['p','H'],dm:['l','DM'],ac:['l','AC'],df:['l','DF'],ho:['l','HO'],po:['p','O'],pi:['p','I'],pk:['p','K'],ik:['l','IK'],io:['l','IO'],rH:['r','AHB'],rDHM:['r','DHM'],rMHF:['r','MHF'],t1:['g','AME'],t2:['g','CMB'],k1:['k','AM',1],k2:['k','MC',1],k3:['k','ME',2],k4:['k','MB',2],kK:['k','AK',3],kK2:['k','KB',3]},
+S:[{s:'<b>Đề:</b> M di động trên đoạn AB. Trên cùng nửa mặt phẳng bờ AB dựng các hình vuông AMCD và BMEF. a) AE ⊥ BC. b) H = AE ∩ BC: D, H, F thẳng hàng. c) DF luôn đi qua một điểm cố định.',a:['q1','q2','p','k1','k2','k3','k4']},
+{s:'<b>a)</b> ΔAME = ΔCMB (c.g.c): AM = CM, ∠AME = ∠CMB = 90°, ME = MB ⇒ ∠EAM = ∠BCM.',a:['ae','bc','ph'],h:['t1','t2']},
+{s:'Mà ∠MBC + ∠BCM = 90° ⇒ ∠EAM + ∠MBC = 90° ⇒ ∠AHB = 90° ⇒ <b>AE ⊥ BC</b> ✔',a:['rH'],h:['rH']},
+{s:'<b>b)</b> Gọi O là tâm hình vuông AMCD (trung điểm của AC và DM). ΔAHC vuông tại H có trung tuyến HO = {AC|2} = {DM|2} ⇒ ΔDHM vuông tại H: ∠DHM = 90°.',a:['po','ac','dm','ho','rDHM'],h:['ho','rDHM']},
+{s:'Chứng minh tương tự ∠MHF = 90°. Vậy ∠DHM + ∠MHF = 180° ⇒ <b>D, H, F thẳng hàng</b> ✔',a:['rMHF','df'],h:['df']},
+{s:'<b>c)</b> Gọi I = AC ∩ DF. DM ⊥ MF (∠DMF = 90°) và AC ⊥ DM nên IO ∥ MF. O là trung điểm DM ⇒ I là trung điểm của DF.',a:['pi','io'],h:['io','df']},
+{s:'Kẻ IK ⊥ AB (K ∈ AB). IK là đường trung bình của hình thang ABFD (I là trung điểm DF, AD ∥ IK ∥ BF) ⇒ IK = {AD + BF|2} = {AM + BM|2} = {AB|2} (không đổi), và K là trung điểm của AB.',a:['pk','ik','kK','kK2'],h:['ik']},
+{s:'A, B cố định nên K là trung điểm cố định của AB; I cách AB một khoảng IK = {AB|2} không đổi, trên cùng nửa mặt phẳng ⇒ I cố định. Vậy <b>DF luôn đi qua điểm cố định I</b> ✔',h:['pi','ik']}]},
+{g:'CĐ1',n:'Phân giác trong và ngoài: ∠AHD = 45°, tính ∠ADB',nd:'Đường cao AH, phân giác BD và một góc 45° ở H (nửa góc vuông).',cc:'Điểm cách đều các cạnh nằm trên phân giác; hai góc có cạnh tương ứng vuông góc thì bằng nhau; góc ngoài của tam giác; tam giác vuông cân.',loi:'Quên rằng góc ngoài tại H bằng 90° nên HD là phân giác ngoài; nhầm vị trí điểm K nằm ngoài đoạn AC.',
+P:{A:[158.0,119.0],B:[30.0,215.0],H:[158.0,215.0],C:[350.0,215.0],D:[222.0,151.0],K:[94.0,87.0],X:[196.4,90.2]},
+E:{q:['g','ABC'],p:['p','ABCH'],pD:['p','D'],pK:['p','K'],pX:['p','X'],ah:['l','AH'],hd:['l','HD'],bd:['l','BD'],bk:['l','BK'],kd:['l','KD'],ax:['l','AX'],rH:['r','AHB'],rK:['r','BKD'],aHD:['a','AHD','45°',24,1],aA1:['a','HAD','α',22,1],aA2:['a','DAX','α',34,1],aKBH:['a','KBC','α',46,1],aB1:['a','ABD','β',30,1],aB2:['a','DBC','β',38,1],aADB:['a','ADB','45°',22,1],tKBD:['g','KBD']},
+S:[{s:'<b>Đề:</b> ΔABC có đường cao AH, phân giác BD (D ∈ AC) và ∠AHD = 45°. Tính ∠ADB.',a:['q','p','pD','ah','hd','bd','rH','aHD']},
+{s:'<b>Dự đoán</b> ∠ADB = 45° (vẽ hình chính xác). Kẻ BK ⊥ AC (K thuộc đường thẳng AC).',a:['pK','bk','kd','rK'],h:['bk','rK']},
+{s:'Trong ΔABH: BD là phân giác trong của ∠ABH. Vì ∠AHB = 90° nên góc ngoài tại H bằng 90°, mà ∠AHD = 45° ⇒ HD là phân giác ngoài tại H.',h:['bd','hd']},
+{s:'D cách đều AB, BH (vì nằm trên phân giác của ∠B) và cách đều AH, BH (vì nằm trên phân giác ngoài tại H) ⇒ D cách đều AB và AH ⇒ AD là phân giác ngoài tại A: ∠HAD = ∠DAX (cùng bằng α), X nằm trên tia đối của tia AB.',a:['pX','ax','aA1','aA2'],h:['aA1','aA2']},
+{s:'AH ⊥ BC và AC ⊥ BK (hai góc có cạnh tương ứng vuông góc) ⇒ ∠HAD = ∠KBH. Vậy ∠DAX = ∠KBH = α.',a:['aKBH'],h:['aA1','aKBH']},
+{s:'∠DAX là góc ngoài tại A của ΔABD: ∠DAX = ∠ADB + ∠ABD ⇒ ∠ADB = α − ∠ABD.',a:['aB1'],h:['aA2','aB1']},
+{s:'BD là phân giác ⇒ ∠ABD = ∠DBH = β. Do đó ∠ADB = ∠KBH − ∠DBH = ∠KBD.',a:['aB2'],h:['aB1','aB2']},
+{s:'ΔKBD có ∠K = 90° và ∠KBD = ∠ADB = ∠KDB ⇒ ΔKBD vuông cân tại K.',h:['tKBD','rK']},
+{s:'Vậy ∠ADB = ∠KDB = <b>45°</b> ✔',a:['aADB'],h:['aADB']}]},
+{g:'CĐ1',n:'Trung điểm và hình bình hành: ∠AMK = 90°',nd:'Tam giác vuông có đường cao, trung điểm của BH và đoạn CK = {AB|2} song song AB.',cc:'Đường trung bình tạo đoạn bằng và song song; tam giác bằng nhau (c.g.c) ⇒ hai đường song song; trực tâm của tam giác (giao ba đường cao).',loi:'Không vẽ trung điểm N của AH; quên rằng N là trực tâm của ΔAMC.',
+P:{A:[100,210],B:[100,50],C:[300,210],H:[178.0,112.4],M:[139.0,81.2],N:[139.0,161.2],K:[300,130]},
+E:{q:['g','ABC'],p:['p','ABC'],pH:['p','H'],pM:['p','MN'],pK:['p','K'],ah:['l','AH'],mn:['l','MN'],ck:['l','CK'],mk:['l','MK'],nc:['l','NC'],am:['l','AM'],mc:['l','MC'],ra:['r','BAC'],rh:['r','AHB'],k1:['k','BM',1],k2:['k','MH',1],k3:['k','AN',2],k4:['k','NH',2],k5:['k','MN',3],k6:['k','CK',3],pa1:['pa','AB',1],pa2:['pa','CK',1],pa3:['pa','MN',1],t1:['g','NMC'],t2:['g','KCM'],t3:['g','AMC'],rM:['r','AMK']},
+S:[{s:'<b>Đề:</b> ΔABC vuông tại A, đường cao AH. Qua C kẻ tia Cx ∥ AB (cùng phía với B đối với AC); lấy K ∈ Cx sao cho CK = {AB|2}. M là trung điểm BH. Tính ∠AMK.',a:['q','p','pH','pM','pK','ah','ck','ra','rh','pa1','pa2','k1','k2']},
+{s:'<b>Dự đoán</b> ∠AMK = 90°. Vì CK = {AB|2}, gợi ý dùng đường trung bình: gọi N là trung điểm AH, nối MN.',a:['mn','k3','k4'],h:['mn']},
+{s:'MN là đường trung bình của ΔABH ⇒ MN ∥ AB và MN = {AB|2}. Mà CK ∥ AB và CK = {AB|2} ⇒ MN ∥ CK và MN = CK.',a:['pa3','k5','k6'],h:['mn','ck']},
+{s:'ΔNMC = ΔKCM (c.g.c): MN = CK, MC chung, ∠NMC = ∠KCM (so le trong, MN ∥ CK) ⇒ ∠NCM = ∠KMC ⇒ MK ∥ NC.',a:['mc','mk','nc'],h:['t1','t2']},
+{s:'Trong ΔAMC: AH ⊥ MC và MN ⊥ AC (MN ∥ AB, AB ⊥ AC) ⇒ N là giao điểm của hai đường cao ⇒ N là trực tâm ⇒ CN ⊥ AM.',a:['am'],h:['t3','nc','am']},
+{s:'MK ∥ NC và CN ⊥ AM ⇒ MK ⊥ AM. Vậy ∠AMK = <b>90°</b> ✔',a:['rM'],h:['mk','rM']}]},
+{g:'CĐ1',n:'Hai đường cao và hai phân giác: ∠AOC = 90°',nd:'Hai đường cao AD, CE cắt nhau; hai phân giác cắt nhau ở O; hỏi góc AOC.',cc:'Tam giác vuông cho góc phụ nhau; tam giác cân (hai góc bằng nhau) ⇒ phân giác cũng là đường cao.',loi:'Chưa vẽ giao điểm M, N của CO với AB, AD để tạo tam giác cân AMN.',
+P:{A:[170,40],B:[60,220],C:[340,220],D:[170,220],E:[136.1,95.4],H:[170.0,116.1],O:[135.5,162.5],M:[101.1,152.8],N:[170.0,172.2]},
+E:{q:['g','ABC'],p:['p','ABC'],pD:['p','D'],pE:['p','E'],pH:['p','H'],pO:['p','O'],pMN:['p','MN'],ad:['l','AD'],ce:['l','CE'],ao:['l','AO'],cm:['l','CM'],rD:['r','ADB'],rE:['r','AEC'],rO:['r','AOC'],a1:['a','BAO','α',26,1],a2:['a','OAD','α',34,1],b1:['a','ECO','β',24,1],b2:['a','OCB','β',32,1],g1:['a','AMC','γ',22,1],g2:['a','ANM','γ',22,1],k1:['k','AM',1],k2:['k','AN',1],tMEC:['g','MEC'],tNDC:['g','NDC'],tAMN:['g','AMN']},
+S:[{s:'<b>Đề:</b> ΔABC nhọn, hai đường cao AD và CE cắt nhau tại H. Phân giác của ∠BAD và ∠BCE cắt nhau tại O. Tính ∠AOC.',a:['q','p','pD','pE','pH','ad','ce','rD','rE']},
+{s:'Vẽ hai đường phân giác AO (của ∠BAD) và CO (của ∠BCE), cắt nhau tại O.',a:['ao','cm','pO','a1','a2','b1','b2']},
+{s:'<b>Dự đoán</b> ∠AOC = 90°. Gọi M, N là giao điểm của CO với AB và AD. Nếu ΔAMN cân tại A thì phân giác AO cũng là đường cao, tức AO ⊥ MN.',a:['pMN'],h:['tAMN']},
+{s:'ΔMEC vuông tại E: ∠AMC = 90° − ∠ECM = 90° − {∠ECB|2} (vì CM là phân giác của ∠ECB).',a:['g1'],h:['tMEC','g1']},
+{s:'ΔNDC vuông tại D: ∠DNC = 90° − ∠NCD = 90° − {∠ECB|2}. Mà ∠ANM = ∠DNC (đối đỉnh) nên ∠ANM = 90° − {∠ECB|2}.',a:['g2'],h:['tNDC','g2']},
+{s:'∠AMN = ∠ANM ⇒ ΔAMN cân tại A (AM = AN).',a:['k1','k2'],d:['g1','g2'],h:['tAMN']},
+{s:'ΔAMN cân tại A có AO là phân giác ⇒ AO cũng là đường cao ⇒ AO ⊥ MN. Vậy ∠AOC = <b>90°</b> ✔',a:['rO'],h:['ao','rO']}]},
+{g:'CĐ1',n:'Phân giác ngoài hợp BC một góc 30°: tính ∠B − ∠C',nd:'Cho góc giữa phân giác ngoài và cạnh BC; hỏi hiệu hai góc B và C.',cc:'Hai phân giác của hai góc kề bù vuông góc với nhau; góc ngoài của tam giác bằng tổng hai góc trong không kề.',loi:'Nhầm góc 60° và 120° ở D; quên A1 = A2 (AD là phân giác trong).',vb:'0 10 400 240',
+P:{A:[194.0,116.9],B:[194.0,215.0],C:[364.0,215.0],D:[250.7,215.0],E:[24.0,215.0],X:[243.1,88.5]},
+E:{q:['g','ABC'],p:['p','ABC'],pE:['p','E'],pD:['p','D'],ex:['l','EX'],ad:['l','AD'],rA:['r','DAX'],aE:['a','AEB','30°',26,1],aDB:['a','ADB','60°',24,1],aDC:['a','ADC','120°',24,1],a1:['a','BAD','α',24,1],a2:['a','DAC','α',24,1],tABD:['g','ABD'],tACD:['g','ACD']},
+S:[{s:'<b>Đề:</b> ΔABC có ∠B > ∠C. Phân giác ngoài của góc A hợp với BC một góc 30°. Tính ∠B − ∠C.',a:['q','p','pE','ex','aE']},
+{s:'Vẽ thêm phân giác trong AD của ∠A (D ∈ BC). Hai phân giác của hai góc kề bù thì vuông góc: AD ⊥ AX.',a:['pD','ad','rA','a1','a2'],h:['ad','rA']},
+{s:'ΔAED vuông tại A có ∠E = 30° ⇒ ∠ADE = 60°, tức ∠ADB = 60° và ∠ADC = 180° − 60° = 120°.',a:['aDB','aDC'],h:['aDB','aDC']},
+{s:'ΔABD có góc ngoài tại D: ∠ADC = ∠B + ∠BAD ⇒ ∠B = 120° − ∠BAD (1).',h:['tABD','aDC']},
+{s:'ΔACD có góc ngoài tại D: ∠ADB = ∠C + ∠DAC ⇒ ∠C = 60° − ∠DAC (2).',h:['tACD','aDB']},
+{s:'AD là phân giác nên ∠BAD = ∠DAC. Lấy (1) trừ (2): ∠B − ∠C = 120° − 60° = <b>60°</b> ✔',h:['a1','a2']}]},
+{g:'CĐ2',n:'Điểm bất kỳ trong hình vuông: MA² + MB² + MC² + MD² ≥ 2',nd:'Tổng bình phương khoảng cách từ một điểm tới các đỉnh, yêu cầu chứng minh bất đẳng thức.',cc:'Bất đẳng thức tam giác MA + MC ≥ AC; đẳng thức x² + y² = {(x + y)² + (x − y)²|2}; đường chéo hình vuông cạnh 1 là √2.',loi:'Quên dấu bằng xảy ra khi nào; không tách theo hai cặp đỉnh đối diện.',
+P:{A:[110,40],B:[270,40],C:[270,200],D:[110,200],M:[170,92],O:[190,120]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pM:['p','M'],pO:['p','O'],ma:['l','MA'],mb:['l','MB'],mc:['l','MC'],md:['l','MD'],ac:['l','AC'],bd:['l','BD']},
+S:[{s:'<b>Đề:</b> M là một điểm bất kỳ nằm trong hình vuông ABCD có cạnh bằng 1. Chứng minh MA² + MB² + MC² + MD² ≥ 2.',a:['q','p','pM','ma','mb','mc','md']},
+{s:'Đường chéo AC = BD = √2 nên AC² = BD² = 2.',a:['ac','bd'],h:['ac','bd']},
+{s:'Với ba điểm A, M, C: MA + MC ≥ AC (bất đẳng thức tam giác), dấu “=” khi M nằm trên đoạn AC.',h:['ma','mc','ac']},
+{s:'Có MA² + MC² = {(MA + MC)² + (MA − MC)²|2} ≥ {(MA + MC)²|2} ≥ {AC²|2} = 1.',h:['ma','mc']},
+{s:'Tương tự MB² + MD² ≥ {BD²|2} = 1.',h:['mb','md','bd']},
+{s:'Cộng hai bất đẳng thức: MA² + MB² + MC² + MD² ≥ 2 ✔. Dấu “=” xảy ra khi M nằm trên cả hai đường chéo (MA = MC, MB = MD), tức M là giao điểm O của AC và BD.',a:['pO'],h:['pO','ac','bd']}]},
+{g:'CĐ2',n:'Hình vuông: ΔAMN vuông cân, chu vi CMP, tổng nghịch đảo',nd:'Hai đường vuông góc kẻ từ A (AN ⊥ AM, AP ⊥ MN) cắt đường thẳng CD; hỏi tam giác cân, chu vi, hệ thức không đổi.',cc:'g.c.g cho hai tam giác vuông bằng nhau; trong tam giác cân phân giác cũng là trung trực; hai tam giác đồng dạng (g.g); hệ thức trong tam giác vuông có đường cao.',loi:'Quên rằng N và Q nằm trên đường thẳng CD kéo dài; nhầm PM = PN (do AP là trung trực của MN).',vb:'-20 10 420 240',
+P:{A:[110,40],B:[270,40],C:[270,200],D:[110,200],M:[270,140],N:[10,200],P:[146.9,200.0],Q:[366.0,200.0]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pM:['p','M'],pN:['p','N'],pP:['p','P'],pQ:['p','Q'],am:['l','AM'],mq:['l','MQ'],an:['l','AN'],mn:['l','MN'],ap:['l','AP'],ac:['l','AC'],nq:['l','NQ'],ra:['r','MAN'],rD:['r','ADN'],aNAP:['a','NAP','45°',26,1],aMAP:['a','PAM','45°',36,1],aACN:['a','ACN','45°',24,1],k1:['k','AM',1],k2:['k','AN',1],k3:['k','BM',2],k4:['k','DN',2],t1:['g','ADN'],t2:['g','ABM'],t3:['g','ACN'],t4:['g','PAN'],t5:['g','CMP'],t6:['g','ANQ']},
+S:[{s:'<b>Đề:</b> hình vuông ABCD, M nằm giữa B và C. Kẻ AN ⊥ AM, AP ⊥ MN (N, P thuộc đường thẳng CD). a) ΔAMN vuông cân và AN² = NC · NP. b) Tính tỉ số chu vi ΔCMP và chu vi hình vuông. c) Q = AM ∩ DC: {1|AM²} + {1|AQ²} không đổi khi M thay đổi trên BC.',a:['q','p','pM','pN','pP','am','an','mn','ap','nq']},
+{s:'<b>a)</b> ΔADN = ΔABM (g.c.g): AD = AB, ∠ADN = ∠ABM = 90°, ∠DAN = ∠BAM (cùng phụ với ∠DAM) ⇒ AN = AM và DN = BM.',a:['rD','k3','k4'],h:['t1','t2']},
+{s:'ΔAMN có AM = AN và ∠MAN = 90° ⇒ <b>ΔAMN vuông cân tại A</b> ✔',a:['ra','k1','k2'],h:['ra','am','an']},
+{s:'ΔAMN cân tại A, AP ⊥ MN ⇒ AP là phân giác của ∠MAN ⇒ ∠NAP = ∠MAP = 45°. Mà ∠ACN = ∠ACD = 45° (đường chéo của hình vuông).',a:['ac','aNAP','aMAP','aACN'],h:['aNAP','aMAP','aACN']},
+{s:'ΔACN ∽ ΔPAN (g.g): ∠N chung, ∠ACN = ∠PAN = 45° ⇒ {AN|PN} = {CN|AN} ⇒ <b>AN² = NP · NC</b> ✔',h:['t3','t4']},
+{s:'<b>b)</b> AP là trục đối xứng của tam giác cân AMN (trung trực của MN) và P nằm trên AP ⇒ PM = PN.',h:['ap','mn']},
+{s:'Chu vi ΔCMP = CM + MP + CP = CM + PN + CP = CM + (PD + DN) + CP = (CP + PD) + (CM + DN).',h:['t5']},
+{s:'Mà DN = BM nên CP + PD = CD và CM + DN = CM + BM = BC. Chu vi ΔCMP = CD + BC = 2BC, chu vi ABCD = 4BC. Tỉ số = {2BC|4BC} = <b>{1|2}</b> ✔',h:['t5']},
+{s:'<b>c)</b> Q = AM ∩ DC. ΔANQ vuông tại A có đường cao AD: AD · NQ = AN · AQ ⇒ {1|AD} = {NQ|AN · AQ}.',a:['pQ','mq'],h:['t6']},
+{s:'Bình phương hai vế: {1|AD²} = {NQ²|AN² · AQ²} = {AN² + AQ²|AN² · AQ²} = {1|AN²} + {1|AQ²} = {1|AM²} + {1|AQ²} (AM = AN). AD không đổi nên tổng <b>{1|AM²} + {1|AQ²} = {1|AD²}</b> không đổi ✔',h:['t6']}]},
+{g:'CĐ1',n:'Nửa tam giác đều: ∠C = 30°, BC = 2AB',nd:'Có góc 30° và một cạnh gấp đôi cạnh khác; hỏi các góc còn lại.',cc:'Tam giác vuông có góc 30° thì cạnh góc vuông đối diện bằng nửa cạnh huyền; trong tam giác vuông cạnh huyền lớn hơn cạnh góc vuông (phản chứng).',loi:'Vội kết luận vuông ở A mà không chứng minh H trùng A.',
+P:{A:[100,210],B:[100,110],C:[273.2,210]},
+E:{q:['g','ABC'],p:['p','ABC'],ra:['r','BAC'],aC:['a','ACB','30°',30,1],aB:['a','ABC','60°',30,1],tBC:['t',205,148,'BC = 2AB'],tH:['t',112,240,'H ≡ A']},
+S:[{s:'<b>Đề:</b> ΔABC có ∠C = 30° và BC = 2AB. Tính các góc A, B.',a:['q','p','aC','tBC']},
+{s:'<b>Nhận dạng:</b> góc 30° gợi ý “nửa tam giác đều”. Hạ BH ⊥ AC (H thuộc đường thẳng AC).',h:['aC']},
+{s:'ΔHBC vuông tại H có ∠C = 30° ⇒ BH = {BC|2} = AB.',h:['aC','tBC']},
+{s:'Nếu H khác A thì trong tam giác vuông ABH, cạnh huyền AB phải lớn hơn cạnh góc vuông BH, trái với BH = AB. Vậy H trùng A, tức AB ⊥ AC.',a:['ra','tH'],h:['ra','tH']},
+{s:'Do đó ∠A = 90° và ∠B = 90° − 30° = <b>60°</b> ✔',a:['aB'],h:['aB']}]},
+{g:'CĐ2',n:'Hình vuông AEDF: vị trí của D',nd:'Điểm di động trên cạnh, hai hình chiếu vuông góc; tìm vị trí để tứ giác thành hình vuông.',cc:'Tứ giác có ba góc vuông là hình chữ nhật; hình chữ nhật có một đường chéo là phân giác của một góc là hình vuông.',loi:'Chỉ nhìn góc vuông mà quên điều kiện thêm để thành hình vuông.',
+P:{A:[100,210],B:[100,50],C:[320,210],D:[192.6,117.4],E:[100,117.4],F:[192.6,210]},
+E:{q:['g','ABC'],p:['p','ABCD'],pEF:['p','EF'],de:['l','DE'],df:['l','DF'],ad:['l','AD'],ra:['r','BAC'],rE:['r','AED'],rF:['r','AFD'],a1:['a','BAD','45°',26,1],a2:['a','DAC','45°',26,1],k1:['k','AE',1],k2:['k','ED',1],k3:['k','DF',1],k4:['k','FA',1],sq:['g','AEDF']},
+S:[{s:'<b>Đề:</b> ΔABC vuông tại A. D là điểm di động trên cạnh BC; E, F lần lượt là hình chiếu của D trên AB, AC. Xác định vị trí của D để AEDF là hình vuông.',a:['q','p','pEF','de','df','ra']},
+{s:'AEDF có ∠A = ∠AED = ∠AFD = 90° (ba góc vuông) ⇒ AEDF là <b>hình chữ nhật</b>.',a:['rE','rF'],h:['sq','ra','rE','rF']},
+{s:'Hình chữ nhật AEDF là hình vuông ⇔ một đường chéo là phân giác của một góc. Vậy AD phải là phân giác của ∠BAC.',a:['ad','a1','a2'],h:['ad','a1','a2']},
+{s:'Khi đó AE = ED = DF = FA nên AEDF là hình vuông. Kết luận: <b>D là giao điểm của đường phân giác góc A với cạnh BC</b> ✔',a:['k1','k2','k3','k4'],h:['sq']}]},
+{g:'CĐ2',n:'Tam giác vuông cân: AKHQ là hình vuông',nd:'Hai trung điểm, nhiều đường vuông góc cùng xuất phát từ A và N; cần chứng minh một tứ giác là hình vuông.',cc:'Ba góc vuông ⇒ hình chữ nhật; hai tam giác vuông bằng nhau (g.c.g, cạnh huyền – góc nhọn) cho các đoạn bằng nhau; hai cạnh kề bằng nhau ⇒ hình vuông.',loi:'Quên chỉ ra ba góc vuông trước khi nói hình chữ nhật; chọn nhầm cặp góc đối đỉnh.',
+P:{A:[100,185.0],B:[100,25.0],C:[260,185.0],M:[100,105.0],N:[180,185.0],H:[196.0,153.0],K:[132.0,121.0],Q:[164.0,217.0]},
+E:{q:['g','ABC'],p:['p','ABCMN'],pH:['p','H'],pK:['p','K'],pQ:['p','Q'],mc:['l','MC'],hq:['l','HQ'],ak:['l','AK'],aq:['l','AQ'],rK:['r','AKH'],rH:['r','KHQ'],rQ:['r','AQH'],rect:['g','AKHQ'],k1:['k','MA',1],k2:['k','NC',1],k3:['k','AK',2],k4:['k','CH',2],k5:['k','AQ',2],t1:['g','MAK'],t2:['g','NCH'],t3:['g','AQN'],t4:['g','CHN']},
+S:[{s:'<b>Đề:</b> ΔABC vuông cân tại A (đáy BC). M, N là trung điểm AB, AC. NH ⊥ MC tại H; AK ⊥ MC tại K; AQ ⊥ HN tại Q. Chứng minh AKHQ là hình vuông.',a:['q','p','pH','pK','pQ','mc','hq','ak','aq']},
+{s:'AKHQ có ∠AKH = 90° (AK ⊥ MC), ∠KHQ = 90° (NH ⊥ MC), ∠AQH = 90° (AQ ⊥ HN): ba góc vuông ⇒ AKHQ là <b>hình chữ nhật</b>.',a:['rK','rH','rQ'],h:['rect']},
+{s:'ΔMAK = ΔNCH (g.c.g): MA = NC (cùng bằng {AB|2}), ∠MKA = ∠NHC = 90°, ∠MAK = ∠NCH (cùng phụ với ∠AMC) ⇒ AK = CH.',a:['k1','k2','k3','k4'],h:['t1','t2']},
+{s:'ΔAQN = ΔCHN (cạnh huyền – góc nhọn): AN = CN, ∠AQN = ∠CHN = 90°, ∠ANQ = ∠CNH (đối đỉnh) ⇒ AQ = CH.',a:['k5'],h:['t3','t4']},
+{s:'AK = CH = AQ ⇒ AK = AQ. Hình chữ nhật AKHQ có hai cạnh kề bằng nhau ⇒ <b>AKHQ là hình vuông</b> ✔',h:['rect','k3','k5']}]},
+{g:'CĐ2',n:'Hình vuông BQEP: trọng tâm và tam giác vuông cân',nd:'Tam giác vuông cân, điểm G chia cạnh theo tỉ lệ 1 : 3, nhiều đường vuông góc cùng xuất phát từ B.',cc:'Nhận ra trọng tâm của tam giác lớn hơn (ΔBDC); hai tam giác vuông bằng nhau (cạnh huyền – góc nhọn, g.c.g); ba góc vuông ⇒ hình chữ nhật; hai cạnh kề bằng nhau ⇒ hình vuông.',loi:'Không dựng D, N nên không thấy G là trọng tâm; nhầm các cặp góc cùng phụ nhau.',
+P:{A:[170,205],B:[170,85],C:[290,205],D:[50.0,205.0],G:[170,165],M:[230.0,145.0],N:[110.0,145.0],E:[218.0,181.0],P:[146.0,157.0],Q:[242.0,109.0]},
+E:{q:['g','ABC'],p:['p','ABCG'],pM:['p','M'],pD:['p','D'],pN:['p','N'],pE:['p','E'],pP:['p','P'],pQ:['p','Q'],ra:['r','BAC'],mg:['l','MD'],ad:['l','AD'],bd:['l','BD'],cn:['l','CN'],me:['l','ME'],bp:['l','BP'],bq:['l','BQ'],rE:['r','MEC'],rP:['r','BPE'],rQ:['r','BQE'],rQE:['r','QEP'],sq:['g','BQEP'],tbdc:['g','BDC'],t1:['g','BPN'],t2:['g','CEM'],t3:['g','BQM'],k1:['k','BP',1],k2:['k','BQ',1],k3:['k','CE',1],k4:['k','BN',2],k5:['k','CM',2]},
+S:[{s:'<b>Đề:</b> ΔABC vuông cân tại A. G ∈ AB sao cho AG = {AB|3}; M là trung điểm BC; E là chân đường vuông góc hạ từ M xuống CG; D = MG ∩ AC; N = CG ∩ BD; BP ⊥ NC tại P; BQ ⊥ ME tại Q. Chứng minh BQEP là hình vuông. (Đề gốc ghi nhầm tên điểm N; ở đây hiểu N = CG ∩ BD.)',a:['q','p','pM','ra']},
+{s:'Dựng D = MG ∩ AC và N = CG ∩ BD. Nhận xét: G là trọng tâm của ΔBDC (hai trung tuyến BA và DM cắt nhau tại G), ΔBDC vuông cân tại B và CN cũng là trung tuyến ⇒ N là trung điểm BD.',a:['pD','pN','ad','bd','mg','cn'],h:['tbdc','cn']},
+{s:'Dựng thêm E ∈ CG sao cho ME ⊥ CG; P ∈ NC sao cho BP ⊥ NC; Q ∈ ME sao cho BQ ⊥ ME.',a:['pE','pP','pQ','me','bp','bq','rE','rP','rQ'],h:['me','bp','bq']},
+{s:'ΔBNC vuông tại B và ΔCEM vuông tại E có ∠CME = ∠BNP (cùng phụ với ∠NCB) và BN = CM (cùng bằng nửa BD = BC) ⇒ ΔBPN = ΔCEM (cạnh huyền – góc nhọn) ⇒ BP = CE (1).',a:['k4','k5','k1','k3'],h:['t1','t2']},
+{s:'ΔBQM = ΔCEM (g.c.g): ∠BQM = ∠CEM = 90°, BM = CM, ∠BMQ = ∠CME (đối đỉnh) ⇒ BQ = CE (2).',a:['k2'],h:['t3','t2']},
+{s:'Từ (1) và (2): BP = BQ. Tứ giác BQEP có ba góc vuông: ∠BPE = 90°, ∠BQE = 90°, ∠QEP = 90° (ME ⊥ CG) ⇒ BQEP là <b>hình chữ nhật</b>.',a:['rQE'],h:['sq','rQE']},
+{s:'Hình chữ nhật BQEP có hai cạnh kề BP = BQ ⇒ <b>BQEP là hình vuông</b> ✔',h:['sq','k1','k2']}]},
+{g:'CĐ2',n:'Đường trung bình tạo hình vuông INJM',nd:'Bốn trung điểm của hai cặp cạnh/đường chéo; điều kiện AD = BC và tổng hai góc bằng 90°.',cc:'Đường trung bình của bốn tam giác cho bốn đoạn bằng nhau (hình thoi); gọi giao điểm của hai cạnh để tìm một góc 90°; góc có cạnh tương ứng song song.',loi:'Chỉ chứng minh hình thoi rồi dừng; quên tìm một góc vuông bằng ∠DSC.',
+P:{A:[98.0,126.4],B:[258.4,170.0],C:[340,208.0],D:[60,208.0],S:[110,100.8],I:[178.2,148.2],N:[219.0,167.2],J:[200.0,208.0],M:[159.2,189.0]},
+E:{q:['g','ABCD'],p:['p','ABCD'],pIN:['p','INJM'],ac:['l','AC'],bd:['l','BD'],inj:['g','INJM'],pS:['p','S'],ds:['l','DS'],cs:['l','CS'],rS:['r','DSC'],rI:['r','MIN'],aD:['a','CDA','α',26,1],aC:['a','DCB','β',26,1],k1:['k','AD',1],k2:['k','BC',1],k3:['k','IM',2],k4:['k','NJ',2],k5:['k','IN',2],k6:['k','MJ',2],im:['l','IM'],nj:['l','NJ'],inn:['l','IN'],mj:['l','MJ']},
+S:[{s:'<b>Đề:</b> tứ giác ABCD có ∠ADC + ∠BCD = 90° và AD = BC. I, N, J, M lần lượt là trung điểm AB, AC, CD, BD. Chứng minh INJM là hình vuông. (Ký hiệu “+” giữa hai góc bị mất khi trích xuất PDF, suy ra từ lời giải.)',a:['q','p','pIN','k1','k2','aD','aC']},
+{s:'ΔABD có I, M là trung điểm AB, BD ⇒ IM ∥ AD và IM = {AD|2}. ΔACD có N, J là trung điểm AC, CD ⇒ NJ ∥ AD và NJ = {AD|2}.',a:['ac','bd','im','nj'],h:['im','nj']},
+{s:'ΔABC có I, N là trung điểm AB, AC ⇒ IN ∥ BC và IN = {BC|2}. ΔBCD có M, J là trung điểm BD, CD ⇒ MJ ∥ BC và MJ = {BC|2}.',a:['inn','mj'],h:['inn','mj']},
+{s:'Vì AD = BC nên IM = NJ = IN = MJ ⇒ <b>INJM là hình thoi</b>.',a:['inj','k3','k4','k5','k6'],h:['inj']},
+{s:'Gọi S = DA ∩ CB. ΔSDC có ∠SDC + ∠SCD = ∠ADC + ∠BCD = 90° ⇒ ∠DSC = 90°.',a:['pS','ds','cs','rS'],h:['rS']},
+{s:'IM ∥ SD và IN ∥ SC ⇒ ∠MIN = ∠DSC = 90° (hai góc có các cạnh tương ứng song song). Hình thoi INJM có một góc vuông ⇒ <b>INJM là hình vuông</b> ✔',a:['rI'],h:['rI','inj']}]},
+{g:'CĐ2',n:'Hình bình hành: MNPQ là hình thoi',nd:'Hai đường thẳng vuông góc cùng đi qua tâm O của hình bình hành, cắt bốn cạnh.',cc:'Tâm đối xứng O là trung điểm của MP và NQ; hai tam giác vuông bằng nhau (hai cạnh góc vuông); bốn cạnh bằng nhau ⇒ hình thoi.',loi:'Quên rằng O là trung điểm của cả hai đoạn MP và NQ.',
+P:{A:[150,50],B:[330,50],C:[270,200],D:[90,200],O:[210.0,125.0],M:[219.2,50.0],N:[295.8,135.5],P:[200.8,200.0],Q:[124.2,114.5]},
+E:{q:['g','ABCD'],p:['p','ABCD'],po:['p','O'],pMNPQ:['p','MNPQ'],mp:['l','MP'],nq:['l','NQ'],ac:['l','AC'],bd:['l','BD'],rO:['r','MON'],mnpq:['g','MNPQ'],t1:['g','OMN'],t2:['g','OPN'],t3:['g','OPQ'],t4:['g','OMQ'],k1:['k','OM',1],k2:['k','OP',1],k3:['k','ON',2],k4:['k','OQ',2],k5:['k','MN',3],k6:['k','NP',3],k7:['k','PQ',3],k8:['k','QM',3]},
+S:[{s:'<b>Đề:</b> ABCD là hình bình hành, O = AC ∩ BD. Hai đường thẳng d1, d2 vuông góc với nhau tại O; d1 cắt AB, CD tại M, P; d2 cắt BC, AD tại N, Q. a) MNPQ là hình thoi. b) Nếu ABCD là hình vuông thì MNPQ là hình vuông.',a:['q','p','po','pMNPQ','mp','nq','ac','bd','rO']},
+{s:'<b>a)</b> O là tâm đối xứng của hình bình hành nên O là trung điểm của MP và của NQ: OM = OP, ON = OQ.',a:['k1','k2','k3','k4'],h:['mp','nq']},
+{s:'Bốn tam giác OMN, OPN, OPQ, OMQ vuông tại O (vì d1 ⊥ d2) và có các cặp cạnh góc vuông bằng nhau từng đôi một ⇒ bằng nhau ⇒ MN = NP = PQ = QM.',a:['k5','k6','k7','k8'],h:['t1','t2','t3','t4']},
+{s:'Tứ giác MNPQ có bốn cạnh bằng nhau ⇒ <b>MNPQ là hình thoi</b> ✔',a:['mnpq'],h:['mnpq']},
+{s:'<b>b)</b> Nếu ABCD là hình vuông (hình vẽ là hình bình hành tổng quát): ∠A = 90° ⇒ ∠AQM + ∠AMQ = 90°. Tài liệu dùng kết quả ∠AQM = ∠BMN, suy ra ∠BMN + ∠AMQ = 90° ⇒ ∠QMN = 90°. Hình thoi MNPQ có một góc vuông ⇒ <b>MNPQ là hình vuông</b>.',h:['mnpq']}]}
+];
+const ZG={'HK1':'📘 Học kì 1','Nâng cao':'🚀 Nâng cao','CĐ1':'🏆 Chuyên đề 1 – Tam giác cân, tam giác đều','CĐ2':'🏆 Chuyên đề 2 – Hình vuông'};
+let zc=0,zs=0,zf='';
+function zfig(e,st){
+ const sh=new Set();for(let i=0;i<=st;i++){(e.S[i].a||[]).forEach(k=>sh.add(k));(e.S[i].d||[]).forEach(k=>sh.delete(k))}
+ const hl=new Set(e.S[st].h||[]),P=e.P,V=Object.values(P),cx=V.reduce((s,p)=>s+p[0],0)/V.length,cy=V.reduce((s,p)=>s+p[1],0)/V.length;
+ const it=Object.entries(e.E).filter(([k])=>sh.has(k)||hl.has(k)),col=k=>hl.has(k)?'var(--aux)':'var(--ac)',kd=c=>it.filter(([,v])=>v[0]==c),pl=s=>[...s].map(k=>P[k].join(',')).join(' ');let o='';
+ kd('g').forEach(([k,v])=>{const on=hl.has(k);o+=`<polygon points="${pl(v[1])}" fill="${on?'var(--aux)':'var(--fl)'}" fill-opacity="${on?.25:1}" stroke="${col(k)}" stroke-width="${on?3.5:2.5}" stroke-linejoin="round"/>`});
+ kd('l').forEach(([k,v])=>{const a=P[v[1][0]],b=P[v[1][1]],on=hl.has(k);o+=`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${col(k)}" stroke-width="${on?4:2.2}" stroke-linecap="round"/>`});
+ kd('a').forEach(([k,v])=>{const n=v[1];o+=hArc(P[n[1]],P[n[0]],P[n[2]],v[3]||24,v[2],v[4]||1,col(k))});
+ kd('r').forEach(([k,v])=>{const n=v[1];o+=hRight(P[n[1]],P[n[0]],P[n[2]],12,col(k))});
+ kd('k').forEach(([k,v])=>{o+=hTick(P[v[1][0]],P[v[1][1]],v[2]||1,col(k))});
+ kd('pa').forEach(([k,v])=>{o+=hPar(P[v[1][0]],P[v[1][1]],v[2]||1,col(k))});
+ kd('p').forEach(([k,v])=>[...v[1]].forEach(c=>{const p=P[c],dx=p[0]-cx,dy=p[1]-cy,d=Math.hypot(dx,dy)||1;o+=`<circle cx="${p[0]}" cy="${p[1]}" r="4.8" fill="var(--tx)"/><text x="${p[0]+dx/d*19-6}" y="${p[1]+dy/d*19+6}" fill="var(--tx)" font-size="19" font-style="italic" font-weight="800">${c}</text>`}));
+ kd('t').forEach(([k,v])=>{o+=`<text x="${v[1]}" y="${v[2]}" font-size="14" font-weight="700" fill="${hl.has(k)?'var(--aux)':'var(--tx)'}">${v[3]}</text>`});
+ return o}
+function zlist(){
+ $('zf').innerHTML=['Tất cả','HK1','Nâng cao','CĐ1','CĐ2'].map(v=>`<button class="${(zf||'Tất cả')==v?'on':''}" onclick="zfilt('${v}')">${v}</button>`).join('');
+ $('zsel').innerHTML=Z.map((e,i)=>zf&&e.g!=zf?'':`<option value="${i}" ${i==zc?'selected':''}>${i+1}. ${e.n}</option>`).join('')}
+$('zsel').onchange=e=>zpick(+e.target.value);
+function zfilt(v){zf=v=='Tất cả'?'':v;if(zf&&Z[zc].g!=zf){zc=Z.findIndex(e=>e.g==zf);zs=0;zdraw()}zlist()}
+function zpick(i){zc=i;zs=0;zlist();zdraw()}
+$('zpv').onclick=()=>{if(zs>0){zs--;zdraw()}};$('zxn').onclick=()=>{if(zs<Z[zc].S.length-1){zs++;zdraw()}else{let j=zc;do{j=(j+1)%Z.length}while(zf&&Z[j].g!=zf);zpick(j)}};
+function zdraw(){const e=Z[zc],n=e.S.length;
+ $('zsv').setAttribute('viewBox',e.vb||'0 0 400 250');$('zsv').innerHTML=zfig(e,zs);
+ $('zinfo').innerHTML=`<details class="an" ${zs==0?'open':''}><summary>🔎 Phân tích đề · ${ZG[e.g]}</summary><div>${fr(`<div><b>Nhận dạng:</b> ${e.nd}</div><div><b>Công cụ:</b> ${e.cc}</div><div><b>Lỗi hay gặp:</b> ${e.loi}</div>`)}</div></details>`;
+ $('zsteps').innerHTML=nowUI(e.S,zs);$('zpast').innerHTML=pastUI(e.S,zs,'zgo');
+ $('zcn').innerHTML=dotsUI(n,zs,'zgo');$('zcn').className='dots';$('zpv').disabled=zs==0;$('zxn').textContent=zs==n-1?'Bài kế tiếp →':'Bước tiếp →'}
+(function(){const c='var(--ac)',L=(a,b)=>`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${c}" stroke-width="2.5" stroke-linecap="round"/>`,T=(x,s)=>`<text x="${x}" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="var(--tx)">${s}</text>`;
+ let o='';const V1=[40,110],X1=[115,110],Y1=[85,45];o+=L(V1,X1)+L(V1,Y1)+hArc(V1,X1,Y1,26,'α',1,c)+T(78,'Góc (cung)');
+ const V2=[150,110],X2=[220,110],Y2=[150,45];o+=L(V2,X2)+L(V2,Y2)+hRight(V2,X2,Y2,13,c)+T(185,'Góc vuông 90°');
+ [[55,1],[85,1],[115,2]].forEach(([y,n])=>{const a=[255,y],b=[315,y];o+=L(a,b)+hTick(a,b,n,c)});o+=T(285,'Cạnh bằng nhau');
+ [70,100].forEach(y=>{const a=[350,y],b=[420,y];o+=L(a,b)+hPar(a,b,1,c)});o+=T(385,'Song song');
+ $('lgsv').innerHTML=o;
+ $('lgt').innerHTML=[['∠ABC','góc có đỉnh B (chữ ở giữa là đỉnh)'],['∠A hay Â','góc tại đỉnh A'],['2 cung giống nhau','hai góc bằng nhau'],['ô vuông ⌐','góc vuông 90° (⊥)'],['vạch ngang giống nhau','các cạnh bằng nhau'],['mũi tên > giống nhau','các cạnh song song (∥)'],['vạch trên 2 đoạn kề nhau','điểm giữa là trung điểm'],['ΔABC','tam giác ABC'],['AB','đoạn thẳng AB / độ dài AB'],['đỏ trong hình','phần đang được nói tới ở bước hiện tại']].map(s=>`<div><b>${s[0]}</b><br>${s[1]}</div>`).join('')})();
+/* ===== HUD, PHÓNG CHỮ, LUYỆN TẬP, THẺ NHỚ ===== */
+let H={xp:0,st:0,bs:0},zm=1;
+try{H=Object.assign(H,JSON.parse(localStorage.getItem('hh8xp')||'{}'));zm=+localStorage.getItem('hh8z')||1}catch(e){}
+const svH=()=>{try{localStorage.setItem('hh8xp',JSON.stringify(H))}catch(e){}};
+function hud(){$('hud').innerHTML=`<span class="k">⭐ <b>${H.xp}</b> XP</span><span class="k">🔥 <b>${H.st}</b></span><span class="k">🏅 Cấp <b>${Math.floor(H.xp/100)+1}</b><span class="bar"><i style="width:${H.xp%100}%"></i></span></span><button onclick="setZ(-.1)" aria-label="Giảm cỡ chữ">A−</button><button onclick="setZ(.1)" aria-label="Tăng cỡ chữ">A+</button>`}
+function addXP(n){const o=Math.floor(H.xp/100);H.xp+=n;svH();hud();return Math.floor(H.xp/100)>o}
+function setZ(d){zm=Math.min(1.5,Math.max(.8,+(zm+d).toFixed(2)));document.body.style.zoom=zm;try{localStorage.setItem('hh8z',zm)}catch(e){}}
+const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1)),pick=a=>a[R(0,a.length-1)];
+const mkf=(P,E)=>({P,E,S:[{a:Object.keys(E)}]});
+const TR=[[3,4,5],[5,12,13],[8,15,17],[6,8,10],[9,12,15],[7,24,25],[12,16,20]];
+const TA={A:[200,25],B:[70,225],C:[340,225],M:[135,125],N:[270,125]},TT={A:[200,25],B:[70,225],C:[340,225],M:[113,158],N:[293,158]};
+const TZ={A:[140,60],B:[260,60],C:[320,200],D:[80,200]};
+const GEN=[
+{n:'Góc tứ giác',f(){let a,b,c,d;do{a=R(60,130);b=R(60,130);c=R(60,130);d=360-a-b-c}while(d<40||d>150);
+ return{q:`Tứ giác ABCD có ∠A = ${a}°, ∠B = ${b}°, ∠C = ${c}°. Tính ∠D (độ).`,fig:mkf({A:[100,40],B:[300,50],C:[320,200],D:[80,210]},{q:['g','ABCD'],p:['p','ABCD'],a1:['a','DAB',a+'°',26,1],a2:['a','ABC',b+'°',26,1],a3:['a','BCD',c+'°',26,1],a4:['a','CDA','?',26,1]}),ans:d,hint:'Tổng bốn góc của tứ giác bằng 360°.',exp:`∠D = 360° − (${a}° + ${b}° + ${c}°) = ${d}°`}}},
+{n:'Pythagore',f(){const t=pick(TR),h=R(0,2),l=t.map((x,i)=>i==h?'?':x),ex=h==2?`BC² = ${t[0]}² + ${t[1]}² = ${t[0]**2+t[1]**2} ⇒ BC = ${t[2]}`:`${h?'AC':'AB'}² = ${t[2]}² − ${t[1-h]}² = ${t[2]**2-t[1-h]**2} ⇒ ${h?'AC':'AB'} = ${t[h]}`;
+ return{q:'ΔABC vuông tại A (xem hình, đơn vị cm). Tính độ dài cạnh có dấu “?”.',fig:mkf({A:[90,215],B:[90,70],C:[320,215]},{q:['g','ABC'],p:['p','ABC'],r:['r','BAC'],t1:['t',50,150,l[0]],t2:['t',195,236,l[1]],t3:['t',215,138,l[2]]}),ans:t[h],hint:'Pythagore: AB² + AC² = BC² (BC là cạnh huyền, đối diện góc vuông).',exp:ex}}},
+{n:'Diện tích hình thang',f(){const a=R(3,7),b=a+R(2,6);let h=R(3,8);if((a+b)*h%2)h++;const S=(a+b)*h/2;
+ return{q:`Hình thang ABCD (AB ∥ CD): đáy AB = ${a}, CD = ${b}, chiều cao AH = ${h} (cm). Tính diện tích (cm²).`,fig:mkf({...TZ,H:[140,200]},{q:['g','ABCD'],p:['p','ABCD'],pa1:['pa','AB',1],pa2:['pa','DC',1],hh:['l','AH'],rh:['r','AHD'],t1:['t',185,50,a],t2:['t',185,224,b],t3:['t',100,135,'h = '+h]}),ans:S,hint:'S = {(đáy lớn + đáy bé) · cao|2}',exp:`S = {(${a} + ${b}) · ${h}|2} = ${S}`}}},
+{n:'Hình thoi',f(){const P={A:[80,125],B:[200,215],C:[320,125],D:[200,35],O:[200,125]},base={q:['g','ABCD'],p:['p','ABCD'],ac:['l','AC'],bd:['l','BD'],ro:['r','AOB'],k1:['k','AO',1],k2:['k','OC',1],k3:['k','BO',2],k4:['k','OD',2]};
+ if(Math.random()<.5){const t=pick([[3,4,5],[6,8,10],[5,12,13],[8,15,17]]),d1=2*t[0],d2=2*t[1];
+  return{q:'Hình thoi ABCD có hai đường chéo như hình (cm). Tính cạnh AB.',fig:mkf(P,{...base,t1:['t',255,113,'AC = '+d1],t2:['t',207,75,'BD = '+d2]}),ans:t[2],hint:'Hai đường chéo vuông góc tại trung điểm O ⇒ AB² = OA² + OB².',exp:`OA = ${t[0]}, OB = ${t[1]} ⇒ AB² = ${t[0]**2} + ${t[1]**2} = ${t[2]**2} ⇒ AB = ${t[2]}`}}
+ const d1=R(3,10);let d2=R(3,10);if(d1*d2%2)d2++;return{q:'Hình thoi ABCD có hai đường chéo như hình (cm). Tính diện tích (cm²).',fig:mkf(P,{...base,t1:['t',255,113,'AC = '+d1],t2:['t',207,75,'BD = '+d2]}),ans:d1*d2/2,hint:'S = {AC · BD|2}',exp:`S = {${d1} · ${d2}|2} = ${d1*d2/2}`}}},
+{n:'Đường trung bình',f(){const mn=R(3,12),ask=Math.random()<.5;
+ return{q:'M, N là trung điểm của AB, AC (xem hình, cm). Tính độ dài đoạn có dấu “?”.',fig:mkf(TA,{q:['g','ABC'],p:['p','ABC'],mp:['p','MN'],ml:['l','MN'],k1:['k','AM',1],k2:['k','MB',1],k3:['k','AN',2],k4:['k','NC',2],t1:['t',190,116,ask?mn:'?'],t2:['t',195,246,ask?'?':2*mn]}),ans:ask?2*mn:mn,hint:'MN là đường trung bình ⇒ MN = {BC|2}, tức BC = 2 · MN.',exp:ask?`BC = 2 · ${mn} = ${2*mn}`:`MN = {${2*mn}|2} = ${mn}`}}},
+{n:'Định lí Talet',f(){const am=R(2,6),mb=R(2,6),j=R(1,3),an=am*j,nc=mb*j;
+ return{q:'MN ∥ BC (xem hình, đơn vị cm). Tính NC.',fig:mkf(TT,{q:['g','ABC'],p:['p','ABC'],mp:['p','MN'],ml:['l','MN'],pa1:['pa','MN',1],pa2:['pa','BC',1],t1:['t',128,90,am],t2:['t',70,197,mb],t3:['t',264,90,an],t4:['t',326,197,'?']}),ans:nc,hint:'Talet: {AM|MB} = {AN|NC}',exp:`{${am}|${mb}} = {${an}|NC} ⇒ NC = ${mb} · ${an} ÷ ${am} = ${nc}`}}},
+{n:'Tam giác đồng dạng',f(){const k=pick([2,3]),ar=Math.random()<.5,p=R(8,20),s=R(4,12);
+ return{q:ar?`ΔDEF ∽ ΔABC theo tỉ số k = ${k} (DEF lớn hơn). Diện tích ΔABC = ${s} cm². Tính diện tích ΔDEF (cm²).`:`ΔDEF ∽ ΔABC theo tỉ số k = ${k} (DEF lớn hơn). Chu vi ΔABC = ${p} cm. Tính chu vi ΔDEF (cm).`,
+ fig:mkf({A:[35,165],B:[20,200],C:[70,200],D:[130+15*k,200-35*k],E:[130,200],F:[130+50*k,200]},{t1:['g','ABC'],t2:['g','DEF'],p:['p','ABCDEF'],tk:['t',120,236,'k = '+k]}),ans:ar?s*k*k:p*k,hint:ar?'Tỉ số diện tích bằng k².':'Tỉ số chu vi bằng k.',exp:ar?`S = ${s} · ${k}² = ${s*k*k}`:`P = ${p} · ${k} = ${p*k}`}}},
+{n:'Đường chéo hình chữ nhật',f(){const t=pick(TR);
+ return{q:`Hình chữ nhật ABCD có AB = ${t[0]}, BC = ${t[1]} (cm). Tính đường chéo AC.`,fig:mkf({A:[90,60],B:[310,60],C:[310,200],D:[90,200]},{q:['g','ABCD'],p:['p','ABCD'],ac:['l','AC'],rb:['r','ABC'],t1:['t',190,50,t[0]],t2:['t',322,135,t[1]],t3:['t',175,128,'?']}),ans:t[2],hint:'ΔABC vuông tại B ⇒ AC² = AB² + BC².',exp:`AC² = ${t[0]}² + ${t[1]}² = ${t[0]**2+t[1]**2} ⇒ AC = ${t[2]}`}}},
+{n:'Hình thang cân: góc',f(){const d=R(55,80);
+ return{q:`ABCD là hình thang cân (AB ∥ CD), ∠D = ${d}°. Tính ∠A (độ).`,fig:mkf(TZ,{q:['g','ABCD'],p:['p','ABCD'],pa1:['pa','AB',1],pa2:['pa','DC',1],k1:['k','AD',1],k2:['k','BC',1],aD:['a','CDA',d+'°',26,1],aA:['a','BAD','?',22,1]}),ans:180-d,hint:'AB ∥ CD ⇒ ∠A + ∠D = 180° (hai góc kề cạnh bên).',exp:`∠A = 180° − ${d}° = ${180-d}°`}}},
+{n:'Hình bình hành: góc',f(){const a=R(50,130),ask=pick(['B','C']);
+ return{q:`ABCD là hình bình hành, ∠A = ${a}°. Tính ∠${ask} (độ).`,fig:mkf({A:[130,60],B:[290,60],C:[330,200],D:[170,200]},{q:['g','ABCD'],p:['p','ABCD'],pa1:['pa','AB',1],pa2:['pa','DC',1],pb1:['pa','AD',2],pb2:['pa','BC',2],a1:['a','DAB',a+'°',26,1],a2:['a','ABC',ask=='B'?'?':'',26,1],a3:['a','BCD',ask=='C'?'?':'',26,1]}),ans:ask=='B'?180-a:a,hint:'Góc đối bằng nhau; hai góc kề một cạnh bù nhau (tổng 180°).',exp:ask=='B'?`∠B = 180° − ${a}° = ${180-a}° (kề bù với ∠A)`:`∠C = ∠A = ${a}° (góc đối)`}}}
+];
+let gf=-1,gg=null,gt=0;
+function gnew(){const i=gf<0?R(0,GEN.length-1):gf;gg=GEN[i].f();gg.done=false;gt=0;$('gsv').innerHTML=zfig(gg.fig,0);$('gq').innerHTML=fr(`<div class="pt" style="margin:0 0 6px">${GEN[i].n}</div><div style="font-size:21px;line-height:1.5">${gg.q}</div>`);$('ga').value='';$('gr').innerHTML='';$('gn').className='g2'}
+function glist(){$('gsel').innerHTML=['Tất cả các dạng',...GEN.map(g=>g.n)].map((v,i)=>`<option value="${i-1}" ${i-1==gf?'selected':''}>${v}</option>`).join('')}
+$('gsel').onchange=e=>{gf=+e.target.value;gnew()};
+function gcheck(){if(!gg)return;const v=parseFloat(String($('ga').value).replace(',','.'));
+ if(isNaN(v)){$('gr').innerHTML='<div class="res hint">Hãy nhập một số.</div>';return}
+ if(Math.abs(v-gg.ans)<0.01){let m='';if(!gg.done){gg.done=true;if(gt==0){H.st++;H.bs=Math.max(H.bs,H.st)}const up=addXP(gt==0?10:4);m=gt==0?' +10 XP':' +4 XP';if(up)m+=' 🎉 Lên cấp!';svH();hud()}
+  $('gr').innerHTML=`<div class="res ok"><b>✅ Đúng rồi!${m}</b><br>${fr(gg.exp)}</div>`;$('gn').className=''}
+ else{gt++;H.st=0;svH();hud();$('gr').innerHTML=`<div class="res bad"><b>❌ Chưa đúng.</b> ${gt>=2?'Xem lời giải: '+fr(gg.exp):'Thử lại hoặc bấm 💡 Gợi ý.'}</div>`}}
+$('gc').onclick=gcheck;$('ga').onkeydown=e=>{if(e.key=='Enter')gcheck()};$('gn').onclick=gnew;$('gh').onclick=()=>{if(gg)$('gr').innerHTML=`<div class="res hint">💡 ${fr(gg.hint)}</div>`};
+const RP=['Có ít nhất 1 cặp cạnh đối song song','Có 2 cặp cạnh đối song song','Hai đường chéo cắt nhau tại trung điểm mỗi đường','Có 4 góc vuông','Có 4 cạnh bằng nhau','Hai đường chéo bằng nhau','Hai đường chéo vuông góc'];
+function rec(){const [p0,p1,p2,p3,p4,p5,p6]=[...document.querySelectorAll('#rc input')].map(c=>c.checked);
+ const hbh=p1||p2||p3||p4,hcn=p3||(hbh&&p5),thoi=p4||(hbh&&p6);let n,w;
+ if(hcn&&thoi){n='Hình vuông';w='Vừa là hình chữ nhật vừa là hình thoi.'}
+ else if(hcn){n='Hình chữ nhật';w=p3?'Tứ giác có 4 góc vuông.':'Hình bình hành có hai đường chéo bằng nhau.'}
+ else if(thoi){n='Hình thoi';w=p4?'Tứ giác có 4 cạnh bằng nhau.':'Hình bình hành có hai đường chéo vuông góc.'}
+ else if(hbh){n='Hình bình hành';w=p1?'Tứ giác có 2 cặp cạnh đối song song.':'Tứ giác có hai đường chéo cắt nhau tại trung điểm.'}
+ else if(p0&&p5){n='Hình thang cân';w='Hình thang có hai đường chéo bằng nhau.'}
+ else if(p0){n='Hình thang';w='Tứ giác có một cặp cạnh đối song song.'}
+ else{n='Tứ giác thường';w=(p5||p6)?'Đường chéo bằng nhau / vuông góc chỉ có ý nghĩa khi đã là hình thang hoặc hình bình hành.':'Hãy tick thêm các dấu hiệu.'}
+ $('rr').innerHTML=`<div class="tip">➡️ Chắc chắn là: <b>${n}</b><br>${w}</div>`}
+$('rc').innerHTML=RP.map(t=>`<label><input type="checkbox" onchange="rec()"> ${t}</label>`).join('');rec();
+let FC={},fi=0,ff=false;try{FC=JSON.parse(localStorage.getItem('hh8fc')||'{}')}catch(e){}
+function frender(){const c=[0,0,0,0];D.forEach((_,i)=>c[FC[i]||0]++);
+ $('fst').textContent=`${D.length} thẻ`;
+ $('fstk').innerHTML=`<div class="stk"><i style="flex:${c[0]};background:var(--no)"></i><i style="flex:${c[1]+c[2]};background:#d97706"></i><i style="flex:${c[3]};background:var(--ok)"></i></div><div class="pt" style="margin:0">🔴 Chưa nhớ ${c[0]} · 🟠 Đang nhớ ${c[1]+c[2]} · 🟢 Thuộc ${c[3]}</div>`;
+ const e=D[fi],cd=$('fcd');cd.className='fcard'+(ff?' back':'');
+ cd.innerHTML=ff?`<span class="bd">${e[1]}</span><b style="font-size:20px">${e[2]}</b><div style="margin-top:10px;font-size:19px;line-height:1.7">${fr(e[3])}</div>`:`<span class="bd">${e[1]} · ${e[0]}</span><div style="font-size:28px;font-weight:800;margin:10px 0;line-height:1.25">${e[2]}</div><div class="pt" style="margin:0">Tự nhớ lại nội dung, rồi lật thẻ để kiểm tra</div>`;
+ $('frate').innerHTML=ff?`<button class="g2" onclick="frate(false)">❌ Chưa nhớ</button><button onclick="frate(true)">✅ Nhớ rồi (+2 XP)</button>`:`<button style="flex:1" onclick="fflip()">Lật thẻ</button>`}
+function fflip(){ff=!ff;frender()}
+function fnext(){const w=D.map((_,i)=>i==fi?0:[6,3,1,.3][FC[i]||0]);let r=Math.random()*w.reduce((a,b)=>a+b,0),i=0;for(;i<w.length-1;i++){r-=w[i];if(r<=0)break}fi=i;ff=false;frender()}
+function frate(ok){FC[fi]=ok?Math.min(3,(FC[fi]||0)+1):0;try{localStorage.setItem('hh8fc',JSON.stringify(FC))}catch(e){}if(ok)addXP(2);fnext()}
+$('fcd').onclick=fflip;$('fcd').onkeydown=e=>{if(e.key==' '||e.key=='Enter'){e.preventDefault();fflip()}};
+document.body.style.zoom=zm;hud();glist();gnew();fnext();
+/* ===== KÉO & KHÁM PHÁ ===== */
+const cl=(x,a,b)=>Math.min(b,Math.max(a,x)),KL={Bp:'B′'};
+const ln=(a,b,c='var(--ac)',w=2.5,d='')=>`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${c}" stroke-width="${w}"${d?` stroke-dasharray="${d}"`:''} stroke-linecap="round"/>`;
+const pg=(a,fill='var(--fl)')=>`<polygon points="${a.map(p=>p.join(',')).join(' ')}" fill="${fill}" stroke="var(--ac)" stroke-width="2.5" stroke-linejoin="round"/>`;
+const dot=(p,l,c='var(--tx)')=>`<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="${c}"/><text x="${p[0]+8}" y="${p[1]-8}" font-size="15" font-weight="700" font-style="italic" fill="${c}">${l}</text>`;
+const u10=(a,b)=>f(dist(a,b)/10),AX='var(--aux)';
+const crs=(a,b,c)=>(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
+function qang(Q,i){const n=Q.length,s=Math.sign(Q.reduce((t,p,j)=>t+p[0]*Q[(j+1)%n][1]-Q[(j+1)%n][0]*p[1],0)),V=Q[i],u=Q[(i+n-1)%n],w=Q[(i+1)%n],a=[u[0]-V[0],u[1]-V[1]],b=[w[0]-V[0],w[1]-V[1]];let th=Math.atan2(a[0]*b[1]-a[1]*b[0],a[0]*b[0]+a[1]*b[1])*(s>0?-1:1);if(th<0)th+=2*Math.PI;return th*180/Math.PI}
+const segX=(a,b,c,d)=>crs(a,b,c)*crs(a,b,d)<0&&crs(c,d,a)*crs(c,d,b)<0;
+const DS=[
+{n:'Hình bình hành',vb:[400,260],P:{A:[110,70],B:[290,70],D:[70,200]},dr:['A','B','D'],h:'Kéo A, B hoặc D bất kỳ. Hình luôn là hình bình hành: hai đường chéo vẫn cắt nhau tại trung điểm O.',
+ f(P){P.C=[P.B[0]+P.D[0]-P.A[0],P.B[1]+P.D[1]-P.A[1]];P.O=mid(P.A,P.C)},
+ d(P){const{A,B,C,D,O}=P;return pg([A,B,C,D])+ln(A,C,AX,1.8,'5 4')+ln(B,D,AX,1.8,'5 4')+hTick(A,O,1,AX)+hTick(O,C,1,AX)+hTick(B,O,2,AX)+hTick(O,D,2,AX)+hPar(A,B,1,'var(--ac)')+hPar(D,C,1,'var(--ac)')+hPar(A,D,2,'var(--ac)')+hPar(B,C,2,'var(--ac)')+hArc(A,D,B,24,f(ang(A,D,B))+'°',1,'var(--ac)')+hArc(B,A,C,24,f(ang(B,A,C))+'°',1,'var(--ac)')+dot(O,'O',AX)+dot(C,'C')},
+ i(P){const{A,B,C,D,O}=P;return[`OA = ${u10(A,O)} = OC = ${u10(O,C)}`,`OB = ${u10(B,O)} = OD = ${u10(O,D)}`,`∠A + ∠B = ${f(ang(A,D,B))}° + ${f(ang(B,A,C))}° = <em>${f(ang(A,D,B)+ang(B,A,C))}°</em>`,`AB = DC = ${u10(A,B)}; AD = BC = ${u10(A,D)}`]}},
+{n:'Đường trung bình',vb:[400,260],P:{A:[200,40],B:[70,220],C:[340,220]},dr:['A','B','C'],h:'Kéo các đỉnh. MN luôn song song BC và bằng một nửa BC.',
+ f(P){P.M=mid(P.A,P.B);P.N=mid(P.A,P.C)},
+ d(P){const{A,B,C,M,N}=P;return pg([A,B,C])+ln(M,N,AX,3.5)+hTick(A,M,1,AX)+hTick(M,B,1,AX)+hTick(A,N,2,AX)+hTick(N,C,2,AX)+dot(M,'M',AX)+dot(N,'N',AX)},
+ i(P){const{B,C,M,N}=P,mn=dist(M,N),bc=dist(B,C),g=Math.abs(Math.asin(cl(crs([0,0],[N[0]-M[0],N[1]-M[1]],[C[0]-B[0],C[1]-B[1]])/(mn*bc||1),-1,1)))*180/Math.PI;return[`BC = ${u10(B,C)}; MN = ${u10(M,N)}`,`BC ÷ MN = <em>${f(bc/mn)}</em> (luôn bằng 2)`,`Góc giữa MN và BC = <em>${f(g)}°</em> ⇒ MN ∥ BC`]}},
+{n:'Định lí Talet',vb:[400,260],P:{A:[200,40],B:[70,220],C:[340,220],Bp:[150,130]},dr:['A','B','C','Bp'],h:'Kéo B′ dọc theo AB (hoặc kéo A, B, C). Ba tỉ số luôn bằng nhau vì B′C′ ∥ BC.',
+ f(P){const{A,B,C,Bp}=P,v=[B[0]-A[0],B[1]-A[1]],t=cl(((Bp[0]-A[0])*v[0]+(Bp[1]-A[1])*v[1])/(v[0]**2+v[1]**2||1),.1,.9);P.t=t;P.Bp=[A[0]+v[0]*t,A[1]+v[1]*t];P.Cp=[A[0]+(C[0]-A[0])*t,A[1]+(C[1]-A[1])*t]},
+ d(P){const{A,B,C,Bp,Cp}=P;return pg([A,B,C])+ln(Bp,Cp,AX,3.5)+hPar(Bp,Cp,1,AX)+hPar(B,C,1,'var(--ac)')+dot(Cp,'C′',AX)},
+ i(P){const{A,B,C,Bp,Cp}=P;return[`{AB′|AB} = <em>${f(dist(A,Bp)/dist(A,B))}</em>`,`{AC′|AC} = <em>${f(dist(A,Cp)/dist(A,C))}</em>`,`{B′C′|BC} = <em>${f(dist(Bp,Cp)/dist(B,C))}</em>`]}},
+{n:'Tổng 4 góc tứ giác',vb:[400,260],P:{A:[100,60],B:[300,50],C:[330,200],D:[70,210]},dr:['A','B','C','D'],h:'Kéo bốn đỉnh để biến đổi tứ giác. Tổng bốn góc luôn bằng 360° (miễn là các cạnh không cắt nhau).',
+ f(P){},
+ d(P){const Q=[P.A,P.B,P.C,P.D];return pg(Q)+Q.map((p,i)=>hArc(p,Q[(i+3)%4],Q[(i+1)%4],20,f(qang(Q,i))+'°',1,'var(--ac)')).join('')},
+ i(P){const Q=[P.A,P.B,P.C,P.D],a=Q.map((_,i)=>qang(Q,i)),x=segX(P.A,P.B,P.C,P.D)||segX(P.B,P.C,P.D,P.A);return[`∠A = ${f(a[0])}°, ∠B = ${f(a[1])}°, ∠C = ${f(a[2])}°, ∠D = ${f(a[3])}°`,x?'⚠️ Các cạnh đang cắt nhau, đây chưa phải tứ giác.':`Tổng = <em>${f(a[0]+a[1]+a[2]+a[3])}°</em>`]}},
+{n:'Định lí Pythagore',vb:[400,300],P:{B:[170,130],C:[240,190]},dr:['B','C'],h:'Kéo B (lên xuống) và C (sang ngang). Diện tích hai hình vuông nhỏ cộng lại luôn bằng hình vuông lớn. Thử tìm bộ ba (3, 4, 5)!',
+ f(P){P.A=[170,190];P.B=[170,cl(Math.round(P.B[1]/10)*10,100,160)];P.C=[cl(Math.round(P.C[0]/10)*10,200,260),190]},
+ d(P){const{A,B,C}=P,a=(A[1]-B[1])/10,b=(C[0]-A[0])/10,A1=a*10,B1=b*10,c=(p,t)=>`<text x="${p[0]}" y="${p[1]}" text-anchor="middle" font-size="15" font-weight="700" fill="var(--tx)">${t}</text>`;
+  return pg([B,A,[A[0]-A1,A[1]],[B[0]-A1,B[1]]],'color-mix(in srgb,var(--ac) 35%,transparent)')+pg([A,C,[C[0],C[1]+B1],[A[0],A[1]+B1]],'color-mix(in srgb,var(--ok) 35%,transparent)')+pg([B,C,[C[0]+A1,C[1]-B1],[B[0]+A1,B[1]-B1]],'color-mix(in srgb,var(--aux) 35%,transparent)')+pg([A,B,C],'var(--fl)')+hRight(A,B,C,13,'var(--tx)')+c([A[0]-A1/2,A[1]-A1/2+5],'a² = '+a*a)+c([A[0]+B1/2,A[1]+B1/2+5],'b² = '+b*b)+c([(B[0]+C[0])/2+(A1-B1)/2+0,(B[1]+C[1])/2-(A1+B1)/2+5],'c² = '+(a*a+b*b))+dot(A,'A')},
+ i(P){const a=(P.A[1]-P.B[1])/10,b=(P.C[0]-P.A[0])/10,s=a*a+b*b,c=Math.sqrt(s);return[`a = AB = ${a}; b = AC = ${b}`,`a² + b² = ${a*a} + ${b*b} = <em>${s}</em> = c²`,`BC = c = √${s} = <em>${f(c)}</em>`,Number.isInteger(c)?`🎉 Bộ ba Pythagore: (${a}, ${b}, ${c})`:'']}}
+];
+let dsc=0,DP={},dk=null;
+const DM=(k)=>DS[k].vb;
+function dreset(){DP=JSON.parse(JSON.stringify(DS[dsc].P));ddraw()}
+function dlist(){$('dscn').innerHTML=DS.map((s,i)=>`<button class="${i==dsc?'on':''}" onclick="dsc=${i};dlist();dreset()">${s.n}</button>`).join('')}
+function ddraw(){const s=DS[dsc];s.f(DP);$('dsv').setAttribute('viewBox',`0 0 ${s.vb[0]} ${s.vb[1]}`);$('dht').innerHTML='👉 '+s.h;
+ $('dsv').innerHTML=s.d(DP)+s.dr.map(k=>`<circle cx="${DP[k][0]}" cy="${DP[k][1]}" r="13" fill="var(--aux)" stroke="#fff" stroke-width="3" data-k="${k}" style="cursor:grab"/><text x="${DP[k][0]+15}" y="${DP[k][1]-13}" font-size="16" font-weight="700" font-style="italic" fill="var(--tx)" pointer-events="none">${KL[k]||k}</text>`).join('');
+ $('dif').innerHTML=s.i(DP).filter(Boolean).map(x=>`<div>${fr(x)}</div>`).join('')}
+const dpt=e=>{const v=$('dsv'),p=v.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const q=p.matrixTransform(v.getScreenCTM().inverse());return[q.x,q.y]};
+$('dsv').onpointerdown=e=>{const k=e.target.dataset&&e.target.dataset.k;if(k){dk=k;try{$('dsv').setPointerCapture(e.pointerId)}catch(x){}e.preventDefault()}};
+$('dsv').onpointermove=e=>{if(!dk)return;const[x,y]=dpt(e),v=DS[dsc].vb;DP[dk]=[cl(x,15,v[0]-15),cl(y,15,v[1]-15)];ddraw()};
+$('dsv').onpointerup=$('dsv').onpointercancel=()=>{dk=null};$('drs').onclick=dreset;
+/* ===== HÌNH KHỐI ===== */
+const prism=(base,h)=>{const n=base.length,V=[...base.map(p=>[p[0],0,p[1]]),...base.map(p=>[p[0],h,p[1]])],F=[[...Array(n).keys()],[...Array(n).keys()].map(i=>i+n)];for(let i=0;i<n;i++)F.push([i,(i+1)%n,(i+1)%n+n,i+n]);return{V,F,base:[0,1],hh:[[...V[0]].map((x,i)=>i==1?h:x),V[0]]}};
+const pyr=(base,h)=>{const n=base.length,V=[...base.map(p=>[p[0],0,p[1]]),[0,h,0]],F=[[...Array(n).keys()]];for(let i=0;i<n;i++)F.push([i,(i+1)%n,n]);return{V,F,base:[0],hh:[V[n],[0,0,0]],dd:[V[n],[(V[0][0]+V[1][0])/2,0,(V[0][2]+V[1][2])/2]]}};
+const SOL=[
+{n:'Hình hộp chữ nhật',real:'Hộp sữa, viên gạch, tủ lạnh, căn phòng của bạn.',p:[['a','Dài a',2,8,5],['b','Rộng b',2,6,3],['h','Cao h',2,8,4]],
+ b(v){const s=prism([[0,0],[v.a,0],[v.a,v.b],[0,v.b]],v.h),B=v.a*v.b,x=2*(v.a+v.b)*v.h;return{...s,info:[`Sđáy = a · b = ${f(B)}`,`V = Sđáy · h = <em>${f(B*v.h)}</em>`,`Sxq = 2(a + b) · h = <em>${f(x)}</em>`,`Stp = Sxq + 2 · Sđáy = <em>${f(x+2*B)}</em>`]}}},
+{n:'Hình lập phương',real:'Viên xúc xắc, khối rubik, hộp quà vuông.',p:[['a','Cạnh a',2,8,4]],
+ b(v){const s=prism([[0,0],[v.a,0],[v.a,v.a],[0,v.a]],v.a);return{...s,info:[`V = a³ = <em>${f(v.a**3)}</em>`,`Sxq = 4a² = <em>${f(4*v.a**2)}</em>`,`Stp = 6a² = <em>${f(6*v.a**2)}</em>`]}}},
+{n:'Lăng trụ đứng tam giác',real:'Mái nhà chữ A, hộp bánh hình tam giác, lều trại.',p:[['a','Góc vuông a',2,7,4],['b','Góc vuông b',2,7,3],['h','Cao h',2,8,5]],
+ b(v){const c=Math.hypot(v.a,v.b),s=prism([[0,0],[v.a,0],[0,v.b]],v.h),B=v.a*v.b/2,x=(v.a+v.b+c)*v.h;return{...s,info:[`Đáy: tam giác vuông, cạnh huyền = ${f(c)}`,`Sđáy = {a · b|2} = ${f(B)}`,`V = Sđáy · h = <em>${f(B*v.h)}</em>`,`Sxq = (chu vi đáy) · h = <em>${f(x)}</em>`,`Stp = Sxq + 2 · Sđáy = <em>${f(x+2*B)}</em>`]}}},
+{n:'Chóp tam giác đều',real:'Lều tam giác, mái chóp, kim tự tháp mini.',p:[['a','Cạnh đáy a',2,8,4],['h','Cao h',2,8,5]],
+ b(v){const R=v.a/Math.sqrt(3),s=pyr([0,1,2].map(i=>[R*Math.cos(Math.PI/2+i*2*Math.PI/3),R*Math.sin(Math.PI/2+i*2*Math.PI/3)]),v.h),r=v.a/(2*Math.sqrt(3)),d=Math.hypot(v.h,r),B=Math.sqrt(3)/4*v.a**2,x=1.5*v.a*d;return{...s,info:[`Sđáy = {√3|4} · a² = ${f(B)}`,`Trung đoạn d = ${f(d)}`,`V = {1|3} · Sđáy · h = <em>${f(B*v.h/3)}</em>`,`Sxq = {1|2} · (chu vi đáy) · d = <em>${f(x)}</em>`,`Stp = Sxq + Sđáy = <em>${f(x+B)}</em>`]}}},
+{n:'Chóp tứ giác đều',real:'Kim tự tháp Ai Cập, mái tháp chuông, đỉnh nón hình chóp.',p:[['a','Cạnh đáy a',2,8,5],['h','Cao h',2,8,5]],
+ b(v){const q=v.a/2,s=pyr([[q,q],[q,-q],[-q,-q],[-q,q]],v.h),d=Math.hypot(v.h,q),x=2*v.a*d;return{...s,info:[`Sđáy = a² = ${f(v.a**2)}`,`Trung đoạn d = ${f(d)}`,`V = {1|3} · Sđáy · h = <em>${f(v.a**2*v.h/3)}</em>`,`Sxq = {1|2} · (chu vi đáy) · d = <em>${f(x)}</em>`,`Stp = Sxq + Sđáy = <em>${f(x+v.a**2)}</em>`]}}}
+];
+let sc=0,sv={},sth=35,stm=null;
+const CF=Math.cos(.45),SF=Math.sin(.45),ry=(p,t)=>[p[0]*Math.cos(t)-p[2]*Math.sin(t),p[1],p[0]*Math.sin(t)+p[2]*Math.cos(t)];
+function slist(){$('sfc').innerHTML=SOL.map((s,i)=>`<button class="${i==sc?'on':''}" onclick="sc=${i};slist();spick()">${s.n}</button>`).join('')}
+function spick(){const s=SOL[sc];sv={};$('sre').innerHTML='<b>Ngoài đời:</b> '+s.real;
+ $('ssl').innerHTML=s.p.map(p=>{sv[p[0]]=p[4];return`<div class="sl"><span>${p[1]}</span><input type="range" min="${p[2]}" max="${p[3]}" step="0.5" value="${p[4]}" data-k="${p[0]}"><b id="sv_${p[0]}">${f(p[4])}</b></div>`}).join('');
+ document.querySelectorAll('#ssl input').forEach(e=>e.oninput=()=>{sv[e.dataset.k]=+e.value;$('sv_'+e.dataset.k).textContent=f(+e.value);sdraw()});sdraw()}
+function sdraw(){const s=SOL[sc].b(sv),th=sth*Math.PI/180,cen=s.V.reduce((a,p)=>[a[0]+p[0]/s.V.length,a[1]+p[1]/s.V.length,a[2]+p[2]/s.V.length],[0,0,0]),V=s.V.map(p=>[p[0]-cen[0],p[1]-cen[1],p[2]-cen[2]]);
+ const mx=Math.max(...V.flat().map(Math.abs))||1,k=118/mx,P2=p=>{const r=ry([p[0]-cen[0],p[1]-cen[1],p[2]-cen[2]],th);return[200+k*r[0],165-k*(r[1]*CF-r[2]*SF)]},S=V.map(p=>{const r=ry(p,th);return[200+k*r[0],165-k*(r[1]*CF-r[2]*SF)]});
+ const vis=s.F.map(F=>{const a=V[F[0]],b=V[F[1]],c=V[F[2]],u=[b[0]-a[0],b[1]-a[1],b[2]-a[2]],w=[c[0]-a[0],c[1]-a[1],c[2]-a[2]];let n=[u[1]*w[2]-u[2]*w[1],u[2]*w[0]-u[0]*w[2],u[0]*w[1]-u[1]*w[0]];const fc=F.reduce((q,i)=>[q[0]+V[i][0]/F.length,q[1]+V[i][1]/F.length,q[2]+V[i][2]/F.length],[0,0,0]);if(n[0]*fc[0]+n[1]*fc[1]+n[2]*fc[2]<0)n=n.map(x=>-x);const m=ry(n,th);return m[1]*SF+m[2]*CF>0});
+ const E={};s.F.forEach((F,fi)=>F.forEach((v,i)=>{const w=F[(i+1)%F.length],key=Math.min(v,w)+'_'+Math.max(v,w);(E[key]=E[key]||{v:[v,w],f:[]}).f.push(fi)}));
+ let o='';Object.values(E).forEach(e=>{if(!e.f.some(i=>vis[i])&&$('sk1').checked)o+=ln(S[e.v[0]],S[e.v[1]],'var(--mu)',1.6,'5 4')});
+ s.F.forEach((F,i)=>{if(vis[i]){const bs=s.base.includes(i)&&$('sk2').checked;o+=`<polygon points="${F.map(j=>S[j].join(',')).join(' ')}" fill="${bs?'var(--aux)':'var(--fl)'}" fill-opacity="${bs?.4:.55}"/>`}});
+ Object.values(E).forEach(e=>{if(e.f.some(i=>vis[i]))o+=ln(S[e.v[0]],S[e.v[1]],'var(--ac)',2.6)});
+ const sp=p=>{const r=ry([p[0]-cen[0],p[1]-cen[1],p[2]-cen[2]],th);return[200+k*r[0],165-k*(r[1]*CF-r[2]*SF)]};
+ if($('sk3').checked&&s.hh){const a=sp(s.hh[0]),b=sp(s.hh[1]);o+=ln(a,b,AX,3,'6 4')+`<text x="${(a[0]+b[0])/2+8}" y="${(a[1]+b[1])/2}" font-size="16" font-weight="700" fill="${AX}">h</text>`}
+ if($('sk4').checked&&s.dd){const a=sp(s.dd[0]),b=sp(s.dd[1]);o+=ln(a,b,'var(--ok)',3,'6 4')+`<text x="${(a[0]+b[0])/2+8}" y="${(a[1]+b[1])/2}" font-size="16" font-weight="700" fill="var(--ok)">d</text>`}
+ $('ssv').innerHTML=o;$('sin').innerHTML=s.info.map(x=>`<div>${fr(x)}</div>`).join('');$('srv').textContent=Math.round(sth)+'°'}
+function sstop(){if(stm){clearInterval(stm);stm=null}$('sau').textContent='▶ Tự xoay'}
+$('sau').onclick=()=>{if(stm)return sstop();$('sau').textContent='⏸ Dừng';stm=setInterval(()=>{sth=(sth+2)%360;$('srot').value=sth;sdraw()},50)};
+$('srot').oninput=e=>{sth=+e.target.value;sdraw()};['sk1','sk2','sk3','sk4'].forEach(i=>$(i).onchange=sdraw);
+/* ===== KIỂM TRA ===== */
+const TP=[['Tứ giác và hình thang','L0'],['Bình hành, chữ nhật, thoi, vuông','L3'],['Đường trung bình','L7'],['Định lí Talet và phân giác','L8'],['Tam giác đồng dạng','L9'],['Định lí Pythagore','X8']];
+const Q=[
+['Tứ giác có ba góc 80°, 100°, 120°. Góc còn lại là?',['60°','70°','80°'],0,'360° − (80° + 100° + 120°) = 60°.'],
+['Hình thang có hai đáy 6 và 10, chiều cao 4. Diện tích?',['32','64','40'],0,'S = {(6 + 10) · 4|2} = 32.'],
+['Hình thang cân luôn có:',['hai đường chéo bằng nhau','hai đáy bằng nhau','bốn góc vuông'],0,'Hai đường chéo bằng nhau là tính chất (và dấu hiệu) của hình thang cân.'],
+['Trong hình thang, hai góc kề một cạnh bên:',['bù nhau (tổng 180°)','bằng nhau','phụ nhau (tổng 90°)'],0,'AB ∥ CD nên hai góc trong cùng phía bù nhau.'],
+['Hai đường chéo của hình thoi:',['vuông góc với nhau','bằng nhau','song song'],1,'Hình thoi: hai đường chéo vuông góc và là phân giác của các góc.'],
+['Hình bình hành có một góc vuông là:',['hình chữ nhật','hình thoi','hình thang cân'],1,'Hình bình hành có một góc vuông là hình chữ nhật.'],
+['Hình thoi có hai đường chéo 10 và 6. Diện tích?',['30','60','16'],1,'S = {10 · 6|2} = 30.'],
+['Hình nào vừa là hình chữ nhật vừa là hình thoi?',['Hình vuông','Hình bình hành','Hình thang cân'],1,'Hình vuông có đủ tính chất của hình chữ nhật và hình thoi.'],
+['M, N là trung điểm AB, AC; BC = 14. Khi đó MN =?',['7','28','14'],2,'MN = {BC|2} = 7.'],
+['Đường trung bình hình thang có hai đáy 4 và 10 dài:',['7','14','6'],2,'{4 + 10|2} = 7.'],
+['Đường trung bình của tam giác:',['song song với cạnh thứ ba','bằng cạnh thứ ba','vuông góc với cạnh thứ ba'],2,'MN ∥ BC và MN = {BC|2}.'],
+['Đường thẳng qua trung điểm một cạnh và song song với cạnh thứ hai thì:',['đi qua trung điểm cạnh thứ ba','đi qua đỉnh đối diện','song song với cạnh thứ ba'],2,'Đây là tính chất của đường trung bình.'],
+['MN ∥ BC, AM = 3, MB = 6, AN = 2. Tính NC.',['4','1','6'],3,'{AM|MB} = {AN|NC} ⇒ {3|6} = {2|NC} ⇒ NC = 4.'],
+['Nếu B′C′ ∥ BC thì:',['{AB′|AB} = {AC′|AC}','AB′ = AC′','AB′ · AB = AC′ · AC'],3,'Đó là định lí Talet.'],
+['AD là phân giác ∠A, AB = 6, AC = 9. Tỉ số DB : DC là?',['2 : 3','3 : 2','1 : 1'],3,'{DB|DC} = {AB|AC} = {6|9} = {2|3}.'],
+['Muốn chứng minh hai đường thẳng song song từ các tỉ lệ đoạn thẳng, ta dùng:',['Talet đảo','Pythagore','tổng ba góc'],3,'Talet đảo: tỉ lệ bằng nhau ⇒ song song.'],
+['Hai tam giác đồng dạng tỉ số k = 3. Tỉ số diện tích là?',['9','3','6'],4,'Tỉ số diện tích = k² = 9.'],
+['Trường hợp đồng dạng g.g cần:',['hai góc bằng nhau','hai cạnh bằng nhau','ba cạnh bằng nhau'],4,'Hai góc của tam giác này bằng hai góc của tam giác kia.'],
+['ΔABC ∽ ΔDEF với tỉ số 2 (ABC lớn hơn). Chu vi ΔDEF = 5. Chu vi ΔABC =?',['10','20','7'],4,'Tỉ số chu vi = k = 2 ⇒ 5 · 2 = 10.'],
+['Hai tam giác vuông đồng dạng khi:',['có một góc nhọn bằng nhau','có cạnh huyền bằng nhau','có chu vi bằng nhau'],4,'Tam giác vuông đã có một góc 90°, thêm một góc nhọn bằng nhau là đủ.'],
+['Tam giác vuông có hai cạnh góc vuông 6 và 8. Cạnh huyền là?',['10','14','12'],5,'√(36 + 64) = 10.'],
+['Tam giác có ba cạnh 5, 12, 13 là tam giác:',['vuông','cân','đều'],5,'5² + 12² = 13² nên vuông (Pythagore đảo).'],
+['Tam giác vuông có cạnh huyền 13, một cạnh góc vuông 5. Cạnh còn lại?',['12','8','18'],5,'√(169 − 25) = 12.'],
+['Thang dài 5 m dựa tường, chân thang cách tường 3 m. Thang chạm tường ở độ cao:',['4 m','2 m','8 m'],5,'√(25 − 9) = 4 m.']
+].map(q=>[q[0],q[1],q[2],q[3]]);
+let tq=[],ti=0,ta=[];
+function tstart(){const by=TP.map(()=>[]);Q.forEach((q,i)=>by[q[2]].push(i));tq=[];by.forEach(a=>{a.sort(()=>Math.random()-.5);a.slice(0,2).forEach(i=>tq.push(i))});tq.sort(()=>Math.random()-.5);
+ tq=tq.map(i=>({i,o:Q[i][1].map((t,j)=>[t,j==0]).sort(()=>Math.random()-.5)}));ti=0;ta=[];trender()}
+function tpick(j){ta[ti]=tq[ti].o[j][1];ti++;trender()}
+function trender(){const b=$('tbx');if(!tq.length){let best=0;try{best=+localStorage.getItem('hh8best')||0}catch(e){}b.innerHTML=`<div class="hero"><div class="big">12</div><b style="font-size:20px">câu trắc nghiệm</b><p>Mỗi chương 2 câu, thứ tự và đáp án được xáo ngẫu nhiên. Làm xong có điểm, biểu đồ từng chương và gợi ý ôn đúng chỗ yếu.</p>${best?`<div class="badge ok" style="margin:0 0 16px;display:inline-block">🏆 Điểm cao nhất: ${best}/12</div><br>`:''}<button class="pri" onclick="tstart()">Bắt đầu làm bài →</button></div>`;return}
+ if(ti>=tq.length)return tfin();const q=Q[tq[ti].i];
+ b.innerHTML=`<div class="pb"><i style="width:${ti/tq.length*100}%"></i></div><div class="pt">Câu ${ti+1}/${tq.length} · ${TP[q[2]][0]}</div><div class="q"><b class="qq">${fr(q[0])}</b>${tq[ti].o.map((o,j)=>`<button class="o" onclick="tpick(${j})">${fr(o[0])}</button>`).join('')}</div>`}
+function tfin(){const sc=ta.filter(Boolean).length,tot=TP.map(()=>0),ok=TP.map(()=>0);tq.forEach((t,k)=>{const p=Q[t.i][2];tot[p]++;ok[p]+=ta[k]?1:0});
+ try{if(sc>(+localStorage.getItem('hh8best')||0))localStorage.setItem('hh8best',sc)}catch(e){}const up=addXP(sc*3);
+ const msg=sc>=11?'🌟 Xuất sắc!':sc>=9?'👏 Rất tốt!':sc>=6?'👍 Khá, cần củng cố vài chỗ.':'💪 Cần ôn lại, hãy làm theo gợi ý bên dưới.';
+ const weak=TP.map((t,i)=>ok[i]<tot[i]?`<button onclick="go2('${t[1]}')">Ôn: ${t[0]} →</button>`:'').join('');
+ const wrong=tq.map((t,k)=>ta[k]?'':`<div class="it"><b>${fr(Q[t.i][0])}</b><div>Đáp án đúng: <em style="font-style:normal;color:var(--ok);font-weight:700">${fr(Q[t.i][1][0])}</em></div><div class="pt">${fr(Q[t.i][3])}</div></div>`).join('');
+ $('tbx').innerHTML=`<h2>Kết quả: ${sc}/${tq.length} ${msg}</h2><div class="pt">+${sc*3} XP${up?' · 🎉 Lên cấp!':''}</div>`+TP.map((t,i)=>`<div class="pt">${t[0]}: ${ok[i]}/${tot[i]}</div><div class="pb"><i style="width:${tot[i]?ok[i]/tot[i]*100:0}%"></i></div>`).join('')+(weak?`<h3>Nên ôn lại</h3><div class="chips">${weak}</div>`:'<h3>Không có chương nào yếu 🎉</h3>')+(wrong?`<h3>Câu làm sai</h3>${wrong}`:'')+`<div class="f"><span></span><button onclick="tstart()">Làm đề mới →</button></div>`}
+/* ===== CHUYÊN ĐỀ NÂNG CAO (từ tài liệu PDF) ===== */
+const CDS=[
+{t:'Chuyên đề 1 – Tam giác cân, tam giác đều (tính số đo góc)',lt:['Tam giác cân: hai cạnh bằng nhau ⇔ hai góc ở đáy bằng nhau. Trung trực của cạnh đáy cũng là trung tuyến, phân giác, đường cao từ đỉnh.','Tam giác vuông cân: hai góc nhọn bằng 45°; đường cao, trung tuyến, phân giác từ đỉnh góc vuông trùng nhau và bằng nửa cạnh huyền.','Tam giác đều: ba cạnh bằng nhau, ba góc bằng 60°; tam giác cân có một góc 60° là tam giác đều.'],
+ dang:[['I. Phát hiện tam giác vuông cân','Chưa so sánh trực tiếp được hai đoạn thì tìm một đoạn thứ ba làm trung gian (ví dụ lấy L sao cho AL = AM) rồi dùng tam giác bằng nhau.'],['II. Phát hiện tam giác đều','Thấy các góc 60°, 15°, 75°, 150° thì dựng tam giác đều trên một cạnh, rồi chứng minh tam giác bằng nhau.'],['III. Phát hiện tam giác cân','Vẽ thêm phân giác hoặc đoạn bằng nhau để chứng minh hai cạnh bằng nhau qua đoạn trung gian (bài mẫu ở dưới).'],['IV. Khai thác mối liên hệ giữa các góc','Dùng tổng ba góc, góc ngoài, phân giác trong và ngoài để lập quan hệ giữa các góc.'],['V. Phát hiện “nửa tam giác đều”','Tam giác vuông có góc 30° thì cạnh góc vuông đối diện bằng nửa cạnh huyền (và ngược lại).']],
+ mau:[['Z10','Nửa tam giác đều: tính ∠BCD'],['Z11','Hai phân giác, ∠A = 60°: tam giác DIE'],['Z15','Dựng tam giác đều: BH = 2AC, ∠BHC = 30°'],['Z16','Đoạn trung gian: ∠AIM = 45°'],['Z17','Nửa tam giác đều: AH, AD chia ∠A thành 3'],['Z21','Nửa tam giác đều: ∠B = 45°, ∠C = 120°, tính ∠ADB'],['Z22','Cân A = 40°, BE = BA: tính ∠BEC'],['Z23','Vuông cân, ∠EAC = ∠ECA = 15°: tính ∠AEB'],['Z24','Hai góc 20° và 10°: các góc của ΔIDE'],['Z27','Cân A = 20°: tính ∠BNM = 30°'],['Z28','Hai phân giác góc kề phụ: ∠MON = 45°'],['Z33','Phân giác trong/ngoài: ∠AHD = 45°, tính ∠ADB'],['Z34','Trung điểm và hình bình hành: ∠AMK = 90°'],['Z35','Hai đường cao, hai phân giác: ∠AOC = 90°'],['Z36','Phân giác ngoài hợp BC góc 30°: ∠B − ∠C'],['Z39','Nửa tam giác đều: ∠C = 30°, BC = 2AB']],
+ lu:[['[Dạng III] ΔABC cân tại A, ∠A = 80°. I ∈ BC sao cho ∠BAI = 50°; K ∈ AC sao cho ∠ABK = 30°; AI cắt BK tại H. Chứng minh ΔHIK cân.','ΔBHI cân tại B. Trên BH lấy O sao cho BO = HI; dựng ΔHEI đều nằm trong ΔBHI rồi chứng minh các tam giác bằng nhau.','HI = HK'],
+ ['[Dạng III] ΔABC cân tại A, ∠A = 100°. Điểm M nằm trong tam giác sao cho ∠MBC = 10°, ∠MCB = 20°. Tính ∠AMB.','Trên tia CA lấy D sao cho CD = CB ⇒ ΔBCD cân tại C; ý tưởng của tài liệu: tìm một góc tính được (∠ADB) và chứng minh ∠AMB bằng góc đó.','Xem lời giải đầy đủ trong tài liệu (Dạng III, Ví dụ 4).']]},
+{t:'Chuyên đề 2 – Hình vuông',lt:['Định nghĩa: tứ giác có 4 góc vuông và 4 cạnh bằng nhau. Có đủ tính chất của hình chữ nhật và hình thoi.','Hai đường chéo bằng nhau, vuông góc, cắt nhau tại trung điểm mỗi đường và là phân giác của các góc.','Dấu hiệu: hình chữ nhật có hai cạnh kề bằng nhau, hoặc hai đường chéo vuông góc, hoặc một đường chéo là phân giác; hình thoi có một góc vuông, hoặc hai đường chéo bằng nhau.'],
+ dang:[['A. Chứng minh tứ giác là hình vuông','Chứng minh là hình chữ nhật rồi thêm một dấu hiệu (hoặc hình thoi rồi thêm một góc vuông). Bài mẫu: tứ giác nối trung điểm.'],['B. Áp dụng tính chất, dấu hiệu để giải toán','Chứng minh bằng nhau, vuông góc, song song, thẳng hàng, đồng quy; tính độ dài, diện tích; điểm cố định; cực trị (diện tích lớn nhất, chu vi nhỏ nhất).']],
+ mau:[['Z12','Hình vuông: CE ⊥ DF, ΔMAD cân, diện tích'],['Z13','AE = AF, hình thoi, chu vi không đổi'],['Z14','Tứ giác nối trung điểm: HCN, thoi, vuông'],['Z18','O, M, H thẳng hàng'],['Z19','DE, BF, CM đồng quy; diện tích lớn nhất'],['Z20','B, E, F thẳng hàng (tam giác đều dựng ngoài)'],['Z25','CM · DN = a², ∠MKN = 90°, MN nhỏ nhất'],['Z26','ΔEDF vuông cân; O, C, I thẳng hàng'],['Z29','Phân giác ∠CDE: AE + KC = DE'],['Z30','Hình vuông MNPQ: ΔABC vuông tại A'],['Z31','Chu vi EFGH nhỏ nhất'],['Z32','Hai hình vuông chung đỉnh M: DF qua điểm cố định'],['Z37','Điểm bất kỳ trong hình vuông: MA² + … ≥ 2'],['Z38','ΔAMN vuông cân, chu vi CMP, tổng nghịch đảo'],['Z40','Hình vuông AEDF: vị trí của D'],['Z41','AKHQ là hình vuông'],['Z42','BQEP là hình vuông (trọng tâm)'],['Z43','Đường trung bình tạo hình vuông INJM'],['Z44','Hình bình hành: MNPQ là hình thoi']],
+ lu:[['Hình vuông ABCD, E ∈ AB tùy ý, phân giác của ∠CDE cắt BC tại K, AK cắt CD tại F. Chứng minh {1|AD²} = {1|AK²} + {1|AF²}.','Vẽ AG ⊥ AF (G ∈ DC). Trong tam giác vuông AGF với đường cao AD: {1|AD²} = {1|AG²} + {1|AF²}. Chứng minh ΔDAG = ΔBAK (g.c.g) ⇒ AG = AK.','Chứng minh được (Bài 4, ý b, đề thi học sinh giỏi tỉnh Sóc Trăng 2014-2015).']]}
+];
+let cvz=0,cvs=0,cvd={};try{cvd=JSON.parse(localStorage.getItem('hh8cd')||'{}')}catch(e){}
+function cvopen(i){cvz=i;cvs=0;$('cvw').hidden=false;cvdraw();$('cvw').scrollIntoView&&$('cvw').scrollIntoView({block:'start'})}
+function cvdraw(){const e=Z[cvz],n=e.S.length;$('cvt').textContent=ZG[e.g]+' · '+e.n;$('cvsv').setAttribute('viewBox',e.vb||'0 0 400 250');$('cvsv').innerHTML=zfig(e,cvs);
+ $('cvi').innerHTML=`<details class="an" ${cvs==0?'open':''}><summary>🔎 Phân tích đề</summary><div>${fr(`<div><b>Nhận dạng:</b> ${e.nd}</div><div><b>Công cụ:</b> ${e.cc}</div><div><b>Lỗi hay gặp:</b> ${e.loi}</div>`)}</div></details>`;
+ $('cvs').innerHTML=nowUI(e.S,cvs);$('cvpast').innerHTML=pastUI(e.S,cvs,'cvgo');
+ $('cvc').innerHTML=dotsUI(n,cvs,'cvgo');$('cvc').className='dots';$('cvp').disabled=cvs==0;$('cvn').textContent=cvs==n-1?'Xong, chọn bài khác':'Bước tiếp →';
+ if(cvs==n-1&&!cvd[cvz]){cvd[cvz]=1;try{localStorage.setItem('hh8cd',JSON.stringify(cvd))}catch(x){}addXP(5);cdall()}}
+$('cvp').onclick=()=>{if(cvs>0){cvs--;cvdraw()}};$('cvn').onclick=()=>{if(cvs<Z[cvz].S.length-1){cvs++;cvdraw()}else{$('cvw').hidden=true;$('cdb').scrollIntoView&&$('cdb').scrollIntoView({block:'start'})}};$('cvx').onclick=()=>{$('cvw').hidden=true};
+function cdall(){cdr();blr()}
+function cdr(){
+ const sn=c=>c.mau.filter(m=>cvd[m[0].slice(1)]).length,tot=CDS.reduce((a,c)=>a+c.mau.length,0),seen=CDS.reduce((a,c)=>a+sn(c),0);
+ $('cdh').innerHTML=`<div class="c"><h2>🏆 Chuyên đề nâng cao</h2><div class="pt" style="margin:0 0 8px">Rút ra từ tài liệu PDF bạn gửi (có Chuyên đề 1 và 2). Chọn một bài mẫu để xem từng bước.</div><div style="display:flex;justify-content:space-between;font-size:15px;margin-bottom:4px"><span>Bài mẫu đã xem</span><b>${seen}/${tot}</b></div><div class="pb"><i style="width:${seen/tot*100}%"></i></div></div>`;
+ $('cdb').innerHTML=CDS.map(c=>`<div class="c"><h2>${c.t}</h2><div class="pt" style="margin-top:0">${sn(c)}/${c.mau.length} bài mẫu đã xem</div><h3 style="margin-top:6px">Bài mẫu giải từng bước</h3><div class="exg">${c.mau.map((m,k)=>{const zi=m[0].slice(1),dn=cvd[zi];return`<button class="exc ${dn?'dn':''}" onclick="cvopen(${zi})"><span class="num">${dn?'✓':k+1}</span><span><b>${fr(m[1])}</b><small>${Z[zi].S.length} bước · ${dn?'đã xem':'chưa xem'}</small></span></button>`}).join('')}</div>
+ <details class="acc"><summary>📚 Lý thuyết cần nhớ</summary><div class="in"><ul>${c.lt.map(x=>`<li>${fr(x)}</li>`).join('')}</ul></div></details>
+ <details class="acc"><summary>🧭 Các dạng và mẹo<span class="badge">${c.dang.length}</span></summary><div class="in">${c.dang.map(d=>`<div class="it" style="border:0;padding:6px 0"><b>${d[0]}</b><div>${fr(d[1])}</div></div>`).join('')}</div></details>
+ <details class="acc"><summary>✍️ Đề tự luyện (làm trước, rồi mở gợi ý)<span class="badge">${c.lu.length}</span></summary><div class="in">${c.lu.map(l=>`<details class="it"><summary>${fr(l[0])}</summary><div class="pt">💡 Gợi ý: ${fr(l[1])}</div><div><b>Đáp án:</b> ${fr(l[2])}</div></details>`).join('')}</div></details></div>`).join('')}
+function blr(){
+ const BL=[['CĐ1 · Ví dụ mở đầu',11,0],['CĐ1 · Bài tập đợt 1',26,0],['CĐ1 · Ví dụ đợt 2',6,0],['CĐ1 · Bài tập đợt 2',16,0],['CĐ1 · Dạng I (tam giác vuông cân)',6,3],['CĐ1 · Dạng II (tam giác đều)',7,4],['CĐ1 · Dạng III (tam giác cân)',7,2],['CĐ1 · Dạng IV (liên hệ giữa các góc)',7,4],['CĐ1 · Dạng V (nửa tam giác đều)',5,3],['CĐ1 · Bài tập tính góc',26,0],['CĐ2 · A. Ví dụ (chứng minh hình vuông)',4,3],['CĐ2 · A. Bài tập',3,3],['CĐ2 · B. Ví dụ (áp dụng tính chất)',9,8],['CĐ2 · B. Bài tập',26,5]];
+ const T=BL.reduce((a,b)=>a+b[1],0),Dn=BL.reduce((a,b)=>a+b[2],0);
+ const nxt=['CĐ2 B VD9: ∠IOM = 90°, diện tích BIOM (nhiều ý)','CĐ2 A VD4 (bài số học, không có hình)','CĐ1 Dạng III VD3 (đọc lại đề) và VD4 (∠AMB với A = 100°)','CĐ1 Dạng IV VD5 đến VD7; Dạng V VD4','CĐ1 Dạng II VD5 đến VD7','CĐ1 Bài tập (26 + 16 + 26 bài) và CĐ2 Bài tập B (26 bài)'];
+ const app=['Mô hình kéo cho tam giác đồng dạng và tính chất đường phân giác','Bài chứng minh dài nhiều ý, chấm theo từng bước','Thêm bài tập số cho hình khối và Pythagore','Chuyên đề 3 đến 7 (vuông góc/song song, đồng quy/thẳng hàng, Thales và đồng dạng, tính toán, tổng hợp): chưa có trong file, cần bản đầy đủ'];
+ $('cdb').insertAdjacentHTML('beforeend',`<div class="c"><details class="acc" style="margin:0"><summary>📋 Kế hoạch bổ sung dần<span class="badge">${Dn}/${T} bài</span></summary><div class="in"><div class="pt">Tài liệu PDF có khoảng <b>${T}</b> bài (ví dụ và bài tập). Đã đưa vào app: <b>${Dn}</b>. Mỗi lượt sẽ thêm một nhóm bài có hình vẽ giải từng bước.</div><div class="pb"><i style="width:${Dn/T*100}%"></i></div>${BL.map(b=>`<div class="it" style="padding:6px 0"><span>${b[0]}</span> <b>${b[2]}/${b[1]}</b><div class="pb" style="height:6px"><i style="width:${b[2]/b[1]*100}%"></i></div></div>`).join('')}<h3>Lượt bổ sung tiếp theo (dự kiến)</h3><ul>${nxt.map(x=>`<li>${fr(x)}</li>`).join('')}</ul><h3>Hạng mục khác của app chưa làm</h3><ul>${app.map(x=>`<li>${x}</li>`).join('')}</ul></div></details></div>`)}
+/* ===== LỘ TRÌNH ===== */
+const PL=[['Tuần 0 – Nền tảng (2–3 ngày)',[['Đọc bảng ký hiệu; xem mục “Tam giác”, “Pythagore” trong CSDL','D'],['Bài tập: Pythagore tìm cạnh','X8'],['Bài tập: Pythagore đảo','X9']]],
+['Tuần 1 – Tứ giác, hình thang',[['Học bài 1: Tứ giác','L0'],['Bài tập: tính góc tứ giác','X0'],['Học bài 2: Hình thang','L1'],['Học bài 3: Hình thang cân','L2'],['Tự vẽ hình thang cân và hai đường chéo trên giấy','']]],
+['Tuần 2 – Các hình bình hành, chữ nhật, thoi, vuông',[['Học bài 4: Hình bình hành','L3'],['Bài tập: chứng minh hình bình hành','X1'],['Học bài 5: Hình chữ nhật','L4'],['Học bài 6: Hình thoi','L5'],['Học bài 7: Hình vuông','L6'],['Bài tập: hình vuông (c.g.c)','X2'],['Vẽ lại sơ đồ “kế thừa” các tứ giác từ trí nhớ','']]],
+['Tuần 3 – Đường trung bình, Talet, phân giác',[['Học bài 8: Đường trung bình','L7'],['Bài tập: đường trung bình','X4'],['Học bài 9: Định lí Talet','L8'],['Bài tập: Talet tính độ dài','X3'],['Bài tập: đường phân giác','X5']]],
+['Tuần 4 – Tam giác đồng dạng',[['Học bài 10: Tam giác đồng dạng','L9'],['Bài tập: đồng dạng g.g','X6'],['Bài tập thực tế: đo chiều cao cây','X7']]],
+['Tuần 5 – Dạng toán HK1 và nâng cao',[['Dạng 1–3: góc tứ giác, Pythagore thực tế, hình thang cân','Z0'],['Dạng 4–7: bình hành, chữ nhật, thoi, vuông','Z3'],['Nâng cao: đường trung bình hình thang','Z7'],['Nâng cao: chuỗi trung điểm AI = IM','Z8'],['Nâng cao: tứ giác nối các trung điểm','Z9']]],
+['Tuần 6 – Kéo, hình khối và kiểm tra',[['Kéo: hình bình hành','K0'],['Kéo: đường trung bình','K1'],['Kéo: Talet','K2'],['Kéo: tổng 4 góc','K3'],['Kéo: Pythagore (tìm bộ ba 3-4-5)','K4'],['Hình hộp và lập phương','S0'],['Lăng trụ đứng tam giác','S2'],['Chóp tam giác đều và chóp tứ giác đều','S3'],['Bài kiểm tra tổng hợp 12 câu','T0']]],
+['Tuần 7 – Chuyên đề nâng cao (từ tài liệu PDF)',[['Nửa tam giác đều: tính ∠BCD','Z10'],['Hai phân giác, ∠A = 60°','Z11'],['Hình vuông: CE ⊥ DF, ΔMAD cân','Z12'],['Hình vuông: AE = AF, chu vi không đổi','Z13'],['Tứ giác nối trung điểm: HCN, thoi, vuông','Z14'],['Tự giải 4 đề luyện Chuyên đề 1','C0'],['Tự giải 3 đề luyện Chuyên đề 2','C0']]],
+['Tuần 8 – Ôn tổng hợp',[['Làm lại bài tập 1–5, che lời giải','X0'],['Làm lại bài tập 6–10, che lời giải','X5'],['Làm lại 10 câu kiểm tra nhanh ở tab Học','L0'],['Tự ra 1 đề cho mình và giải từng bước','']]]];
+let pd=new Set();try{pd=new Set(JSON.parse(localStorage.getItem('hh8plan')||'[]'))}catch(e){}
+function go2(a){const n=+a.slice(1);if(a[0]=='L')toLesson(n);else if(a[0]=='X')toEx(n);else if(a[0]=='Z'){show('dang');zpick(n)}else if(a[0]=='K'){show('drag');dsc=n;dlist();dreset()}else if(a[0]=='S'){show('solid');sc=n;slist();spick()}else if(a[0]=='T'){show('test')}else if(a[0]=='C'){show('cd')}else show('db')}
+function ptog(id){pd.has(id)?pd.delete(id):pd.add(id);try{localStorage.setItem('hh8plan',JSON.stringify([...pd]))}catch(e){}pr()}
+function pr(){let tot=0;PL.forEach(w=>tot+=w[1].length);
+ const todo=[];PL.forEach((w,wi)=>w[1].forEach((k,ti)=>{if(todo.length<3&&!pd.has(wi+'-'+ti))todo.push([wi,ti,k,w[0]])}));
+ const cw=PL.findIndex((w,wi)=>w[1].some((_,ti)=>!pd.has(wi+'-'+ti)));
+ $('ptd').innerHTML=todo.length?`<div class="c today"><h2>🎯 Hôm nay làm gì?</h2><div class="pt" style="margin:0">Làm lần lượt, xong thì bấm “Xong”.</div>${todo.map(([wi,ti,k,wt])=>`<div class="todo"><div><b>${k[0]}</b><div class="pt" style="margin:0">${wt.split(' – ')[0]}</div></div>${k[1]?`<button class="pri" onclick="go2('${k[1]}')">Mở →</button>`:''}<button class="g2s" onclick="ptog('${wi}-${ti}')">✓ Xong</button></div>`).join('')}</div>`:`<div class="c today"><h2>🎉 Bạn đã hoàn thành cả lộ trình!</h2></div>`;
+ $('pw').innerHTML=PL.map((w,wi)=>{const dn=w[1].filter((_,ti)=>pd.has(wi+'-'+ti)).length;return`<details class="acc" ${wi==cw?'open':''}><summary>${w[0]}<span class="badge ${dn==w[1].length?'ok':''}">${dn}/${w[1].length}</span></summary><div class="in">`+w[1].map((k,ti)=>{const id=wi+'-'+ti;return`<div class="tk"><label><input type="checkbox" data-i="${id}" ${pd.has(id)?'checked':''}><span>${k[0]}</span></label>${k[1]?`<a onclick="go2('${k[1]}')">Mở →</a>`:''}</div>`}).join('')+'</div></details>'}).join('');
+ document.querySelectorAll('#pw input').forEach(c=>c.onchange=()=>ptog(c.dataset.i));
+ $('ppb').style.width=pd.size/tot*100+'%';$('ppt').textContent=`Hoàn thành ${pd.size}/${tot} mục`}
+/* ===== CƠ SỞ DỮ LIỆU ===== */
+let fc='',fk='',dq='';
+const uniq=i=>[...new Set(D.map(e=>e[i]))];
+function toLesson(i){show('learn');lgo(i)}function toEx(i){show('ex');xpick(i)}
+function setF(t,v){if(t=='c')fc=fc==v?'':v;else fk=fk==v?'':v;dbr()}
+function dbr(){
+ $('dc').innerHTML=uniq(0).map(v=>`<button class="${fc==v?'on':''}" onclick="setF('c',this.textContent)">${v}</button>`).join('');
+ $('dk').innerHTML=uniq(1).map(v=>`<button class="${fk==v?'on':''}" onclick="setF('k',this.textContent)">${v}</button>`).join('');
+ const r=D.filter(e=>(!fc||e[0]==fc)&&(!fk||e[1]==fk)&&(!dq||e.slice(0,4).join(' ').toLowerCase().includes(dq)));
+ $('dn').textContent=`${r.length}/${D.length} mục kiến thức`;
+ $('dl').innerHTML=r.map(e=>`<div class="it"><span class="bd">${e[1]}</span><b>${e[2]}</b> <small>· ${e[0]}</small><div>${fr(e[3])}</div><div class="lk">${e[4]>=0?`<a onclick="toLesson(${e[4]})">📘 Học bài ${e[4]+1}</a>`:''}${e[5]>=0?`<a onclick="toEx(${e[5]})">🧩 Xem bài tập</a>`:''}</div></div>`).join('')||'<div class="pt">Không có kết quả.</div>'}
+$('dq').oninput=e=>{dq=e.target.value.trim().toLowerCase();dbr()};
+$('xl').innerHTML=X.map((e,i)=>`<button onclick="toEx(${i})">${i+1}. ${e.n}</button>`).join('');
+$('sy').innerHTML=SY.map(s=>`<div><b>${s[0].includes('{')?fr(s[0]):s[0]}</b>${s[1]}</div>`).join('');
+$('js').textContent=JSON.stringify({kienThuc:D.map(e=>({chuong:e[0],loai:e[1],ten:e[2],noiDung:e[3]})),baiHoc:L.map(l=>({ten:l.n,ngoaiDoi:l.real,yChinh:l.def})),baiTap:X.map(e=>({ten:e.n,cacBuoc:e.S.map(s=>s.s)}))},null,1);
+pr();dbr();lgo(0);zlist();zdraw();dlist();dreset();slist();spick();trender();cdall();xdraw();show('learn');
+</script></body></html>
